@@ -1,0 +1,8686 @@
+{
+  "frames": [
+    {
+      "line_no": 140,
+      "timestamp": "18:11:33.591",
+      "dest": "0x24",
+      "cmd": "0x2006",
+      "payload": "0x00",
+      "sensors": [
+        {
+          "line_no": 141,
+          "timestamp": "18:11:33.659",
+          "sensor_type": "binary_sensor",
+          "name": "Tür",
+          "value": "ON"
+        }
+      ]
+    },
+    {
+      "line_no": 142,
+      "timestamp": "18:11:47.095",
+      "dest": "0x24",
+      "cmd": "0x2006",
+      "payload": "0x08",
+      "sensors": [
+        {
+          "line_no": 143,
+          "timestamp": "18:11:47.098",
+          "sensor_type": "binary_sensor",
+          "name": "Tür",
+          "value": "OFF"
+        }
+      ]
+    },
+    {
+      "line_no": 146,
+      "timestamp": "18:12:08.054",
+      "dest": "0x24",
+      "cmd": "0x2006",
+      "payload": "0x00",
+      "sensors": [
+        {
+          "line_no": 147,
+          "timestamp": "18:12:08.099",
+          "sensor_type": "binary_sensor",
+          "name": "Tür",
+          "value": "ON"
+        }
+      ]
+    },
+    {
+      "line_no": 148,
+      "timestamp": "18:12:12.305",
+      "dest": "0x24",
+      "cmd": "0x2006",
+      "payload": "0x08",
+      "sensors": [
+        {
+          "line_no": 149,
+          "timestamp": "18:12:12.308",
+          "sensor_type": "binary_sensor",
+          "name": "Tür",
+          "value": "OFF"
+        }
+      ]
+    },
+    {
+      "line_no": 150,
+      "timestamp": "18:12:32.068",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 296,
+      "timestamp": "10:46:26.354",
+      "dest": "0x22",
+      "cmd": "0x7ff1",
+      "payload": "0x10",
+      "sensors": []
+    },
+    {
+      "line_no": 297,
+      "timestamp": "10:46:26.563",
+      "dest": "0x22",
+      "cmd": "0x40f2",
+      "payload": "0x",
+      "sensors": []
+    },
+    {
+      "line_no": 298,
+      "timestamp": "10:46:26.582",
+      "dest": "0x24",
+      "cmd": "0x2006",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 299,
+      "timestamp": "10:46:26.617",
+      "dest": "0x26",
+      "cmd": "0x2002",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 300,
+      "timestamp": "10:46:26.636",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 302,
+      "timestamp": "10:46:26.656",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0xa00000",
+      "sensors": [
+        {
+          "line_no": 303,
+          "timestamp": "10:46:26.657",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "160 min"
+        }
+      ]
+    },
+    {
+      "line_no": 304,
+      "timestamp": "10:46:26.677",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 305,
+      "timestamp": "10:46:26.699",
+      "dest": "0x25",
+      "cmd": "0x2011",
+      "payload": "0xa5100d0b0e1112a1a080818486a2",
+      "sensors": []
+    },
+    {
+      "line_no": 306,
+      "timestamp": "10:46:26.718",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 308,
+      "timestamp": "10:46:26.738",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 310,
+      "timestamp": "10:46:26.744",
+      "dest": "0x25",
+      "cmd": "0x2012",
+      "payload": "0x01",
+      "sensors": []
+    },
+    {
+      "line_no": 311,
+      "timestamp": "10:46:26.761",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 313,
+      "timestamp": "10:46:26.782",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 315,
+      "timestamp": "10:46:26.785",
+      "dest": "0x25",
+      "cmd": "0x2013",
+      "payload": "0xffff",
+      "sensors": []
+    },
+    {
+      "line_no": 316,
+      "timestamp": "10:46:26.804",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 318,
+      "timestamp": "10:46:26.832",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 320,
+      "timestamp": "10:46:26.845",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 322,
+      "timestamp": "10:46:26.866",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 324,
+      "timestamp": "10:46:26.884",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 326,
+      "timestamp": "10:46:26.887",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 328,
+      "timestamp": "10:46:26.908",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 330,
+      "timestamp": "10:46:26.930",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 332,
+      "timestamp": "10:46:26.948",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 334,
+      "timestamp": "10:46:26.969",
+      "dest": "0x25",
+      "cmd": "0x2010",
+      "payload": "0x0d000001050062000037010000",
+      "sensors": [
+        {
+          "line_no": 335,
+          "timestamp": "10:46:26.972",
+          "sensor_type": "binary_sensor",
+          "name": "Option VarioSpeed",
+          "value": "OFF"
+        },
+        {
+          "line_no": 336,
+          "timestamp": "10:46:26.973",
+          "sensor_type": "binary_sensor",
+          "name": "helper_init_variospeed",
+          "value": "OFF"
+        },
+        {
+          "line_no": 337,
+          "timestamp": "10:46:26.973",
+          "sensor_type": "binary_sensor",
+          "name": "Option IntensivZone",
+          "value": "OFF"
+        },
+        {
+          "line_no": 338,
+          "timestamp": "10:46:26.973",
+          "sensor_type": "binary_sensor",
+          "name": "helper_init_intensivzone",
+          "value": "OFF"
+        },
+        {
+          "line_no": 339,
+          "timestamp": "10:46:26.976",
+          "sensor_type": "binary_sensor",
+          "name": "Option Hygiene",
+          "value": "OFF"
+        },
+        {
+          "line_no": 340,
+          "timestamp": "10:46:26.976",
+          "sensor_type": "binary_sensor",
+          "name": "helper_init_hygiene",
+          "value": "OFF"
+        },
+        {
+          "line_no": 341,
+          "timestamp": "10:46:26.976",
+          "sensor_type": "binary_sensor",
+          "name": "Option Glanztrocknen",
+          "value": "OFF"
+        },
+        {
+          "line_no": 342,
+          "timestamp": "10:46:26.978",
+          "sensor_type": "binary_sensor",
+          "name": "helper_init_glanz",
+          "value": "OFF"
+        },
+        {
+          "line_no": 343,
+          "timestamp": "10:46:26.980",
+          "sensor_type": "text_sensor",
+          "name": "bsh_helper_init",
+          "value": "'Auto 45-65°'"
+        },
+        {
+          "line_no": 344,
+          "timestamp": "10:46:26.980",
+          "sensor_type": "text_sensor",
+          "name": "Ausgewähltes Programm",
+          "value": "'Auto 45-65°'"
+        }
+      ]
+    },
+    {
+      "line_no": 346,
+      "timestamp": "10:46:27.005",
+      "dest": "0x27",
+      "cmd": "0x2007",
+      "payload": "0x02",
+      "sensors": [
+        {
+          "line_no": 347,
+          "timestamp": "10:46:27.005",
+          "sensor_type": "binary_sensor",
+          "name": "Status",
+          "value": "OFF"
+        }
+      ]
+    },
+    {
+      "line_no": 348,
+      "timestamp": "10:46:27.022",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 350,
+      "timestamp": "10:46:27.040",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0xa00000",
+      "sensors": [
+        {
+          "line_no": 351,
+          "timestamp": "10:46:27.043",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "160 min"
+        }
+      ]
+    },
+    {
+      "line_no": 352,
+      "timestamp": "10:46:27.062",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 354,
+      "timestamp": "10:46:27.085",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 356,
+      "timestamp": "10:46:27.106",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 358,
+      "timestamp": "10:46:27.135",
+      "dest": "0x55",
+      "cmd": "0x5006",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 360,
+      "timestamp": "10:46:27.148",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 362,
+      "timestamp": "10:46:27.169",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 364,
+      "timestamp": "10:46:27.190",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 366,
+      "timestamp": "10:46:27.211",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 368,
+      "timestamp": "10:46:27.211",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 370,
+      "timestamp": "10:46:27.246",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 372,
+      "timestamp": "10:46:27.251",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 374,
+      "timestamp": "10:46:27.273",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 376,
+      "timestamp": "10:46:27.299",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 378,
+      "timestamp": "10:46:27.317",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 380,
+      "timestamp": "10:46:27.336",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 382,
+      "timestamp": "10:46:27.357",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 384,
+      "timestamp": "10:46:27.377",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 386,
+      "timestamp": "10:46:27.397",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 388,
+      "timestamp": "10:46:27.417",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 390,
+      "timestamp": "10:46:27.438",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 392,
+      "timestamp": "10:46:27.459",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 394,
+      "timestamp": "10:46:27.485",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 396,
+      "timestamp": "10:46:27.500",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 398,
+      "timestamp": "10:46:27.520",
+      "dest": "0x55",
+      "cmd": "0x5003",
+      "payload": "0xa00000",
+      "sensors": []
+    },
+    {
+      "line_no": 400,
+      "timestamp": "10:46:27.543",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 402,
+      "timestamp": "10:46:27.564",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 404,
+      "timestamp": "10:46:27.587",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 406,
+      "timestamp": "10:46:27.605",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 408,
+      "timestamp": "10:46:27.636",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 410,
+      "timestamp": "10:46:27.651",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 412,
+      "timestamp": "10:46:27.653",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 414,
+      "timestamp": "10:46:27.670",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 416,
+      "timestamp": "10:46:27.690",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 418,
+      "timestamp": "10:46:27.696",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 420,
+      "timestamp": "10:46:27.716",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 422,
+      "timestamp": "10:46:27.759",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 424,
+      "timestamp": "10:46:27.759",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 426,
+      "timestamp": "10:46:27.760",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 428,
+      "timestamp": "10:46:27.776",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 430,
+      "timestamp": "10:46:27.798",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 432,
+      "timestamp": "10:46:27.802",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 434,
+      "timestamp": "10:46:27.822",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 436,
+      "timestamp": "10:46:27.845",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 438,
+      "timestamp": "10:46:27.849",
+      "dest": "0x55",
+      "cmd": "0x5008",
+      "payload": "0x000000",
+      "sensors": []
+    },
+    {
+      "line_no": 440,
+      "timestamp": "10:46:27.886",
+      "dest": "0x17",
+      "cmd": "0x1007",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 441,
+      "timestamp": "10:46:27.905",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0xa00000",
+      "sensors": [
+        {
+          "line_no": 442,
+          "timestamp": "10:46:27.906",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "160 min"
+        }
+      ]
+    },
+    {
+      "line_no": 443,
+      "timestamp": "10:46:32.604",
+      "dest": "0x17",
+      "cmd": "0x1013",
+      "payload": "0x01",
+      "sensors": []
+    },
+    {
+      "line_no": 444,
+      "timestamp": "10:46:32.638",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0xa00000",
+      "sensors": [
+        {
+          "line_no": 445,
+          "timestamp": "10:46:32.641",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "160 min"
+        }
+      ]
+    },
+    {
+      "line_no": 446,
+      "timestamp": "10:46:34.378",
+      "dest": "0x24",
+      "cmd": "0x2006",
+      "payload": "0x08",
+      "sensors": [
+        {
+          "line_no": 447,
+          "timestamp": "10:46:34.381",
+          "sensor_type": "binary_sensor",
+          "name": "Tür",
+          "value": "OFF"
+        }
+      ]
+    },
+    {
+      "line_no": 448,
+      "timestamp": "10:46:34.467",
+      "dest": "0x27",
+      "cmd": "0x2007",
+      "payload": "0x01",
+      "sensors": [
+        {
+          "line_no": 449,
+          "timestamp": "10:46:34.470",
+          "sensor_type": "binary_sensor",
+          "name": "Status",
+          "value": "ON"
+        }
+      ]
+    },
+    {
+      "line_no": 450,
+      "timestamp": "10:46:34.541",
+      "dest": "0x25",
+      "cmd": "0x2013",
+      "payload": "0xffff",
+      "sensors": []
+    },
+    {
+      "line_no": 451,
+      "timestamp": "10:46:34.629",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0xa00000",
+      "sensors": [
+        {
+          "line_no": 452,
+          "timestamp": "10:46:34.631",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "160 min"
+        }
+      ]
+    },
+    {
+      "line_no": 453,
+      "timestamp": "10:46:34.633",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 454,
+      "timestamp": "10:46:34.704",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x020000",
+      "sensors": []
+    },
+    {
+      "line_no": 455,
+      "timestamp": "10:46:34.758",
+      "dest": "0x26",
+      "cmd": "0x2002",
+      "payload": "0x00000000",
+      "sensors": []
+    },
+    {
+      "line_no": 456,
+      "timestamp": "10:46:34.863",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x21",
+      "sensors": []
+    },
+    {
+      "line_no": 457,
+      "timestamp": "10:46:35.216",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x820000",
+      "sensors": []
+    },
+    {
+      "line_no": 458,
+      "timestamp": "10:46:35.364",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x220000",
+      "sensors": []
+    },
+    {
+      "line_no": 459,
+      "timestamp": "10:46:39.599",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 460,
+      "timestamp": "10:46:41.386",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 461,
+      "timestamp": "10:46:52.507",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 462,
+      "timestamp": "10:46:54.568",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 465,
+      "timestamp": "10:47:14.318",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 466,
+      "timestamp": "10:47:16.310",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 467,
+      "timestamp": "10:47:18.302",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 468,
+      "timestamp": "10:47:28.462",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 469,
+      "timestamp": "10:47:31.214",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 470,
+      "timestamp": "10:47:33.291",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 471,
+      "timestamp": "10:47:34.320",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x9f0000",
+      "sensors": [
+        {
+          "line_no": 472,
+          "timestamp": "10:47:34.323",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "159 min"
+        }
+      ]
+    },
+    {
+      "line_no": 473,
+      "timestamp": "10:47:34.336",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x01",
+      "sensors": []
+    },
+    {
+      "line_no": 476,
+      "timestamp": "10:48:34.144",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x9e0000",
+      "sensors": [
+        {
+          "line_no": 477,
+          "timestamp": "10:48:34.145",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "158 min"
+        }
+      ]
+    },
+    {
+      "line_no": 478,
+      "timestamp": "10:48:34.147",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x01",
+      "sensors": []
+    },
+    {
+      "line_no": 479,
+      "timestamp": "10:48:34.235",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 482,
+      "timestamp": "10:49:34.067",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x9d0000",
+      "sensors": [
+        {
+          "line_no": 483,
+          "timestamp": "10:49:34.071",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "157 min"
+        }
+      ]
+    },
+    {
+      "line_no": 484,
+      "timestamp": "10:49:34.076",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x02",
+      "sensors": []
+    },
+    {
+      "line_no": 485,
+      "timestamp": "10:49:54.092",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 489,
+      "timestamp": "10:50:33.972",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x9c0000",
+      "sensors": [
+        {
+          "line_no": 490,
+          "timestamp": "10:50:33.974",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "156 min"
+        }
+      ]
+    },
+    {
+      "line_no": 491,
+      "timestamp": "10:50:33.997",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 492,
+      "timestamp": "10:50:34.012",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x03",
+      "sensors": []
+    },
+    {
+      "line_no": 493,
+      "timestamp": "10:50:39.010",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 494,
+      "timestamp": "10:50:40.935",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 495,
+      "timestamp": "10:50:56.038",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 498,
+      "timestamp": "10:51:02.183",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 499,
+      "timestamp": "10:51:18.167",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 500,
+      "timestamp": "10:51:20.974",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 501,
+      "timestamp": "10:51:24.054",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 502,
+      "timestamp": "10:51:34.075",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x9b0000",
+      "sensors": [
+        {
+          "line_no": 503,
+          "timestamp": "10:51:34.095",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "155 min"
+        }
+      ]
+    },
+    {
+      "line_no": 504,
+      "timestamp": "10:51:34.095",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x03",
+      "sensors": []
+    },
+    {
+      "line_no": 505,
+      "timestamp": "10:51:46.138",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 508,
+      "timestamp": "10:52:33.879",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x9a0000",
+      "sensors": [
+        {
+          "line_no": 509,
+          "timestamp": "10:52:33.882",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "154 min"
+        }
+      ]
+    },
+    {
+      "line_no": 510,
+      "timestamp": "10:52:33.922",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x04",
+      "sensors": []
+    },
+    {
+      "line_no": 513,
+      "timestamp": "10:53:33.770",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x990000",
+      "sensors": [
+        {
+          "line_no": 514,
+          "timestamp": "10:53:33.774",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "153 min"
+        }
+      ]
+    },
+    {
+      "line_no": 515,
+      "timestamp": "10:53:33.790",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x04",
+      "sensors": []
+    },
+    {
+      "line_no": 518,
+      "timestamp": "10:54:33.676",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x980000",
+      "sensors": [
+        {
+          "line_no": 519,
+          "timestamp": "10:54:33.679",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "152 min"
+        }
+      ]
+    },
+    {
+      "line_no": 520,
+      "timestamp": "10:54:33.697",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x05",
+      "sensors": []
+    },
+    {
+      "line_no": 524,
+      "timestamp": "10:55:33.568",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x970000",
+      "sensors": [
+        {
+          "line_no": 525,
+          "timestamp": "10:55:33.570",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "151 min"
+        }
+      ]
+    },
+    {
+      "line_no": 526,
+      "timestamp": "10:55:33.589",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x06",
+      "sensors": []
+    },
+    {
+      "line_no": 529,
+      "timestamp": "10:56:33.470",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x960000",
+      "sensors": [
+        {
+          "line_no": 530,
+          "timestamp": "10:56:33.478",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "150 min"
+        }
+      ]
+    },
+    {
+      "line_no": 531,
+      "timestamp": "10:56:33.492",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x06",
+      "sensors": []
+    },
+    {
+      "line_no": 534,
+      "timestamp": "10:57:33.361",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x950000",
+      "sensors": [
+        {
+          "line_no": 535,
+          "timestamp": "10:57:33.364",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "149 min"
+        }
+      ]
+    },
+    {
+      "line_no": 536,
+      "timestamp": "10:57:33.388",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x07",
+      "sensors": []
+    },
+    {
+      "line_no": 539,
+      "timestamp": "10:58:33.277",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x940000",
+      "sensors": [
+        {
+          "line_no": 540,
+          "timestamp": "10:58:33.282",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "148 min"
+        }
+      ]
+    },
+    {
+      "line_no": 541,
+      "timestamp": "10:58:33.296",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x08",
+      "sensors": []
+    },
+    {
+      "line_no": 544,
+      "timestamp": "10:59:33.178",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x930000",
+      "sensors": [
+        {
+          "line_no": 545,
+          "timestamp": "10:59:33.180",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "147 min"
+        }
+      ]
+    },
+    {
+      "line_no": 546,
+      "timestamp": "10:59:33.197",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x08",
+      "sensors": []
+    },
+    {
+      "line_no": 550,
+      "timestamp": "11:00:33.073",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x920000",
+      "sensors": [
+        {
+          "line_no": 551,
+          "timestamp": "11:00:33.092",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "146 min"
+        }
+      ]
+    },
+    {
+      "line_no": 552,
+      "timestamp": "11:00:33.092",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x09",
+      "sensors": []
+    },
+    {
+      "line_no": 555,
+      "timestamp": "11:01:32.978",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x910000",
+      "sensors": [
+        {
+          "line_no": 556,
+          "timestamp": "11:01:32.980",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "145 min"
+        }
+      ]
+    },
+    {
+      "line_no": 557,
+      "timestamp": "11:01:32.997",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x09",
+      "sensors": []
+    },
+    {
+      "line_no": 560,
+      "timestamp": "11:02:32.867",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x900000",
+      "sensors": [
+        {
+          "line_no": 561,
+          "timestamp": "11:02:32.869",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "144 min"
+        }
+      ]
+    },
+    {
+      "line_no": 562,
+      "timestamp": "11:02:32.890",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x0a",
+      "sensors": []
+    },
+    {
+      "line_no": 565,
+      "timestamp": "11:03:32.768",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x8f0000",
+      "sensors": [
+        {
+          "line_no": 566,
+          "timestamp": "11:03:32.770",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "143 min"
+        }
+      ]
+    },
+    {
+      "line_no": 567,
+      "timestamp": "11:03:32.789",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x0b",
+      "sensors": []
+    },
+    {
+      "line_no": 570,
+      "timestamp": "11:04:32.678",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x8e0000",
+      "sensors": [
+        {
+          "line_no": 571,
+          "timestamp": "11:04:32.681",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "142 min"
+        }
+      ]
+    },
+    {
+      "line_no": 572,
+      "timestamp": "11:04:32.699",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x0b",
+      "sensors": []
+    },
+    {
+      "line_no": 575,
+      "timestamp": "11:05:32.576",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x8d0000",
+      "sensors": [
+        {
+          "line_no": 576,
+          "timestamp": "11:05:32.579",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "141 min"
+        }
+      ]
+    },
+    {
+      "line_no": 577,
+      "timestamp": "11:05:32.602",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x0c",
+      "sensors": []
+    },
+    {
+      "line_no": 580,
+      "timestamp": "11:06:32.502",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x8c0000",
+      "sensors": [
+        {
+          "line_no": 581,
+          "timestamp": "11:06:32.505",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "140 min"
+        }
+      ]
+    },
+    {
+      "line_no": 582,
+      "timestamp": "11:06:32.522",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x0d",
+      "sensors": []
+    },
+    {
+      "line_no": 583,
+      "timestamp": "11:06:42.608",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 586,
+      "timestamp": "11:07:06.477",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 587,
+      "timestamp": "11:07:32.438",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x8b0000",
+      "sensors": [
+        {
+          "line_no": 588,
+          "timestamp": "11:07:32.443",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "139 min"
+        }
+      ]
+    },
+    {
+      "line_no": 589,
+      "timestamp": "11:07:32.462",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x0d",
+      "sensors": []
+    },
+    {
+      "line_no": 592,
+      "timestamp": "11:08:02.457",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 593,
+      "timestamp": "11:08:04.244",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 594,
+      "timestamp": "11:08:14.247",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 595,
+      "timestamp": "11:08:24.305",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 596,
+      "timestamp": "11:08:26.847",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x22",
+      "sensors": []
+    },
+    {
+      "line_no": 597,
+      "timestamp": "11:08:27.377",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x221000",
+      "sensors": []
+    },
+    {
+      "line_no": 598,
+      "timestamp": "11:08:32.261",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x8a0000",
+      "sensors": [
+        {
+          "line_no": 599,
+          "timestamp": "11:08:32.263",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "138 min"
+        }
+      ]
+    },
+    {
+      "line_no": 600,
+      "timestamp": "11:08:32.290",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x0e",
+      "sensors": []
+    },
+    {
+      "line_no": 603,
+      "timestamp": "11:09:32.165",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x890000",
+      "sensors": [
+        {
+          "line_no": 604,
+          "timestamp": "11:09:32.169",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "137 min"
+        }
+      ]
+    },
+    {
+      "line_no": 605,
+      "timestamp": "11:09:32.185",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x0e",
+      "sensors": []
+    },
+    {
+      "line_no": 608,
+      "timestamp": "11:10:32.060",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x880000",
+      "sensors": [
+        {
+          "line_no": 609,
+          "timestamp": "11:10:32.063",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "136 min"
+        }
+      ]
+    },
+    {
+      "line_no": 610,
+      "timestamp": "11:10:32.079",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x0f",
+      "sensors": []
+    },
+    {
+      "line_no": 613,
+      "timestamp": "11:11:31.949",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x870000",
+      "sensors": []
+    },
+    {
+      "line_no": 615,
+      "timestamp": "11:11:32.379",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x10",
+      "sensors": []
+    },
+    {
+      "line_no": 618,
+      "timestamp": "11:12:31.860",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x860000",
+      "sensors": [
+        {
+          "line_no": 619,
+          "timestamp": "11:12:31.864",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "134 min"
+        }
+      ]
+    },
+    {
+      "line_no": 620,
+      "timestamp": "11:12:31.880",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x10",
+      "sensors": []
+    },
+    {
+      "line_no": 623,
+      "timestamp": "11:13:31.761",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x850000",
+      "sensors": [
+        {
+          "line_no": 624,
+          "timestamp": "11:13:31.768",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "133 min"
+        }
+      ]
+    },
+    {
+      "line_no": 625,
+      "timestamp": "11:13:31.781",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x11",
+      "sensors": []
+    },
+    {
+      "line_no": 628,
+      "timestamp": "11:14:31.664",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x840000",
+      "sensors": [
+        {
+          "line_no": 629,
+          "timestamp": "11:14:31.667",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "132 min"
+        }
+      ]
+    },
+    {
+      "line_no": 630,
+      "timestamp": "11:14:31.684",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x12",
+      "sensors": []
+    },
+    {
+      "line_no": 633,
+      "timestamp": "11:15:31.583",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x830000",
+      "sensors": [
+        {
+          "line_no": 634,
+          "timestamp": "11:15:31.586",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "131 min"
+        }
+      ]
+    },
+    {
+      "line_no": 635,
+      "timestamp": "11:15:31.600",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x12",
+      "sensors": []
+    },
+    {
+      "line_no": 638,
+      "timestamp": "11:16:31.494",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x820000",
+      "sensors": [
+        {
+          "line_no": 639,
+          "timestamp": "11:16:31.511",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "130 min"
+        }
+      ]
+    },
+    {
+      "line_no": 640,
+      "timestamp": "11:16:31.513",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x13",
+      "sensors": []
+    },
+    {
+      "line_no": 643,
+      "timestamp": "11:17:31.395",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x810000",
+      "sensors": [
+        {
+          "line_no": 644,
+          "timestamp": "11:17:31.400",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "129 min"
+        }
+      ]
+    },
+    {
+      "line_no": 645,
+      "timestamp": "11:17:31.416",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x13",
+      "sensors": []
+    },
+    {
+      "line_no": 648,
+      "timestamp": "11:18:31.304",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x800000",
+      "sensors": [
+        {
+          "line_no": 649,
+          "timestamp": "11:18:31.341",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "128 min"
+        }
+      ]
+    },
+    {
+      "line_no": 650,
+      "timestamp": "11:18:31.341",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x14",
+      "sensors": []
+    },
+    {
+      "line_no": 653,
+      "timestamp": "11:19:21.376",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 654,
+      "timestamp": "11:19:23.135",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 655,
+      "timestamp": "11:19:31.182",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x7f0000",
+      "sensors": [
+        {
+          "line_no": 656,
+          "timestamp": "11:19:31.183",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "127 min"
+        }
+      ]
+    },
+    {
+      "line_no": 657,
+      "timestamp": "11:19:31.197",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x15",
+      "sensors": []
+    },
+    {
+      "line_no": 660,
+      "timestamp": "11:20:31.109",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x7e0000",
+      "sensors": [
+        {
+          "line_no": 661,
+          "timestamp": "11:20:31.111",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "126 min"
+        }
+      ]
+    },
+    {
+      "line_no": 662,
+      "timestamp": "11:20:31.124",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x15",
+      "sensors": []
+    },
+    {
+      "line_no": 665,
+      "timestamp": "11:21:31.139",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x7d0000",
+      "sensors": [
+        {
+          "line_no": 666,
+          "timestamp": "11:21:31.150",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "125 min"
+        }
+      ]
+    },
+    {
+      "line_no": 667,
+      "timestamp": "11:21:31.158",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x16",
+      "sensors": []
+    },
+    {
+      "line_no": 670,
+      "timestamp": "11:22:30.917",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x7c0000",
+      "sensors": [
+        {
+          "line_no": 671,
+          "timestamp": "11:22:30.922",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "124 min"
+        }
+      ]
+    },
+    {
+      "line_no": 672,
+      "timestamp": "11:22:30.938",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x17",
+      "sensors": []
+    },
+    {
+      "line_no": 675,
+      "timestamp": "11:23:30.911",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x7b0000",
+      "sensors": [
+        {
+          "line_no": 676,
+          "timestamp": "11:23:30.917",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "123 min"
+        }
+      ]
+    },
+    {
+      "line_no": 677,
+      "timestamp": "11:23:30.940",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x17",
+      "sensors": []
+    },
+    {
+      "line_no": 680,
+      "timestamp": "11:24:20.671",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 681,
+      "timestamp": "11:24:25.794",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 682,
+      "timestamp": "11:24:27.837",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 683,
+      "timestamp": "11:24:29.863",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 684,
+      "timestamp": "11:24:30.887",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x7a0000",
+      "sensors": [
+        {
+          "line_no": 685,
+          "timestamp": "11:24:30.890",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "122 min"
+        }
+      ]
+    },
+    {
+      "line_no": 686,
+      "timestamp": "11:24:30.906",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x18",
+      "sensors": []
+    },
+    {
+      "line_no": 687,
+      "timestamp": "11:24:51.774",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 690,
+      "timestamp": "11:25:30.705",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x790000",
+      "sensors": [
+        {
+          "line_no": 691,
+          "timestamp": "11:25:30.718",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "121 min"
+        }
+      ]
+    },
+    {
+      "line_no": 692,
+      "timestamp": "11:25:30.726",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x18",
+      "sensors": []
+    },
+    {
+      "line_no": 693,
+      "timestamp": "11:25:50.574",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 694,
+      "timestamp": "11:25:52.615",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 697,
+      "timestamp": "11:26:02.615",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 698,
+      "timestamp": "11:26:04.666",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 699,
+      "timestamp": "11:26:30.641",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x780000",
+      "sensors": [
+        {
+          "line_no": 700,
+          "timestamp": "11:26:30.643",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "120 min"
+        }
+      ]
+    },
+    {
+      "line_no": 701,
+      "timestamp": "11:26:30.661",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x19",
+      "sensors": []
+    },
+    {
+      "line_no": 704,
+      "timestamp": "11:27:30.413",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x770000",
+      "sensors": [
+        {
+          "line_no": 705,
+          "timestamp": "11:27:30.417",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "119 min"
+        }
+      ]
+    },
+    {
+      "line_no": 706,
+      "timestamp": "11:27:30.441",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x1a",
+      "sensors": []
+    },
+    {
+      "line_no": 709,
+      "timestamp": "11:28:30.433",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x760000",
+      "sensors": [
+        {
+          "line_no": 710,
+          "timestamp": "11:28:30.437",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "118 min"
+        }
+      ]
+    },
+    {
+      "line_no": 711,
+      "timestamp": "11:28:30.457",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x1a",
+      "sensors": []
+    },
+    {
+      "line_no": 714,
+      "timestamp": "11:29:30.188",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x750000",
+      "sensors": [
+        {
+          "line_no": 715,
+          "timestamp": "11:29:30.192",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "117 min"
+        }
+      ]
+    },
+    {
+      "line_no": 716,
+      "timestamp": "11:29:30.208",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x1b",
+      "sensors": []
+    },
+    {
+      "line_no": 719,
+      "timestamp": "11:30:30.233",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x740000",
+      "sensors": [
+        {
+          "line_no": 720,
+          "timestamp": "11:30:30.236",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "116 min"
+        }
+      ]
+    },
+    {
+      "line_no": 721,
+      "timestamp": "11:30:30.256",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x1c",
+      "sensors": []
+    },
+    {
+      "line_no": 723,
+      "timestamp": "11:31:00.125",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": [
+        {
+          "line_no": 724,
+          "timestamp": "11:31:00.374",
+          "sensor_type": "sensor",
+          "name": "Uptime",
+          "value": "2763 s"
+        }
+      ]
+    },
+    {
+      "line_no": 725,
+      "timestamp": "11:31:00.844",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x12",
+      "sensors": []
+    },
+    {
+      "line_no": 728,
+      "timestamp": "11:32:13.435",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x4a0000",
+      "sensors": [
+        {
+          "line_no": 729,
+          "timestamp": "11:32:13.438",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "74 min"
+        }
+      ]
+    },
+    {
+      "line_no": 730,
+      "timestamp": "11:32:13.455",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x22",
+      "sensors": []
+    },
+    {
+      "line_no": 731,
+      "timestamp": "11:32:14.198",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x4a0000",
+      "sensors": [
+        {
+          "line_no": 732,
+          "timestamp": "11:32:14.211",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "74 min"
+        }
+      ]
+    },
+    {
+      "line_no": 733,
+      "timestamp": "11:32:14.214",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x36",
+      "sensors": []
+    },
+    {
+      "line_no": 734,
+      "timestamp": "11:32:15.990",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 735,
+      "timestamp": "11:32:29.901",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x490000",
+      "sensors": [
+        {
+          "line_no": 736,
+          "timestamp": "11:32:29.905",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "73 min"
+        }
+      ]
+    },
+    {
+      "line_no": 737,
+      "timestamp": "11:32:29.921",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x36",
+      "sensors": []
+    },
+    {
+      "line_no": 738,
+      "timestamp": "11:32:37.138",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 741,
+      "timestamp": "11:33:30.024",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x480000",
+      "sensors": [
+        {
+          "line_no": 742,
+          "timestamp": "11:33:30.027",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "72 min"
+        }
+      ]
+    },
+    {
+      "line_no": 743,
+      "timestamp": "11:33:30.043",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 744,
+      "timestamp": "11:33:30.062",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x37",
+      "sensors": []
+    },
+    {
+      "line_no": 745,
+      "timestamp": "11:33:31.819",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 748,
+      "timestamp": "11:34:29.932",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x470000",
+      "sensors": [
+        {
+          "line_no": 749,
+          "timestamp": "11:34:29.936",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "71 min"
+        }
+      ]
+    },
+    {
+      "line_no": 750,
+      "timestamp": "11:34:29.949",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 751,
+      "timestamp": "11:34:29.971",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x38",
+      "sensors": []
+    },
+    {
+      "line_no": 752,
+      "timestamp": "11:34:51.533",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 755,
+      "timestamp": "11:35:29.665",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x460000",
+      "sensors": [
+        {
+          "line_no": 756,
+          "timestamp": "11:35:29.666",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "70 min"
+        }
+      ]
+    },
+    {
+      "line_no": 757,
+      "timestamp": "11:35:29.666",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x38",
+      "sensors": []
+    },
+    {
+      "line_no": 760,
+      "timestamp": "11:36:29.660",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x450000",
+      "sensors": [
+        {
+          "line_no": 761,
+          "timestamp": "11:36:29.663",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "69 min"
+        }
+      ]
+    },
+    {
+      "line_no": 762,
+      "timestamp": "11:36:29.680",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x39",
+      "sensors": []
+    },
+    {
+      "line_no": 765,
+      "timestamp": "11:37:29.435",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x440000",
+      "sensors": [
+        {
+          "line_no": 766,
+          "timestamp": "11:37:29.437",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "68 min"
+        }
+      ]
+    },
+    {
+      "line_no": 767,
+      "timestamp": "11:37:29.453",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x3a",
+      "sensors": []
+    },
+    {
+      "line_no": 770,
+      "timestamp": "11:38:29.447",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x430000",
+      "sensors": [
+        {
+          "line_no": 771,
+          "timestamp": "11:38:29.450",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "67 min"
+        }
+      ]
+    },
+    {
+      "line_no": 772,
+      "timestamp": "11:38:29.466",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x3a",
+      "sensors": []
+    },
+    {
+      "line_no": 775,
+      "timestamp": "11:39:29.483",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x420000",
+      "sensors": [
+        {
+          "line_no": 776,
+          "timestamp": "11:39:29.487",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "66 min"
+        }
+      ]
+    },
+    {
+      "line_no": 777,
+      "timestamp": "11:39:29.502",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x3b",
+      "sensors": []
+    },
+    {
+      "line_no": 778,
+      "timestamp": "11:39:49.342",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 781,
+      "timestamp": "11:40:05.215",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 782,
+      "timestamp": "11:40:13.449",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 783,
+      "timestamp": "11:40:29.368",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x410000",
+      "sensors": [
+        {
+          "line_no": 784,
+          "timestamp": "11:40:29.373",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "65 min"
+        }
+      ]
+    },
+    {
+      "line_no": 785,
+      "timestamp": "11:40:29.386",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x3b",
+      "sensors": []
+    },
+    {
+      "line_no": 786,
+      "timestamp": "11:40:34.255",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 787,
+      "timestamp": "11:40:46.301",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 790,
+      "timestamp": "11:41:05.686",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 791,
+      "timestamp": "11:41:16.150",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 792,
+      "timestamp": "11:41:26.176",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 793,
+      "timestamp": "11:41:28.049",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 794,
+      "timestamp": "11:41:28.478",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x12",
+      "sensors": []
+    },
+    {
+      "line_no": 795,
+      "timestamp": "11:41:50.273",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x320000",
+      "sensors": [
+        {
+          "line_no": 796,
+          "timestamp": "11:41:50.295",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "50 min"
+        }
+      ]
+    },
+    {
+      "line_no": 797,
+      "timestamp": "11:41:50.295",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x22",
+      "sensors": []
+    },
+    {
+      "line_no": 798,
+      "timestamp": "11:41:50.534",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x320000",
+      "sensors": [
+        {
+          "line_no": 799,
+          "timestamp": "11:41:50.550",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "50 min"
+        }
+      ]
+    },
+    {
+      "line_no": 800,
+      "timestamp": "11:41:50.550",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x45",
+      "sensors": []
+    },
+    {
+      "line_no": 801,
+      "timestamp": "11:41:53.036",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 802,
+      "timestamp": "11:41:55.039",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 805,
+      "timestamp": "11:42:29.007",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x310000",
+      "sensors": [
+        {
+          "line_no": 806,
+          "timestamp": "11:42:29.009",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "49 min"
+        }
+      ]
+    },
+    {
+      "line_no": 807,
+      "timestamp": "11:42:29.014",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x45",
+      "sensors": []
+    },
+    {
+      "line_no": 808,
+      "timestamp": "11:42:46.997",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 809,
+      "timestamp": "11:42:52.170",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 810,
+      "timestamp": "11:42:53.920",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 813,
+      "timestamp": "11:43:09.021",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 814,
+      "timestamp": "11:43:29.021",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x300000",
+      "sensors": [
+        {
+          "line_no": 815,
+          "timestamp": "11:43:29.024",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "48 min"
+        }
+      ]
+    },
+    {
+      "line_no": 816,
+      "timestamp": "11:43:29.044",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x46",
+      "sensors": []
+    },
+    {
+      "line_no": 819,
+      "timestamp": "11:44:08.698",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 820,
+      "timestamp": "11:44:22.578",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 821,
+      "timestamp": "11:44:28.963",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x2f0000",
+      "sensors": [
+        {
+          "line_no": 822,
+          "timestamp": "11:44:28.965",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "47 min"
+        }
+      ]
+    },
+    {
+      "line_no": 823,
+      "timestamp": "11:44:28.985",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x47",
+      "sensors": []
+    },
+    {
+      "line_no": 826,
+      "timestamp": "11:45:28.732",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x2e0000",
+      "sensors": [
+        {
+          "line_no": 827,
+          "timestamp": "11:45:28.739",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "46 min"
+        }
+      ]
+    },
+    {
+      "line_no": 828,
+      "timestamp": "11:45:28.751",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x47",
+      "sensors": []
+    },
+    {
+      "line_no": 831,
+      "timestamp": "11:46:28.769",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x2d0000",
+      "sensors": [
+        {
+          "line_no": 832,
+          "timestamp": "11:46:28.777",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "45 min"
+        }
+      ]
+    },
+    {
+      "line_no": 833,
+      "timestamp": "11:46:28.784",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x48",
+      "sensors": []
+    },
+    {
+      "line_no": 836,
+      "timestamp": "11:47:28.532",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x2c0000",
+      "sensors": [
+        {
+          "line_no": 837,
+          "timestamp": "11:47:28.534",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "44 min"
+        }
+      ]
+    },
+    {
+      "line_no": 838,
+      "timestamp": "11:47:28.558",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x49",
+      "sensors": []
+    },
+    {
+      "line_no": 841,
+      "timestamp": "11:48:28.554",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x2b0000",
+      "sensors": [
+        {
+          "line_no": 842,
+          "timestamp": "11:48:28.566",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "43 min"
+        }
+      ]
+    },
+    {
+      "line_no": 843,
+      "timestamp": "11:48:28.574",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x49",
+      "sensors": []
+    },
+    {
+      "line_no": 846,
+      "timestamp": "11:49:18.548",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 847,
+      "timestamp": "11:49:28.529",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x2a0000",
+      "sensors": [
+        {
+          "line_no": 848,
+          "timestamp": "11:49:28.540",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "42 min"
+        }
+      ]
+    },
+    {
+      "line_no": 849,
+      "timestamp": "11:49:28.550",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x4a",
+      "sensors": []
+    },
+    {
+      "line_no": 850,
+      "timestamp": "11:49:34.437",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 851,
+      "timestamp": "11:49:42.673",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 854,
+      "timestamp": "11:50:03.491",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 855,
+      "timestamp": "11:50:15.277",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 856,
+      "timestamp": "11:50:28.426",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x290000",
+      "sensors": [
+        {
+          "line_no": 857,
+          "timestamp": "11:50:28.428",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "41 min"
+        }
+      ]
+    },
+    {
+      "line_no": 858,
+      "timestamp": "11:50:28.453",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x4a",
+      "sensors": []
+    },
+    {
+      "line_no": 859,
+      "timestamp": "11:50:29.453",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 860,
+      "timestamp": "11:50:40.256",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 861,
+      "timestamp": "11:50:50.266",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 862,
+      "timestamp": "11:50:52.224",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 863,
+      "timestamp": "11:50:55.334",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x12",
+      "sensors": []
+    },
+    {
+      "line_no": 865,
+      "timestamp": "11:50:59.155",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x290000",
+      "sensors": [
+        {
+          "line_no": 866,
+          "timestamp": "11:50:59.157",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "41 min"
+        }
+      ]
+    },
+    {
+      "line_no": 867,
+      "timestamp": "11:50:59.172",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x22",
+      "sensors": []
+    },
+    {
+      "line_no": 868,
+      "timestamp": "11:50:59.503",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x221000",
+      "sensors": []
+    },
+    {
+      "line_no": 869,
+      "timestamp": "11:50:59.586",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x220000",
+      "sensors": []
+    },
+    {
+      "line_no": 870,
+      "timestamp": "11:50:59.680",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x24",
+      "sensors": []
+    },
+    {
+      "line_no": 872,
+      "timestamp": "11:51:28.176",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x280000",
+      "sensors": [
+        {
+          "line_no": 873,
+          "timestamp": "11:51:28.177",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "40 min"
+        }
+      ]
+    },
+    {
+      "line_no": 874,
+      "timestamp": "11:51:28.178",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x4b",
+      "sensors": []
+    },
+    {
+      "line_no": 875,
+      "timestamp": "11:51:41.672",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 876,
+      "timestamp": "11:51:45.389",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 877,
+      "timestamp": "11:51:47.091",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 880,
+      "timestamp": "11:52:02.196",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 881,
+      "timestamp": "11:52:28.148",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x270000",
+      "sensors": [
+        {
+          "line_no": 882,
+          "timestamp": "11:52:28.150",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "39 min"
+        }
+      ]
+    },
+    {
+      "line_no": 883,
+      "timestamp": "11:52:28.170",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x4c",
+      "sensors": []
+    },
+    {
+      "line_no": 886,
+      "timestamp": "11:53:08.813",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 887,
+      "timestamp": "11:53:28.139",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x260000",
+      "sensors": [
+        {
+          "line_no": 888,
+          "timestamp": "11:53:28.145",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "38 min"
+        }
+      ]
+    },
+    {
+      "line_no": 889,
+      "timestamp": "11:53:28.145",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x4c",
+      "sensors": []
+    },
+    {
+      "line_no": 890,
+      "timestamp": "11:53:30.189",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 893,
+      "timestamp": "11:54:27.935",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x250000",
+      "sensors": [
+        {
+          "line_no": 894,
+          "timestamp": "11:54:27.938",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "37 min"
+        }
+      ]
+    },
+    {
+      "line_no": 895,
+      "timestamp": "11:54:27.954",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x4d",
+      "sensors": []
+    },
+    {
+      "line_no": 896,
+      "timestamp": "11:54:29.999",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 899,
+      "timestamp": "11:55:27.922",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x240000",
+      "sensors": [
+        {
+          "line_no": 900,
+          "timestamp": "11:55:27.924",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "36 min"
+        }
+      ]
+    },
+    {
+      "line_no": 901,
+      "timestamp": "11:55:27.941",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x4e",
+      "sensors": []
+    },
+    {
+      "line_no": 904,
+      "timestamp": "11:56:27.790",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x230000",
+      "sensors": [
+        {
+          "line_no": 905,
+          "timestamp": "11:56:27.795",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "35 min"
+        }
+      ]
+    },
+    {
+      "line_no": 906,
+      "timestamp": "11:56:27.832",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x4e",
+      "sensors": []
+    },
+    {
+      "line_no": 907,
+      "timestamp": "11:56:31.667",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 910,
+      "timestamp": "11:57:27.543",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x220000",
+      "sensors": [
+        {
+          "line_no": 911,
+          "timestamp": "11:57:27.564",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "34 min"
+        }
+      ]
+    },
+    {
+      "line_no": 912,
+      "timestamp": "11:57:27.565",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x4f",
+      "sensors": []
+    },
+    {
+      "line_no": 915,
+      "timestamp": "11:58:27.571",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x210000",
+      "sensors": [
+        {
+          "line_no": 916,
+          "timestamp": "11:58:27.575",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "33 min"
+        }
+      ]
+    },
+    {
+      "line_no": 917,
+      "timestamp": "11:58:27.577",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 918,
+      "timestamp": "11:58:27.598",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x4f",
+      "sensors": []
+    },
+    {
+      "line_no": 921,
+      "timestamp": "11:59:27.446",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x200000",
+      "sensors": [
+        {
+          "line_no": 922,
+          "timestamp": "11:59:27.452",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "32 min"
+        }
+      ]
+    },
+    {
+      "line_no": 923,
+      "timestamp": "11:59:27.466",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x50",
+      "sensors": []
+    },
+    {
+      "line_no": 926,
+      "timestamp": "12:00:27.394",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x1f0000",
+      "sensors": [
+        {
+          "line_no": 927,
+          "timestamp": "12:00:27.398",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "31 min"
+        }
+      ]
+    },
+    {
+      "line_no": 928,
+      "timestamp": "12:00:27.414",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x51",
+      "sensors": []
+    },
+    {
+      "line_no": 931,
+      "timestamp": "12:01:27.158",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x1e0000",
+      "sensors": [
+        {
+          "line_no": 932,
+          "timestamp": "12:01:27.162",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "30 min"
+        }
+      ]
+    },
+    {
+      "line_no": 933,
+      "timestamp": "12:01:27.176",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x51",
+      "sensors": []
+    },
+    {
+      "line_no": 936,
+      "timestamp": "12:02:27.204",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x1d0000",
+      "sensors": [
+        {
+          "line_no": 937,
+          "timestamp": "12:02:27.231",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "29 min"
+        }
+      ]
+    },
+    {
+      "line_no": 938,
+      "timestamp": "12:02:27.232",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 939,
+      "timestamp": "12:02:27.245",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x52",
+      "sensors": []
+    },
+    {
+      "line_no": 942,
+      "timestamp": "12:03:27.176",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x1c0000",
+      "sensors": [
+        {
+          "line_no": 943,
+          "timestamp": "12:03:27.179",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "28 min"
+        }
+      ]
+    },
+    {
+      "line_no": 944,
+      "timestamp": "12:03:27.204",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x53",
+      "sensors": []
+    },
+    {
+      "line_no": 947,
+      "timestamp": "12:04:25.454",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 948,
+      "timestamp": "12:04:26.969",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x1b0000",
+      "sensors": [
+        {
+          "line_no": 949,
+          "timestamp": "12:04:26.974",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "27 min"
+        }
+      ]
+    },
+    {
+      "line_no": 950,
+      "timestamp": "12:04:26.974",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x53",
+      "sensors": []
+    },
+    {
+      "line_no": 951,
+      "timestamp": "12:04:27.724",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x14",
+      "sensors": []
+    },
+    {
+      "line_no": 952,
+      "timestamp": "12:04:34.971",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x190000",
+      "sensors": [
+        {
+          "line_no": 953,
+          "timestamp": "12:04:34.993",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "25 min"
+        }
+      ]
+    },
+    {
+      "line_no": 954,
+      "timestamp": "12:04:34.994",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x24",
+      "sensors": []
+    },
+    {
+      "line_no": 955,
+      "timestamp": "12:04:35.727",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x190000",
+      "sensors": [
+        {
+          "line_no": 956,
+          "timestamp": "12:04:35.747",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "25 min"
+        }
+      ]
+    },
+    {
+      "line_no": 957,
+      "timestamp": "12:04:35.748",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x54",
+      "sensors": []
+    },
+    {
+      "line_no": 958,
+      "timestamp": "12:04:45.027",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 959,
+      "timestamp": "12:04:46.615",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x220000",
+      "sensors": []
+    },
+    {
+      "line_no": 962,
+      "timestamp": "12:05:26.777",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x180000",
+      "sensors": [
+        {
+          "line_no": 963,
+          "timestamp": "12:05:26.778",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "24 min"
+        }
+      ]
+    },
+    {
+      "line_no": 964,
+      "timestamp": "12:05:26.792",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x55",
+      "sensors": []
+    },
+    {
+      "line_no": 965,
+      "timestamp": "12:05:45.773",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 968,
+      "timestamp": "12:06:00.752",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 969,
+      "timestamp": "12:06:03.732",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 970,
+      "timestamp": "12:06:26.827",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x170000",
+      "sensors": [
+        {
+          "line_no": 971,
+          "timestamp": "12:06:26.830",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "23 min"
+        }
+      ]
+    },
+    {
+      "line_no": 972,
+      "timestamp": "12:06:26.847",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x56",
+      "sensors": []
+    },
+    {
+      "line_no": 975,
+      "timestamp": "12:07:26.687",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x160000",
+      "sensors": [
+        {
+          "line_no": 976,
+          "timestamp": "12:07:26.690",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "22 min"
+        }
+      ]
+    },
+    {
+      "line_no": 977,
+      "timestamp": "12:07:26.704",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x56",
+      "sensors": []
+    },
+    {
+      "line_no": 980,
+      "timestamp": "12:08:26.544",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x150000",
+      "sensors": [
+        {
+          "line_no": 981,
+          "timestamp": "12:08:26.547",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "21 min"
+        }
+      ]
+    },
+    {
+      "line_no": 982,
+      "timestamp": "12:08:26.563",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x57",
+      "sensors": []
+    },
+    {
+      "line_no": 983,
+      "timestamp": "12:08:48.661",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 984,
+      "timestamp": "12:08:50.467",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 985,
+      "timestamp": "12:08:55.521",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 988,
+      "timestamp": "12:09:25.486",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 989,
+      "timestamp": "12:09:26.458",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x140000",
+      "sensors": [
+        {
+          "line_no": 990,
+          "timestamp": "12:09:26.460",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "20 min"
+        }
+      ]
+    },
+    {
+      "line_no": 991,
+      "timestamp": "12:09:26.473",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x58",
+      "sensors": []
+    },
+    {
+      "line_no": 992,
+      "timestamp": "12:09:40.629",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 993,
+      "timestamp": "12:09:49.486",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 996,
+      "timestamp": "12:10:01.582",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 997,
+      "timestamp": "12:10:11.576",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 998,
+      "timestamp": "12:10:13.293",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x28",
+      "sensors": []
+    },
+    {
+      "line_no": 999,
+      "timestamp": "12:10:13.547",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x221000",
+      "sensors": []
+    },
+    {
+      "line_no": 1000,
+      "timestamp": "12:10:26.356",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x130000",
+      "sensors": [
+        {
+          "line_no": 1001,
+          "timestamp": "12:10:26.364",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "19 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1002,
+      "timestamp": "12:10:26.371",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x58",
+      "sensors": []
+    },
+    {
+      "line_no": 1005,
+      "timestamp": "12:11:26.234",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x120000",
+      "sensors": [
+        {
+          "line_no": 1006,
+          "timestamp": "12:11:26.238",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "18 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1007,
+      "timestamp": "12:11:26.238",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x59",
+      "sensors": []
+    },
+    {
+      "line_no": 1010,
+      "timestamp": "12:12:26.183",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x110000",
+      "sensors": [
+        {
+          "line_no": 1011,
+          "timestamp": "12:12:26.193",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "17 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1012,
+      "timestamp": "12:12:26.204",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x59",
+      "sensors": []
+    },
+    {
+      "line_no": 1015,
+      "timestamp": "12:13:06.110",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 1016,
+      "timestamp": "12:13:26.126",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x100000",
+      "sensors": [
+        {
+          "line_no": 1017,
+          "timestamp": "12:13:26.135",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "16 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1018,
+      "timestamp": "12:13:26.135",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x5a",
+      "sensors": []
+    },
+    {
+      "line_no": 1021,
+      "timestamp": "12:14:26.035",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x0f0000",
+      "sensors": [
+        {
+          "line_no": 1022,
+          "timestamp": "12:14:26.042",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "15 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1023,
+      "timestamp": "12:14:26.056",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x5b",
+      "sensors": []
+    },
+    {
+      "line_no": 1026,
+      "timestamp": "12:15:25.956",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x0e0000",
+      "sensors": [
+        {
+          "line_no": 1027,
+          "timestamp": "12:15:25.959",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "14 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1028,
+      "timestamp": "12:15:25.966",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x5b",
+      "sensors": []
+    },
+    {
+      "line_no": 1031,
+      "timestamp": "12:16:25.868",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x0d0000",
+      "sensors": [
+        {
+          "line_no": 1032,
+          "timestamp": "12:16:25.871",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "13 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1033,
+      "timestamp": "12:16:25.876",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x5c",
+      "sensors": []
+    },
+    {
+      "line_no": 1036,
+      "timestamp": "12:17:25.781",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x0c0000",
+      "sensors": [
+        {
+          "line_no": 1037,
+          "timestamp": "12:17:25.785",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "12 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1038,
+      "timestamp": "12:17:25.787",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x5d",
+      "sensors": []
+    },
+    {
+      "line_no": 1041,
+      "timestamp": "12:18:25.706",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x0b0000",
+      "sensors": [
+        {
+          "line_no": 1042,
+          "timestamp": "12:18:25.709",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "11 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1043,
+      "timestamp": "12:18:25.709",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x5d",
+      "sensors": []
+    },
+    {
+      "line_no": 1046,
+      "timestamp": "12:19:25.616",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x0a0000",
+      "sensors": [
+        {
+          "line_no": 1047,
+          "timestamp": "12:19:25.620",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "10 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1048,
+      "timestamp": "12:19:25.620",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x5e",
+      "sensors": []
+    },
+    {
+      "line_no": 1051,
+      "timestamp": "12:20:25.538",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x090000",
+      "sensors": [
+        {
+          "line_no": 1052,
+          "timestamp": "12:20:25.541",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "9 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1053,
+      "timestamp": "12:20:25.541",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x5e",
+      "sensors": []
+    },
+    {
+      "line_no": 1056,
+      "timestamp": "12:21:25.349",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x080000",
+      "sensors": [
+        {
+          "line_no": 1057,
+          "timestamp": "12:21:25.353",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "8 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1058,
+      "timestamp": "12:21:25.365",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x5f",
+      "sensors": []
+    },
+    {
+      "line_no": 1061,
+      "timestamp": "12:22:25.276",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x070000",
+      "sensors": [
+        {
+          "line_no": 1062,
+          "timestamp": "12:22:25.279",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "7 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1063,
+      "timestamp": "12:22:25.279",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x60",
+      "sensors": []
+    },
+    {
+      "line_no": 1066,
+      "timestamp": "12:23:25.178",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x060000",
+      "sensors": [
+        {
+          "line_no": 1067,
+          "timestamp": "12:23:25.183",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "6 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1068,
+      "timestamp": "12:23:25.183",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x60",
+      "sensors": []
+    },
+    {
+      "line_no": 1071,
+      "timestamp": "12:24:25.092",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x050000",
+      "sensors": [
+        {
+          "line_no": 1072,
+          "timestamp": "12:24:25.110",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "5 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1073,
+      "timestamp": "12:24:25.111",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x61",
+      "sensors": []
+    },
+    {
+      "line_no": 1076,
+      "timestamp": "12:25:25.010",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x040000",
+      "sensors": [
+        {
+          "line_no": 1077,
+          "timestamp": "12:25:25.013",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "4 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1078,
+      "timestamp": "12:25:25.021",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x62",
+      "sensors": []
+    },
+    {
+      "line_no": 1081,
+      "timestamp": "12:26:24.923",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x030000",
+      "sensors": [
+        {
+          "line_no": 1082,
+          "timestamp": "12:26:24.929",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "3 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1083,
+      "timestamp": "12:26:24.929",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x62",
+      "sensors": []
+    },
+    {
+      "line_no": 1086,
+      "timestamp": "12:27:24.834",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x020000",
+      "sensors": [
+        {
+          "line_no": 1087,
+          "timestamp": "12:27:24.836",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "2 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1088,
+      "timestamp": "12:27:24.850",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 1089,
+      "timestamp": "12:27:24.873",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x63",
+      "sensors": []
+    },
+    {
+      "line_no": 1092,
+      "timestamp": "12:28:19.337",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 1093,
+      "timestamp": "12:28:24.950",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0x010000",
+      "sensors": [
+        {
+          "line_no": 1094,
+          "timestamp": "12:28:24.968",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "1 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1095,
+      "timestamp": "12:28:24.986",
+      "dest": "0x25",
+      "cmd": "0x2000",
+      "payload": "0x63",
+      "sensors": []
+    },
+    {
+      "line_no": 1096,
+      "timestamp": "12:28:31.210",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 1097,
+      "timestamp": "12:28:31.210",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x201000",
+      "sensors": []
+    },
+    {
+      "line_no": 1098,
+      "timestamp": "12:28:31.210",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x201000",
+      "sensors": []
+    },
+    {
+      "line_no": 1099,
+      "timestamp": "12:28:31.211",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x201000",
+      "sensors": []
+    },
+    {
+      "line_no": 1100,
+      "timestamp": "12:28:31.211",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x201000",
+      "sensors": []
+    },
+    {
+      "line_no": 1101,
+      "timestamp": "12:28:31.211",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x201000",
+      "sensors": []
+    },
+    {
+      "line_no": 1102,
+      "timestamp": "12:28:32.789",
+      "dest": "0x25",
+      "cmd": "0x2009",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 1103,
+      "timestamp": "12:28:32.946",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x20",
+      "sensors": []
+    },
+    {
+      "line_no": 1104,
+      "timestamp": "12:28:33.458",
+      "dest": "0x27",
+      "cmd": "0x2007",
+      "payload": "0x03",
+      "sensors": [
+        {
+          "line_no": 1105,
+          "timestamp": "12:28:33.461",
+          "sensor_type": "binary_sensor",
+          "name": "Status",
+          "value": "OFF"
+        }
+      ]
+    },
+    {
+      "line_no": 1106,
+      "timestamp": "12:28:33.489",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x200000",
+      "sensors": []
+    },
+    {
+      "line_no": 1107,
+      "timestamp": "12:28:33.544",
+      "dest": "0x25",
+      "cmd": "0x2005",
+      "payload": "0x20",
+      "sensors": []
+    },
+    {
+      "line_no": 1448,
+      "timestamp": "15:18:53.336",
+      "dest": "0x24",
+      "cmd": "0x2006",
+      "payload": "0x00",
+      "sensors": [
+        {
+          "line_no": 1449,
+          "timestamp": "15:18:53.340",
+          "sensor_type": "binary_sensor",
+          "name": "Tür",
+          "value": "ON"
+        }
+      ]
+    },
+    {
+      "line_no": 1450,
+      "timestamp": "15:18:57.270",
+      "dest": "0x17",
+      "cmd": "0x1001",
+      "payload": "0x02",
+      "sensors": []
+    },
+    {
+      "line_no": 1451,
+      "timestamp": "15:18:57.362",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x200000",
+      "sensors": []
+    },
+    {
+      "line_no": 1452,
+      "timestamp": "15:18:57.531",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0xa00000",
+      "sensors": [
+        {
+          "line_no": 1453,
+          "timestamp": "15:18:57.531",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "160 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1454,
+      "timestamp": "15:18:57.534",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x200000",
+      "sensors": []
+    },
+    {
+      "line_no": 1455,
+      "timestamp": "15:18:57.567",
+      "dest": "0x25",
+      "cmd": "0x2011",
+      "payload": "0xa5100d0b0e1112a1a080818486a2",
+      "sensors": []
+    },
+    {
+      "line_no": 1456,
+      "timestamp": "15:18:57.585",
+      "dest": "0x25",
+      "cmd": "0x2012",
+      "payload": "0x01",
+      "sensors": []
+    },
+    {
+      "line_no": 1457,
+      "timestamp": "15:18:57.605",
+      "dest": "0x25",
+      "cmd": "0x2013",
+      "payload": "0xffff",
+      "sensors": []
+    },
+    {
+      "line_no": 1458,
+      "timestamp": "15:18:57.634",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x200000",
+      "sensors": []
+    },
+    {
+      "line_no": 1459,
+      "timestamp": "15:18:57.713",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x200000",
+      "sensors": []
+    },
+    {
+      "line_no": 1460,
+      "timestamp": "15:18:57.801",
+      "dest": "0x25",
+      "cmd": "0x2010",
+      "payload": "0x0d000001050062000037010000",
+      "sensors": [
+        {
+          "line_no": 1461,
+          "timestamp": "15:18:57.803",
+          "sensor_type": "text_sensor",
+          "name": "bsh_helper_init",
+          "value": "'Auto 45-65°'"
+        },
+        {
+          "line_no": 1462,
+          "timestamp": "15:18:57.805",
+          "sensor_type": "text_sensor",
+          "name": "Ausgewähltes Programm",
+          "value": "'Auto 45-65°'"
+        }
+      ]
+    },
+    {
+      "line_no": 1463,
+      "timestamp": "15:18:57.824",
+      "dest": "0x27",
+      "cmd": "0x2007",
+      "payload": "0x02",
+      "sensors": []
+    },
+    {
+      "line_no": 1464,
+      "timestamp": "15:18:57.843",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0xa00000",
+      "sensors": [
+        {
+          "line_no": 1465,
+          "timestamp": "15:18:57.844",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "160 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1466,
+      "timestamp": "15:18:57.850",
+      "dest": "0x17",
+      "cmd": "0x1007",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 1467,
+      "timestamp": "15:18:57.881",
+      "dest": "0x25",
+      "cmd": "0x2008",
+      "payload": "0xa00000",
+      "sensors": [
+        {
+          "line_no": 1468,
+          "timestamp": "15:18:57.883",
+          "sensor_type": "sensor",
+          "name": "Restzeit",
+          "value": "160 min"
+        }
+      ]
+    },
+    {
+      "line_no": 1469,
+      "timestamp": "15:18:58.072",
+      "dest": "0x25",
+      "cmd": "0x2012",
+      "payload": "0x00",
+      "sensors": []
+    },
+    {
+      "line_no": 1470,
+      "timestamp": "15:18:58.149",
+      "dest": "0x25",
+      "cmd": "0x2004",
+      "payload": "0x200000",
+      "sensors": []
+    }
+  ],
+  "unlinked_sensors": [
+    {
+      "line_no": 144,
+      "timestamp": "18:11:52.132",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "180 s"
+    },
+    {
+      "line_no": 145,
+      "timestamp": "18:11:52.962",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 293,
+      "timestamp": "10:45:58.951",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-50 dBm"
+    },
+    {
+      "line_no": 294,
+      "timestamp": "10:46:00.325",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "63 s"
+    },
+    {
+      "line_no": 463,
+      "timestamp": "10:46:58.952",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-50 dBm"
+    },
+    {
+      "line_no": 464,
+      "timestamp": "10:47:00.326",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "123 s"
+    },
+    {
+      "line_no": 474,
+      "timestamp": "10:47:58.952",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-50 dBm"
+    },
+    {
+      "line_no": 475,
+      "timestamp": "10:48:00.339",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "183 s"
+    },
+    {
+      "line_no": 480,
+      "timestamp": "10:48:58.954",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-50 dBm"
+    },
+    {
+      "line_no": 481,
+      "timestamp": "10:49:00.331",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "243 s"
+    },
+    {
+      "line_no": 486,
+      "timestamp": "10:49:58.955",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 487,
+      "timestamp": "10:50:00.328",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "303 s"
+    },
+    {
+      "line_no": 496,
+      "timestamp": "10:50:58.957",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-50 dBm"
+    },
+    {
+      "line_no": 497,
+      "timestamp": "10:51:00.335",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "363 s"
+    },
+    {
+      "line_no": 506,
+      "timestamp": "10:51:58.957",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 507,
+      "timestamp": "10:52:00.339",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "423 s"
+    },
+    {
+      "line_no": 511,
+      "timestamp": "10:52:58.957",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 512,
+      "timestamp": "10:53:00.332",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "483 s"
+    },
+    {
+      "line_no": 516,
+      "timestamp": "10:53:58.957",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 517,
+      "timestamp": "10:54:00.332",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "543 s"
+    },
+    {
+      "line_no": 521,
+      "timestamp": "10:54:58.958",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 522,
+      "timestamp": "10:55:00.334",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "603 s"
+    },
+    {
+      "line_no": 527,
+      "timestamp": "10:55:58.961",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 528,
+      "timestamp": "10:56:00.337",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "663 s"
+    },
+    {
+      "line_no": 532,
+      "timestamp": "10:56:58.962",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 533,
+      "timestamp": "10:57:00.333",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "723 s"
+    },
+    {
+      "line_no": 537,
+      "timestamp": "10:57:58.963",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 538,
+      "timestamp": "10:58:00.335",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "783 s"
+    },
+    {
+      "line_no": 542,
+      "timestamp": "10:58:58.966",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 543,
+      "timestamp": "10:59:00.335",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "843 s"
+    },
+    {
+      "line_no": 547,
+      "timestamp": "10:59:58.978",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 548,
+      "timestamp": "11:00:00.335",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "903 s"
+    },
+    {
+      "line_no": 553,
+      "timestamp": "11:00:58.969",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 554,
+      "timestamp": "11:01:00.341",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "963 s"
+    },
+    {
+      "line_no": 558,
+      "timestamp": "11:01:58.969",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 559,
+      "timestamp": "11:02:00.337",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1023 s"
+    },
+    {
+      "line_no": 563,
+      "timestamp": "11:02:58.975",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 564,
+      "timestamp": "11:03:00.339",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1083 s"
+    },
+    {
+      "line_no": 568,
+      "timestamp": "11:03:58.984",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 569,
+      "timestamp": "11:04:00.342",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1143 s"
+    },
+    {
+      "line_no": 573,
+      "timestamp": "11:04:58.977",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 574,
+      "timestamp": "11:05:00.343",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1203 s"
+    },
+    {
+      "line_no": 578,
+      "timestamp": "11:05:58.984",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 579,
+      "timestamp": "11:06:00.344",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1263 s"
+    },
+    {
+      "line_no": 584,
+      "timestamp": "11:06:58.988",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 585,
+      "timestamp": "11:07:00.345",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1323 s"
+    },
+    {
+      "line_no": 590,
+      "timestamp": "11:07:58.989",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 591,
+      "timestamp": "11:08:00.352",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1383 s"
+    },
+    {
+      "line_no": 601,
+      "timestamp": "11:08:58.995",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 602,
+      "timestamp": "11:09:00.347",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1443 s"
+    },
+    {
+      "line_no": 606,
+      "timestamp": "11:09:59.004",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 607,
+      "timestamp": "11:10:00.354",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1503 s"
+    },
+    {
+      "line_no": 611,
+      "timestamp": "11:10:58.992",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 612,
+      "timestamp": "11:11:00.350",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1563 s"
+    },
+    {
+      "line_no": 614,
+      "timestamp": "11:11:32.378",
+      "sensor_type": "sensor",
+      "name": "Restzeit",
+      "value": "135 min"
+    },
+    {
+      "line_no": 616,
+      "timestamp": "11:11:58.993",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 617,
+      "timestamp": "11:12:00.351",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1623 s"
+    },
+    {
+      "line_no": 621,
+      "timestamp": "11:12:58.994",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 622,
+      "timestamp": "11:13:00.356",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1683 s"
+    },
+    {
+      "line_no": 626,
+      "timestamp": "11:13:58.996",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 627,
+      "timestamp": "11:14:00.353",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1743 s"
+    },
+    {
+      "line_no": 631,
+      "timestamp": "11:14:58.999",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 632,
+      "timestamp": "11:15:00.355",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1803 s"
+    },
+    {
+      "line_no": 636,
+      "timestamp": "11:15:59.000",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 637,
+      "timestamp": "11:16:00.355",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1863 s"
+    },
+    {
+      "line_no": 641,
+      "timestamp": "11:16:59.000",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 642,
+      "timestamp": "11:17:00.355",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1923 s"
+    },
+    {
+      "line_no": 646,
+      "timestamp": "11:17:59.003",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 647,
+      "timestamp": "11:18:00.357",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "1983 s"
+    },
+    {
+      "line_no": 651,
+      "timestamp": "11:18:59.006",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 652,
+      "timestamp": "11:19:00.358",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2043 s"
+    },
+    {
+      "line_no": 658,
+      "timestamp": "11:19:59.007",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 659,
+      "timestamp": "11:20:00.359",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2103 s"
+    },
+    {
+      "line_no": 663,
+      "timestamp": "11:20:59.006",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 664,
+      "timestamp": "11:21:00.360",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2163 s"
+    },
+    {
+      "line_no": 668,
+      "timestamp": "11:21:59.007",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 669,
+      "timestamp": "11:22:00.365",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2223 s"
+    },
+    {
+      "line_no": 673,
+      "timestamp": "11:22:59.008",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 674,
+      "timestamp": "11:23:00.365",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2283 s"
+    },
+    {
+      "line_no": 678,
+      "timestamp": "11:23:59.016",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 679,
+      "timestamp": "11:24:00.367",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2343 s"
+    },
+    {
+      "line_no": 688,
+      "timestamp": "11:24:59.010",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 689,
+      "timestamp": "11:25:00.367",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2403 s"
+    },
+    {
+      "line_no": 695,
+      "timestamp": "11:25:59.011",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 696,
+      "timestamp": "11:26:00.370",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2463 s"
+    },
+    {
+      "line_no": 702,
+      "timestamp": "11:26:59.013",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 703,
+      "timestamp": "11:27:00.370",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2523 s"
+    },
+    {
+      "line_no": 707,
+      "timestamp": "11:27:59.014",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 708,
+      "timestamp": "11:28:00.373",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2583 s"
+    },
+    {
+      "line_no": 712,
+      "timestamp": "11:28:59.015",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 713,
+      "timestamp": "11:29:00.380",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2643 s"
+    },
+    {
+      "line_no": 717,
+      "timestamp": "11:29:59.016",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 718,
+      "timestamp": "11:30:00.374",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2703 s"
+    },
+    {
+      "line_no": 722,
+      "timestamp": "11:30:59.017",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 726,
+      "timestamp": "11:31:59.021",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 727,
+      "timestamp": "11:32:00.376",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2823 s"
+    },
+    {
+      "line_no": 739,
+      "timestamp": "11:32:59.022",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 740,
+      "timestamp": "11:33:00.376",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2883 s"
+    },
+    {
+      "line_no": 746,
+      "timestamp": "11:33:59.023",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 747,
+      "timestamp": "11:34:00.386",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "2943 s"
+    },
+    {
+      "line_no": 753,
+      "timestamp": "11:34:59.025",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 754,
+      "timestamp": "11:35:00.447",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3003 s"
+    },
+    {
+      "line_no": 758,
+      "timestamp": "11:35:59.026",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 759,
+      "timestamp": "11:36:00.382",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3063 s"
+    },
+    {
+      "line_no": 763,
+      "timestamp": "11:36:59.028",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 764,
+      "timestamp": "11:37:00.381",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3123 s"
+    },
+    {
+      "line_no": 768,
+      "timestamp": "11:37:59.029",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 769,
+      "timestamp": "11:38:01.672",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3183 s"
+    },
+    {
+      "line_no": 773,
+      "timestamp": "11:38:59.035",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 774,
+      "timestamp": "11:39:00.381",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3243 s"
+    },
+    {
+      "line_no": 779,
+      "timestamp": "11:39:59.041",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 780,
+      "timestamp": "11:40:00.383",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3303 s"
+    },
+    {
+      "line_no": 788,
+      "timestamp": "11:40:59.042",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 789,
+      "timestamp": "11:41:00.390",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3363 s"
+    },
+    {
+      "line_no": 803,
+      "timestamp": "11:41:59.043",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 804,
+      "timestamp": "11:42:00.386",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3423 s"
+    },
+    {
+      "line_no": 811,
+      "timestamp": "11:42:59.048",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 812,
+      "timestamp": "11:43:00.387",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3483 s"
+    },
+    {
+      "line_no": 817,
+      "timestamp": "11:43:59.058",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 818,
+      "timestamp": "11:44:00.389",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3543 s"
+    },
+    {
+      "line_no": 824,
+      "timestamp": "11:44:59.054",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 825,
+      "timestamp": "11:45:00.390",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3603 s"
+    },
+    {
+      "line_no": 829,
+      "timestamp": "11:45:59.060",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 830,
+      "timestamp": "11:46:00.392",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3663 s"
+    },
+    {
+      "line_no": 834,
+      "timestamp": "11:46:59.067",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 835,
+      "timestamp": "11:47:00.398",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3723 s"
+    },
+    {
+      "line_no": 839,
+      "timestamp": "11:47:59.060",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 840,
+      "timestamp": "11:48:00.394",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3783 s"
+    },
+    {
+      "line_no": 844,
+      "timestamp": "11:48:59.062",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 845,
+      "timestamp": "11:49:00.396",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3843 s"
+    },
+    {
+      "line_no": 852,
+      "timestamp": "11:49:59.067",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 853,
+      "timestamp": "11:50:00.401",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3903 s"
+    },
+    {
+      "line_no": 864,
+      "timestamp": "11:50:59.064",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 871,
+      "timestamp": "11:51:00.398",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "3963 s"
+    },
+    {
+      "line_no": 878,
+      "timestamp": "11:51:59.069",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 879,
+      "timestamp": "11:52:00.403",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4023 s"
+    },
+    {
+      "line_no": 884,
+      "timestamp": "11:52:59.060",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 885,
+      "timestamp": "11:53:00.389",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4083 s"
+    },
+    {
+      "line_no": 891,
+      "timestamp": "11:53:59.025",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 892,
+      "timestamp": "11:54:00.358",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4143 s"
+    },
+    {
+      "line_no": 897,
+      "timestamp": "11:54:59.000",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 898,
+      "timestamp": "11:55:00.329",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4203 s"
+    },
+    {
+      "line_no": 902,
+      "timestamp": "11:55:58.995",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 903,
+      "timestamp": "11:56:00.328",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4263 s"
+    },
+    {
+      "line_no": 908,
+      "timestamp": "11:56:58.998",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 909,
+      "timestamp": "11:57:00.329",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4323 s"
+    },
+    {
+      "line_no": 913,
+      "timestamp": "11:57:58.999",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 914,
+      "timestamp": "11:58:00.330",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4383 s"
+    },
+    {
+      "line_no": 919,
+      "timestamp": "11:58:59.002",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 920,
+      "timestamp": "11:59:00.330",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4443 s"
+    },
+    {
+      "line_no": 924,
+      "timestamp": "11:59:59.001",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 925,
+      "timestamp": "12:00:00.331",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4503 s"
+    },
+    {
+      "line_no": 929,
+      "timestamp": "12:00:59.003",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 930,
+      "timestamp": "12:01:00.335",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4563 s"
+    },
+    {
+      "line_no": 934,
+      "timestamp": "12:01:59.007",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 935,
+      "timestamp": "12:02:00.338",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4623 s"
+    },
+    {
+      "line_no": 940,
+      "timestamp": "12:02:59.012",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 941,
+      "timestamp": "12:03:00.342",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4683 s"
+    },
+    {
+      "line_no": 945,
+      "timestamp": "12:03:59.006",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 946,
+      "timestamp": "12:04:00.340",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4743 s"
+    },
+    {
+      "line_no": 960,
+      "timestamp": "12:04:59.007",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 961,
+      "timestamp": "12:05:00.341",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4803 s"
+    },
+    {
+      "line_no": 966,
+      "timestamp": "12:05:59.012",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 967,
+      "timestamp": "12:06:00.345",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4863 s"
+    },
+    {
+      "line_no": 973,
+      "timestamp": "12:06:59.016",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 974,
+      "timestamp": "12:07:00.347",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4923 s"
+    },
+    {
+      "line_no": 978,
+      "timestamp": "12:07:59.023",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 979,
+      "timestamp": "12:08:00.355",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "4983 s"
+    },
+    {
+      "line_no": 986,
+      "timestamp": "12:08:59.025",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 987,
+      "timestamp": "12:09:00.375",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5043 s"
+    },
+    {
+      "line_no": 994,
+      "timestamp": "12:09:59.036",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 995,
+      "timestamp": "12:10:00.371",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5103 s"
+    },
+    {
+      "line_no": 1003,
+      "timestamp": "12:10:59.048",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1004,
+      "timestamp": "12:11:00.380",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5163 s"
+    },
+    {
+      "line_no": 1008,
+      "timestamp": "12:11:59.057",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1009,
+      "timestamp": "12:12:00.389",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5223 s"
+    },
+    {
+      "line_no": 1013,
+      "timestamp": "12:12:59.064",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-50 dBm"
+    },
+    {
+      "line_no": 1014,
+      "timestamp": "12:13:00.398",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5283 s"
+    },
+    {
+      "line_no": 1019,
+      "timestamp": "12:13:59.072",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1020,
+      "timestamp": "12:14:00.405",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5343 s"
+    },
+    {
+      "line_no": 1024,
+      "timestamp": "12:14:59.079",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1025,
+      "timestamp": "12:15:00.418",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5403 s"
+    },
+    {
+      "line_no": 1029,
+      "timestamp": "12:15:59.086",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1030,
+      "timestamp": "12:16:00.418",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5463 s"
+    },
+    {
+      "line_no": 1034,
+      "timestamp": "12:16:59.099",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1035,
+      "timestamp": "12:17:00.428",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5523 s"
+    },
+    {
+      "line_no": 1039,
+      "timestamp": "12:17:59.104",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1040,
+      "timestamp": "12:18:00.430",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5583 s"
+    },
+    {
+      "line_no": 1044,
+      "timestamp": "12:18:59.106",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1045,
+      "timestamp": "12:19:00.446",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5643 s"
+    },
+    {
+      "line_no": 1049,
+      "timestamp": "12:19:59.114",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1050,
+      "timestamp": "12:20:00.452",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5703 s"
+    },
+    {
+      "line_no": 1054,
+      "timestamp": "12:20:59.115",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1055,
+      "timestamp": "12:21:00.447",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5763 s"
+    },
+    {
+      "line_no": 1059,
+      "timestamp": "12:21:59.121",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1060,
+      "timestamp": "12:22:00.452",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5823 s"
+    },
+    {
+      "line_no": 1064,
+      "timestamp": "12:22:59.125",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1065,
+      "timestamp": "12:23:00.463",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5883 s"
+    },
+    {
+      "line_no": 1069,
+      "timestamp": "12:23:59.132",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1070,
+      "timestamp": "12:24:00.464",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "5943 s"
+    },
+    {
+      "line_no": 1074,
+      "timestamp": "12:24:59.133",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1075,
+      "timestamp": "12:25:00.468",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6003 s"
+    },
+    {
+      "line_no": 1079,
+      "timestamp": "12:25:59.138",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1080,
+      "timestamp": "12:26:00.476",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6063 s"
+    },
+    {
+      "line_no": 1084,
+      "timestamp": "12:26:59.173",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1085,
+      "timestamp": "12:27:00.475",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6123 s"
+    },
+    {
+      "line_no": 1090,
+      "timestamp": "12:27:59.141",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1091,
+      "timestamp": "12:28:00.485",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6183 s"
+    },
+    {
+      "line_no": 1108,
+      "timestamp": "12:28:59.148",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1109,
+      "timestamp": "12:29:00.482",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6243 s"
+    },
+    {
+      "line_no": 1110,
+      "timestamp": "12:29:59.152",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1111,
+      "timestamp": "12:30:00.486",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6303 s"
+    },
+    {
+      "line_no": 1112,
+      "timestamp": "12:30:59.156",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1113,
+      "timestamp": "12:31:00.491",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6363 s"
+    },
+    {
+      "line_no": 1114,
+      "timestamp": "12:31:59.158",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1115,
+      "timestamp": "12:32:00.491",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6423 s"
+    },
+    {
+      "line_no": 1116,
+      "timestamp": "12:32:59.163",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1117,
+      "timestamp": "12:33:00.496",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6483 s"
+    },
+    {
+      "line_no": 1118,
+      "timestamp": "12:33:59.163",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1119,
+      "timestamp": "12:34:00.498",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6543 s"
+    },
+    {
+      "line_no": 1120,
+      "timestamp": "12:34:59.165",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1121,
+      "timestamp": "12:35:00.501",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6603 s"
+    },
+    {
+      "line_no": 1122,
+      "timestamp": "12:35:59.168",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1123,
+      "timestamp": "12:36:00.503",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6663 s"
+    },
+    {
+      "line_no": 1124,
+      "timestamp": "12:36:59.171",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1125,
+      "timestamp": "12:37:00.508",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6723 s"
+    },
+    {
+      "line_no": 1126,
+      "timestamp": "12:37:59.172",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1127,
+      "timestamp": "12:38:00.510",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6783 s"
+    },
+    {
+      "line_no": 1128,
+      "timestamp": "12:38:59.175",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1129,
+      "timestamp": "12:39:00.514",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6843 s"
+    },
+    {
+      "line_no": 1130,
+      "timestamp": "12:39:59.178",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1131,
+      "timestamp": "12:40:00.517",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6903 s"
+    },
+    {
+      "line_no": 1132,
+      "timestamp": "12:40:59.179",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1133,
+      "timestamp": "12:41:00.519",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "6963 s"
+    },
+    {
+      "line_no": 1134,
+      "timestamp": "12:41:59.182",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1135,
+      "timestamp": "12:42:00.523",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7023 s"
+    },
+    {
+      "line_no": 1136,
+      "timestamp": "12:42:59.185",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1137,
+      "timestamp": "12:43:00.521",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7083 s"
+    },
+    {
+      "line_no": 1138,
+      "timestamp": "12:43:59.178",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1139,
+      "timestamp": "12:44:00.524",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7143 s"
+    },
+    {
+      "line_no": 1140,
+      "timestamp": "12:44:59.179",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1141,
+      "timestamp": "12:45:00.531",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7203 s"
+    },
+    {
+      "line_no": 1142,
+      "timestamp": "12:45:59.175",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1143,
+      "timestamp": "12:46:00.519",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7263 s"
+    },
+    {
+      "line_no": 1144,
+      "timestamp": "12:46:59.174",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1145,
+      "timestamp": "12:47:00.519",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7323 s"
+    },
+    {
+      "line_no": 1146,
+      "timestamp": "12:47:59.176",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1147,
+      "timestamp": "12:48:00.524",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7383 s"
+    },
+    {
+      "line_no": 1148,
+      "timestamp": "12:48:59.174",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1149,
+      "timestamp": "12:49:00.515",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7443 s"
+    },
+    {
+      "line_no": 1150,
+      "timestamp": "12:49:59.176",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1151,
+      "timestamp": "12:50:00.516",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7503 s"
+    },
+    {
+      "line_no": 1152,
+      "timestamp": "12:50:59.172",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1153,
+      "timestamp": "12:51:00.527",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7563 s"
+    },
+    {
+      "line_no": 1154,
+      "timestamp": "12:51:59.175",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1155,
+      "timestamp": "12:52:00.516",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7623 s"
+    },
+    {
+      "line_no": 1156,
+      "timestamp": "12:52:59.159",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1157,
+      "timestamp": "12:53:00.498",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7683 s"
+    },
+    {
+      "line_no": 1158,
+      "timestamp": "12:53:59.155",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1159,
+      "timestamp": "12:54:00.498",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7743 s"
+    },
+    {
+      "line_no": 1160,
+      "timestamp": "12:54:59.156",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1161,
+      "timestamp": "12:55:00.498",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7803 s"
+    },
+    {
+      "line_no": 1162,
+      "timestamp": "12:55:59.157",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1163,
+      "timestamp": "12:56:00.499",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7863 s"
+    },
+    {
+      "line_no": 1164,
+      "timestamp": "12:56:59.158",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1165,
+      "timestamp": "12:57:00.500",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7923 s"
+    },
+    {
+      "line_no": 1166,
+      "timestamp": "12:57:59.160",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1167,
+      "timestamp": "12:58:00.502",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "7983 s"
+    },
+    {
+      "line_no": 1168,
+      "timestamp": "12:58:59.164",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1169,
+      "timestamp": "12:59:00.503",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8043 s"
+    },
+    {
+      "line_no": 1170,
+      "timestamp": "12:59:59.162",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1171,
+      "timestamp": "13:00:00.503",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8103 s"
+    },
+    {
+      "line_no": 1172,
+      "timestamp": "13:00:59.165",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1173,
+      "timestamp": "13:01:00.510",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8163 s"
+    },
+    {
+      "line_no": 1174,
+      "timestamp": "13:01:59.170",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1175,
+      "timestamp": "13:02:00.505",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8223 s"
+    },
+    {
+      "line_no": 1176,
+      "timestamp": "13:02:59.172",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1177,
+      "timestamp": "13:03:00.506",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8283 s"
+    },
+    {
+      "line_no": 1178,
+      "timestamp": "13:03:59.176",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1179,
+      "timestamp": "13:04:00.508",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8343 s"
+    },
+    {
+      "line_no": 1180,
+      "timestamp": "13:04:59.178",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1181,
+      "timestamp": "13:05:00.514",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8403 s"
+    },
+    {
+      "line_no": 1182,
+      "timestamp": "13:05:59.176",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1183,
+      "timestamp": "13:06:00.517",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8463 s"
+    },
+    {
+      "line_no": 1184,
+      "timestamp": "13:06:59.178",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1185,
+      "timestamp": "13:07:00.513",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8523 s"
+    },
+    {
+      "line_no": 1186,
+      "timestamp": "13:07:59.179",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1187,
+      "timestamp": "13:08:00.516",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8583 s"
+    },
+    {
+      "line_no": 1188,
+      "timestamp": "13:08:59.182",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1189,
+      "timestamp": "13:09:00.516",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8643 s"
+    },
+    {
+      "line_no": 1190,
+      "timestamp": "13:09:59.186",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1191,
+      "timestamp": "13:10:00.518",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8703 s"
+    },
+    {
+      "line_no": 1192,
+      "timestamp": "13:10:59.188",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1193,
+      "timestamp": "13:11:00.520",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8763 s"
+    },
+    {
+      "line_no": 1194,
+      "timestamp": "13:11:59.190",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1195,
+      "timestamp": "13:12:00.522",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8823 s"
+    },
+    {
+      "line_no": 1196,
+      "timestamp": "13:12:59.192",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1197,
+      "timestamp": "13:13:00.523",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8883 s"
+    },
+    {
+      "line_no": 1198,
+      "timestamp": "13:13:59.192",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1199,
+      "timestamp": "13:14:00.524",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "8943 s"
+    },
+    {
+      "line_no": 1200,
+      "timestamp": "13:14:59.193",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1201,
+      "timestamp": "13:15:00.527",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9003 s"
+    },
+    {
+      "line_no": 1202,
+      "timestamp": "13:15:59.195",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1203,
+      "timestamp": "13:16:00.528",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9063 s"
+    },
+    {
+      "line_no": 1204,
+      "timestamp": "13:16:59.212",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1205,
+      "timestamp": "13:17:00.532",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9123 s"
+    },
+    {
+      "line_no": 1206,
+      "timestamp": "13:17:59.201",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1207,
+      "timestamp": "13:18:00.535",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9183 s"
+    },
+    {
+      "line_no": 1208,
+      "timestamp": "13:18:59.208",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1209,
+      "timestamp": "13:19:00.539",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9243 s"
+    },
+    {
+      "line_no": 1210,
+      "timestamp": "13:19:59.208",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1211,
+      "timestamp": "13:20:00.541",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9303 s"
+    },
+    {
+      "line_no": 1212,
+      "timestamp": "13:20:59.208",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1213,
+      "timestamp": "13:21:00.545",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9363 s"
+    },
+    {
+      "line_no": 1214,
+      "timestamp": "13:21:59.210",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1215,
+      "timestamp": "13:22:00.547",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9423 s"
+    },
+    {
+      "line_no": 1216,
+      "timestamp": "13:22:59.214",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1217,
+      "timestamp": "13:23:00.549",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9483 s"
+    },
+    {
+      "line_no": 1218,
+      "timestamp": "13:23:59.216",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1219,
+      "timestamp": "13:24:00.551",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9543 s"
+    },
+    {
+      "line_no": 1220,
+      "timestamp": "13:24:59.229",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1221,
+      "timestamp": "13:25:00.556",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9603 s"
+    },
+    {
+      "line_no": 1222,
+      "timestamp": "13:25:59.235",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1223,
+      "timestamp": "13:26:00.559",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9663 s"
+    },
+    {
+      "line_no": 1224,
+      "timestamp": "13:26:59.227",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1225,
+      "timestamp": "13:27:00.558",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9723 s"
+    },
+    {
+      "line_no": 1226,
+      "timestamp": "13:27:59.232",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1227,
+      "timestamp": "13:28:00.560",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9783 s"
+    },
+    {
+      "line_no": 1228,
+      "timestamp": "13:28:59.227",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1229,
+      "timestamp": "13:29:00.562",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9843 s"
+    },
+    {
+      "line_no": 1230,
+      "timestamp": "13:29:59.228",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1231,
+      "timestamp": "13:30:00.578",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9903 s"
+    },
+    {
+      "line_no": 1232,
+      "timestamp": "13:30:59.238",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1233,
+      "timestamp": "13:31:00.567",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "9963 s"
+    },
+    {
+      "line_no": 1234,
+      "timestamp": "13:31:59.237",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1235,
+      "timestamp": "13:32:00.570",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10023 s"
+    },
+    {
+      "line_no": 1236,
+      "timestamp": "13:32:59.241",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1237,
+      "timestamp": "13:33:00.573",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10083 s"
+    },
+    {
+      "line_no": 1238,
+      "timestamp": "13:33:59.243",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1239,
+      "timestamp": "13:34:00.576",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10143 s"
+    },
+    {
+      "line_no": 1240,
+      "timestamp": "13:34:59.250",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1241,
+      "timestamp": "13:35:00.577",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10203 s"
+    },
+    {
+      "line_no": 1242,
+      "timestamp": "13:35:59.251",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1243,
+      "timestamp": "13:36:00.579",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10263 s"
+    },
+    {
+      "line_no": 1244,
+      "timestamp": "13:36:59.253",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1245,
+      "timestamp": "13:37:00.583",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10323 s"
+    },
+    {
+      "line_no": 1246,
+      "timestamp": "13:37:59.254",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1247,
+      "timestamp": "13:38:00.583",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10383 s"
+    },
+    {
+      "line_no": 1248,
+      "timestamp": "13:38:59.256",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1249,
+      "timestamp": "13:39:00.586",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10443 s"
+    },
+    {
+      "line_no": 1250,
+      "timestamp": "13:39:59.259",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1251,
+      "timestamp": "13:40:00.589",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10503 s"
+    },
+    {
+      "line_no": 1252,
+      "timestamp": "13:40:59.259",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1253,
+      "timestamp": "13:41:00.592",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10563 s"
+    },
+    {
+      "line_no": 1254,
+      "timestamp": "13:41:59.265",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1255,
+      "timestamp": "13:42:00.592",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10623 s"
+    },
+    {
+      "line_no": 1256,
+      "timestamp": "13:42:59.262",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1257,
+      "timestamp": "13:43:00.597",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10683 s"
+    },
+    {
+      "line_no": 1258,
+      "timestamp": "13:43:59.264",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1259,
+      "timestamp": "13:44:00.597",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10743 s"
+    },
+    {
+      "line_no": 1260,
+      "timestamp": "13:44:59.274",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1261,
+      "timestamp": "13:45:00.612",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10803 s"
+    },
+    {
+      "line_no": 1262,
+      "timestamp": "13:45:59.273",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1263,
+      "timestamp": "13:46:00.611",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10863 s"
+    },
+    {
+      "line_no": 1264,
+      "timestamp": "13:46:59.280",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1265,
+      "timestamp": "13:47:00.611",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10923 s"
+    },
+    {
+      "line_no": 1266,
+      "timestamp": "13:47:59.274",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1267,
+      "timestamp": "13:48:00.608",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "10983 s"
+    },
+    {
+      "line_no": 1268,
+      "timestamp": "13:48:59.276",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1269,
+      "timestamp": "13:49:00.610",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11043 s"
+    },
+    {
+      "line_no": 1270,
+      "timestamp": "13:49:59.279",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1271,
+      "timestamp": "13:50:00.615",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11103 s"
+    },
+    {
+      "line_no": 1272,
+      "timestamp": "13:50:59.278",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1273,
+      "timestamp": "13:51:00.614",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11163 s"
+    },
+    {
+      "line_no": 1274,
+      "timestamp": "13:51:59.278",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1275,
+      "timestamp": "13:52:00.612",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11223 s"
+    },
+    {
+      "line_no": 1276,
+      "timestamp": "13:52:59.258",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1277,
+      "timestamp": "13:53:00.596",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11283 s"
+    },
+    {
+      "line_no": 1278,
+      "timestamp": "13:53:59.254",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1279,
+      "timestamp": "13:54:00.590",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11343 s"
+    },
+    {
+      "line_no": 1280,
+      "timestamp": "13:54:59.254",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1281,
+      "timestamp": "13:55:00.601",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11403 s"
+    },
+    {
+      "line_no": 1282,
+      "timestamp": "13:55:59.254",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1283,
+      "timestamp": "13:56:00.588",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11463 s"
+    },
+    {
+      "line_no": 1284,
+      "timestamp": "13:56:59.264",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1285,
+      "timestamp": "13:57:00.588",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11523 s"
+    },
+    {
+      "line_no": 1286,
+      "timestamp": "13:57:59.256",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1287,
+      "timestamp": "13:58:00.589",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11583 s"
+    },
+    {
+      "line_no": 1288,
+      "timestamp": "13:58:59.257",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1289,
+      "timestamp": "13:59:00.593",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11643 s"
+    },
+    {
+      "line_no": 1290,
+      "timestamp": "13:59:59.257",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1291,
+      "timestamp": "14:00:00.599",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11703 s"
+    },
+    {
+      "line_no": 1292,
+      "timestamp": "14:00:59.258",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1293,
+      "timestamp": "14:01:00.600",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11763 s"
+    },
+    {
+      "line_no": 1294,
+      "timestamp": "14:01:59.259",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1295,
+      "timestamp": "14:02:00.593",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11823 s"
+    },
+    {
+      "line_no": 1296,
+      "timestamp": "14:02:59.258",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1297,
+      "timestamp": "14:03:00.595",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11883 s"
+    },
+    {
+      "line_no": 1298,
+      "timestamp": "14:03:59.261",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1299,
+      "timestamp": "14:04:00.597",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "11943 s"
+    },
+    {
+      "line_no": 1300,
+      "timestamp": "14:04:59.263",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1301,
+      "timestamp": "14:05:00.597",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12003 s"
+    },
+    {
+      "line_no": 1302,
+      "timestamp": "14:05:59.269",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1303,
+      "timestamp": "14:06:00.602",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12063 s"
+    },
+    {
+      "line_no": 1304,
+      "timestamp": "14:06:59.264",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1305,
+      "timestamp": "14:07:00.606",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12123 s"
+    },
+    {
+      "line_no": 1306,
+      "timestamp": "14:07:59.265",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1307,
+      "timestamp": "14:08:00.600",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12183 s"
+    },
+    {
+      "line_no": 1308,
+      "timestamp": "14:08:59.265",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1309,
+      "timestamp": "14:09:00.607",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12243 s"
+    },
+    {
+      "line_no": 1310,
+      "timestamp": "14:09:59.267",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1311,
+      "timestamp": "14:10:00.603",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12303 s"
+    },
+    {
+      "line_no": 1312,
+      "timestamp": "14:10:59.265",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1313,
+      "timestamp": "14:11:00.610",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12363 s"
+    },
+    {
+      "line_no": 1314,
+      "timestamp": "14:11:59.266",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1315,
+      "timestamp": "14:12:00.605",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12423 s"
+    },
+    {
+      "line_no": 1316,
+      "timestamp": "14:12:59.268",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1317,
+      "timestamp": "14:13:00.608",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12483 s"
+    },
+    {
+      "line_no": 1318,
+      "timestamp": "14:13:59.270",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1319,
+      "timestamp": "14:14:00.607",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12543 s"
+    },
+    {
+      "line_no": 1320,
+      "timestamp": "14:14:59.271",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1321,
+      "timestamp": "14:15:00.609",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12603 s"
+    },
+    {
+      "line_no": 1322,
+      "timestamp": "14:15:59.275",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1323,
+      "timestamp": "14:16:00.610",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12663 s"
+    },
+    {
+      "line_no": 1324,
+      "timestamp": "14:16:59.277",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1325,
+      "timestamp": "14:17:00.612",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12723 s"
+    },
+    {
+      "line_no": 1326,
+      "timestamp": "14:17:59.279",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1327,
+      "timestamp": "14:18:00.612",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12783 s"
+    },
+    {
+      "line_no": 1328,
+      "timestamp": "14:18:59.278",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1329,
+      "timestamp": "14:19:00.613",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12843 s"
+    },
+    {
+      "line_no": 1330,
+      "timestamp": "14:19:59.280",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1331,
+      "timestamp": "14:20:00.616",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12903 s"
+    },
+    {
+      "line_no": 1332,
+      "timestamp": "14:20:59.284",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1333,
+      "timestamp": "14:21:00.619",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "12963 s"
+    },
+    {
+      "line_no": 1334,
+      "timestamp": "14:21:59.280",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1335,
+      "timestamp": "14:22:00.620",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13023 s"
+    },
+    {
+      "line_no": 1336,
+      "timestamp": "14:22:59.284",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1337,
+      "timestamp": "14:23:00.622",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13083 s"
+    },
+    {
+      "line_no": 1338,
+      "timestamp": "14:23:59.291",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1339,
+      "timestamp": "14:24:00.624",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13143 s"
+    },
+    {
+      "line_no": 1340,
+      "timestamp": "14:24:59.284",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1341,
+      "timestamp": "14:25:00.626",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13203 s"
+    },
+    {
+      "line_no": 1342,
+      "timestamp": "14:25:59.287",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1343,
+      "timestamp": "14:26:00.638",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13263 s"
+    },
+    {
+      "line_no": 1344,
+      "timestamp": "14:26:59.290",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1345,
+      "timestamp": "14:27:00.633",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13323 s"
+    },
+    {
+      "line_no": 1346,
+      "timestamp": "14:27:59.293",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1347,
+      "timestamp": "14:28:00.639",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13383 s"
+    },
+    {
+      "line_no": 1348,
+      "timestamp": "14:28:59.297",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1349,
+      "timestamp": "14:29:00.636",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13443 s"
+    },
+    {
+      "line_no": 1350,
+      "timestamp": "14:29:59.297",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1351,
+      "timestamp": "14:30:00.638",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13503 s"
+    },
+    {
+      "line_no": 1352,
+      "timestamp": "14:30:59.299",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1353,
+      "timestamp": "14:31:00.639",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13563 s"
+    },
+    {
+      "line_no": 1354,
+      "timestamp": "14:31:59.301",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1355,
+      "timestamp": "14:32:00.642",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13623 s"
+    },
+    {
+      "line_no": 1356,
+      "timestamp": "14:32:59.305",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1357,
+      "timestamp": "14:33:00.644",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13683 s"
+    },
+    {
+      "line_no": 1358,
+      "timestamp": "14:33:59.306",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1359,
+      "timestamp": "14:34:00.647",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13743 s"
+    },
+    {
+      "line_no": 1360,
+      "timestamp": "14:34:59.309",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1361,
+      "timestamp": "14:35:00.648",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13803 s"
+    },
+    {
+      "line_no": 1362,
+      "timestamp": "14:35:59.310",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1363,
+      "timestamp": "14:36:00.650",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13863 s"
+    },
+    {
+      "line_no": 1364,
+      "timestamp": "14:36:59.314",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1365,
+      "timestamp": "14:37:00.656",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13923 s"
+    },
+    {
+      "line_no": 1366,
+      "timestamp": "14:37:59.315",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1367,
+      "timestamp": "14:38:00.654",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "13983 s"
+    },
+    {
+      "line_no": 1368,
+      "timestamp": "14:38:59.317",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1369,
+      "timestamp": "14:39:00.655",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14043 s"
+    },
+    {
+      "line_no": 1370,
+      "timestamp": "14:39:59.320",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1371,
+      "timestamp": "14:40:00.657",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14103 s"
+    },
+    {
+      "line_no": 1372,
+      "timestamp": "14:40:59.320",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1373,
+      "timestamp": "14:41:00.659",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14163 s"
+    },
+    {
+      "line_no": 1374,
+      "timestamp": "14:41:59.332",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1375,
+      "timestamp": "14:42:00.664",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14223 s"
+    },
+    {
+      "line_no": 1376,
+      "timestamp": "14:42:59.336",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1377,
+      "timestamp": "14:43:00.664",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14283 s"
+    },
+    {
+      "line_no": 1378,
+      "timestamp": "14:43:59.323",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1379,
+      "timestamp": "14:44:00.672",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14343 s"
+    },
+    {
+      "line_no": 1380,
+      "timestamp": "14:44:59.326",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1381,
+      "timestamp": "14:45:00.666",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14403 s"
+    },
+    {
+      "line_no": 1382,
+      "timestamp": "14:45:59.326",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1383,
+      "timestamp": "14:46:00.670",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14463 s"
+    },
+    {
+      "line_no": 1384,
+      "timestamp": "14:46:59.338",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1385,
+      "timestamp": "14:47:00.671",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14523 s"
+    },
+    {
+      "line_no": 1386,
+      "timestamp": "14:47:59.330",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1387,
+      "timestamp": "14:48:00.673",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14583 s"
+    },
+    {
+      "line_no": 1388,
+      "timestamp": "14:48:59.335",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1389,
+      "timestamp": "14:49:00.673",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14643 s"
+    },
+    {
+      "line_no": 1390,
+      "timestamp": "14:49:59.338",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1391,
+      "timestamp": "14:50:00.674",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14703 s"
+    },
+    {
+      "line_no": 1392,
+      "timestamp": "14:50:59.340",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1393,
+      "timestamp": "14:51:00.676",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14763 s"
+    },
+    {
+      "line_no": 1394,
+      "timestamp": "14:51:59.339",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1395,
+      "timestamp": "14:52:00.683",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14823 s"
+    },
+    {
+      "line_no": 1396,
+      "timestamp": "14:52:59.329",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1397,
+      "timestamp": "14:53:00.668",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14883 s"
+    },
+    {
+      "line_no": 1398,
+      "timestamp": "14:53:59.330",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1399,
+      "timestamp": "14:54:00.670",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "14943 s"
+    },
+    {
+      "line_no": 1400,
+      "timestamp": "14:54:59.332",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1401,
+      "timestamp": "14:55:00.673",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15003 s"
+    },
+    {
+      "line_no": 1402,
+      "timestamp": "14:55:59.333",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1403,
+      "timestamp": "14:56:00.674",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15063 s"
+    },
+    {
+      "line_no": 1404,
+      "timestamp": "14:56:59.359",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1405,
+      "timestamp": "14:57:00.676",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15123 s"
+    },
+    {
+      "line_no": 1406,
+      "timestamp": "14:57:59.338",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1407,
+      "timestamp": "14:58:00.678",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15183 s"
+    },
+    {
+      "line_no": 1408,
+      "timestamp": "14:58:59.338",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1409,
+      "timestamp": "14:59:00.680",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15243 s"
+    },
+    {
+      "line_no": 1410,
+      "timestamp": "14:59:59.343",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1411,
+      "timestamp": "15:00:00.684",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15303 s"
+    },
+    {
+      "line_no": 1412,
+      "timestamp": "15:00:59.348",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1413,
+      "timestamp": "15:01:00.681",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15363 s"
+    },
+    {
+      "line_no": 1414,
+      "timestamp": "15:01:59.343",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1415,
+      "timestamp": "15:02:00.686",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15423 s"
+    },
+    {
+      "line_no": 1416,
+      "timestamp": "15:02:59.345",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1417,
+      "timestamp": "15:03:00.694",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15483 s"
+    },
+    {
+      "line_no": 1418,
+      "timestamp": "15:03:59.346",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1419,
+      "timestamp": "15:04:00.683",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15543 s"
+    },
+    {
+      "line_no": 1420,
+      "timestamp": "15:04:59.348",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1421,
+      "timestamp": "15:05:00.684",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15603 s"
+    },
+    {
+      "line_no": 1422,
+      "timestamp": "15:05:59.349",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1423,
+      "timestamp": "15:06:00.685",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15663 s"
+    },
+    {
+      "line_no": 1424,
+      "timestamp": "15:06:59.352",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1425,
+      "timestamp": "15:07:00.686",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15723 s"
+    },
+    {
+      "line_no": 1426,
+      "timestamp": "15:07:59.356",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1427,
+      "timestamp": "15:08:00.688",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15783 s"
+    },
+    {
+      "line_no": 1428,
+      "timestamp": "15:08:59.363",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1429,
+      "timestamp": "15:09:00.690",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15843 s"
+    },
+    {
+      "line_no": 1430,
+      "timestamp": "15:09:59.357",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1431,
+      "timestamp": "15:10:00.691",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15903 s"
+    },
+    {
+      "line_no": 1432,
+      "timestamp": "15:10:59.358",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1433,
+      "timestamp": "15:11:00.696",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "15963 s"
+    },
+    {
+      "line_no": 1434,
+      "timestamp": "15:11:59.360",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1435,
+      "timestamp": "15:12:00.700",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16023 s"
+    },
+    {
+      "line_no": 1436,
+      "timestamp": "15:12:59.361",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1437,
+      "timestamp": "15:13:00.699",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16083 s"
+    },
+    {
+      "line_no": 1438,
+      "timestamp": "15:13:59.364",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1439,
+      "timestamp": "15:14:00.698",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16143 s"
+    },
+    {
+      "line_no": 1440,
+      "timestamp": "15:14:59.364",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1441,
+      "timestamp": "15:15:00.702",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16203 s"
+    },
+    {
+      "line_no": 1442,
+      "timestamp": "15:15:59.365",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1443,
+      "timestamp": "15:16:00.701",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16263 s"
+    },
+    {
+      "line_no": 1444,
+      "timestamp": "15:16:59.367",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1445,
+      "timestamp": "15:17:00.703",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16323 s"
+    },
+    {
+      "line_no": 1446,
+      "timestamp": "15:17:59.368",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1447,
+      "timestamp": "15:18:00.704",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16383 s"
+    },
+    {
+      "line_no": 1471,
+      "timestamp": "15:18:59.374",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-51 dBm"
+    },
+    {
+      "line_no": 1472,
+      "timestamp": "15:19:00.716",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16443 s"
+    },
+    {
+      "line_no": 1473,
+      "timestamp": "15:19:59.381",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-54 dBm"
+    },
+    {
+      "line_no": 1474,
+      "timestamp": "15:20:00.715",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16503 s"
+    },
+    {
+      "line_no": 1475,
+      "timestamp": "15:20:59.371",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-54 dBm"
+    },
+    {
+      "line_no": 1476,
+      "timestamp": "15:21:00.722",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16563 s"
+    },
+    {
+      "line_no": 1477,
+      "timestamp": "15:21:59.378",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1478,
+      "timestamp": "15:22:00.712",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16623 s"
+    },
+    {
+      "line_no": 1479,
+      "timestamp": "15:22:59.376",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1480,
+      "timestamp": "15:23:00.714",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16683 s"
+    },
+    {
+      "line_no": 1481,
+      "timestamp": "15:23:59.379",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1482,
+      "timestamp": "15:24:00.719",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16743 s"
+    },
+    {
+      "line_no": 1483,
+      "timestamp": "15:24:59.379",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1484,
+      "timestamp": "15:25:00.718",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16803 s"
+    },
+    {
+      "line_no": 1485,
+      "timestamp": "15:25:59.386",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1486,
+      "timestamp": "15:26:00.719",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16863 s"
+    },
+    {
+      "line_no": 1487,
+      "timestamp": "15:26:59.383",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1488,
+      "timestamp": "15:27:00.721",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16923 s"
+    },
+    {
+      "line_no": 1489,
+      "timestamp": "15:27:59.386",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1490,
+      "timestamp": "15:28:00.721",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "16983 s"
+    },
+    {
+      "line_no": 1491,
+      "timestamp": "15:28:59.386",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1492,
+      "timestamp": "15:29:00.722",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "17043 s"
+    },
+    {
+      "line_no": 1493,
+      "timestamp": "15:29:59.388",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1494,
+      "timestamp": "15:30:00.724",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "17103 s"
+    },
+    {
+      "line_no": 1495,
+      "timestamp": "15:30:59.393",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1496,
+      "timestamp": "15:31:00.729",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "17163 s"
+    },
+    {
+      "line_no": 1497,
+      "timestamp": "15:31:59.400",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1498,
+      "timestamp": "15:32:00.726",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "17223 s"
+    },
+    {
+      "line_no": 1499,
+      "timestamp": "15:32:59.402",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1500,
+      "timestamp": "15:33:00.727",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "17283 s"
+    },
+    {
+      "line_no": 1501,
+      "timestamp": "15:33:59.403",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1502,
+      "timestamp": "15:34:00.727",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "17343 s"
+    },
+    {
+      "line_no": 1503,
+      "timestamp": "15:34:59.401",
+      "sensor_type": "sensor",
+      "name": "WiFi Signal",
+      "value": "-52 dBm"
+    },
+    {
+      "line_no": 1504,
+      "timestamp": "15:35:00.727",
+      "sensor_type": "sensor",
+      "name": "Uptime",
+      "value": "17403 s"
+    }
+  ]
+}
