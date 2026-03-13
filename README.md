@@ -1,78 +1,78 @@
-# BSH DBus Analyse (Siemens Spuelmaschine)
+# BSH DBus Analysis (Siemens Dishwasher)
 
-Dieses Verzeichnis dient zur Analyse eines ESPHome-Debug-Logs einer Siemens Spuelmaschine (BSH DBus), um serielle Pakete auf der Leitung zu verstehen und in ESPHome sauber abzubilden.
+This workspace is used to analyze an ESPHome debug log from a Siemens dishwasher (BSH DBus) to understand the serial packets on the bus and map them correctly in ESPHome.
 
-## Ziel
+## Goal
 
-Ziel ist eine robuste `esphome.yaml`, die relevante DBus-Telegramme der Maschine korrekt interpretiert und als Home-Assistant-Sensoren bereitstellt.
+The goal is a robust `esphome.yaml` that correctly interprets relevant DBus telegrams from the appliance and exposes them as Home Assistant sensors.
 
-Konkret:
-- serielle Frames erkennen (`dest`, `cmd`, `payload`)
-- Frames mit direkt folgenden Sensor-Events korrelieren
-- daraus stabile Mapping-Regeln fuer Binary-, Numeric- und Text-Sensoren ableiten
+Specifically:
+- detect serial frames (`dest`, `cmd`, `payload`)
+- correlate frames with directly following sensor events
+- derive stable mapping rules for binary, numeric, and text sensors
 
-## Aktuelle Dateien
+## Current Files
 
-- `spuelmaschine_log.txt`: Roh-Log aus ESPHome (`Received frame ...` + Sensor-Logs)
-- `parse_log.py`: Parser fuer Frame-Extraktion und Frame->Sensor-Korrelation
-- `esphome.yaml`: aktuelle Arbeits-Config fuer den ESP32-C6 inkl. `bshdbus`
+- `spuelmaschine_log.txt`: raw ESPHome log (`Received frame ...` plus sensor log lines)
+- `parse_log.py`: parser for frame extraction and frame-to-sensor correlation
+- `esphome.yaml`: current working config for ESP32-C6 including `bshdbus`
 
-## Parser-Logik (`parse_log.py`)
+## Parser Logic (`parse_log.py`)
 
-Der Parser extrahiert aus Zeilen wie:
+The parser extracts fields from lines such as:
 
 ```text
 Received frame dest 0x24 cmd 0x2006: 0x00
 ```
 
-folgende Felder:
+Extracted fields:
 - `dest`
 - `cmd`
 - `payload`
 
-Danach ordnet er direkt folgende Sensorzeilen dem zuletzt empfangenen Frame zu, z. B.:
+It then maps directly following sensor lines to the last received frame, for example:
 
 ```text
 [18:11:33.591][D][main:432]: Received frame dest 0x24 cmd 0x2006: 0x00
-[18:11:33.659][D][binary_sensor:047]: 'Tuer' >> ON
+[18:11:33.659][D][binary_sensor:047]: 'Door' >> ON
 ```
 
-=> Mapping: `0x24 / 0x2006 / 0x00 -> Tuer ON`
+Mapping result: `0x24 / 0x2006 / 0x00 -> Door ON`
 
-Wichtig:
-- Payload-Fortsetzungszeilen ohne Timestamp werden erkannt und angehaengt.
-- Die Zuordnung nutzt ein Zeitfenster (Default `--max-lag-ms 300`), damit spaete System-Logs (z. B. `Uptime`, `WiFi Signal`) nicht falsch zugeordnet werden.
+Important details:
+- Payload continuation lines without timestamp are detected and appended.
+- Mapping uses a time window (default `--max-lag-ms 300`) so delayed system logs (for example `Uptime`, `WiFi Signal`) are not incorrectly linked.
 
-## Bisherige Erkenntnisse aus dem Log
+## Findings So Far
 
-Stand auf Basis von `spuelmaschine_log.txt`:
-- Gesamtzahl erkannter Frames: `441`
-- Viele zyklische Frames ohne direkte Sensorfolge (normal bei Polling/Status-Traffic)
+Based on `spuelmaschine_log.txt`:
+- total detected frames: `441`
+- many cyclic frames have no direct sensor line below them (normal polling/status traffic)
 
-Bisher gut bestaetigte Korrelationen:
-- `dest 0x24, cmd 0x2006, payload 0x00` -> `Tuer ON`
-- `dest 0x24, cmd 0x2006, payload 0x08` -> `Tuer OFF`
+Well-confirmed correlations:
+- `dest 0x24, cmd 0x2006, payload 0x00` -> `Door (Tuer) ON`
+- `dest 0x24, cmd 0x2006, payload 0x08` -> `Door (Tuer) OFF`
 - `dest 0x27, cmd 0x2007, payload 0x01/0x02` -> `Status ON/OFF`
-- `dest 0x25, cmd 0x2008, payload 0x..0000` -> `Restzeit` (Minutenwert aus Byte 0)
-- `dest 0x25, cmd 0x2010` -> Programm-/Optionsdaten (u. a. Programmnamen und Option-Bits)
+- `dest 0x25, cmd 0x2008, payload 0x..0000` -> `Remaining time (Restzeit)` (minutes from byte 0)
+- `dest 0x25, cmd 0x2010` -> program/option data (including program name and option bits)
 
-Diese Beobachtungen sind bereits in der aktuellen `esphome.yaml` als erste Dekodierung umgesetzt.
+These observations are already implemented as first-level decoding in `esphome.yaml`.
 
-## Aktueller Config-Status (`esphome.yaml`)
+## Current Config Status (`esphome.yaml`)
 
-Die aktuelle Config enthaelt bereits:
-- UART + `bshdbus`-Empfang
-- Roh-Frame-Logging via `on_frame`
-- Dekodierung fuer
-  - Tuersensor (`0x24/0x2006`)
-  - Laufstatus (`0x27/0x2007`)
-  - Restzeit (`0x25/0x2008`)
-  - Zeitvorwahl (`0x17/0x1012`)
-  - Programmnamen und Optionsbits ueber Helper-Sensoren (`0x17/0x1011`, `0x17/0x1000`, `0x25/0x2010`)
+The current config already includes:
+- UART + `bshdbus` receive path
+- raw frame logging via `on_frame`
+- decoding for:
+  - door sensor (`Tuer`, `0x24/0x2006`)
+  - running status (`0x27/0x2007`)
+  - remaining time (`Restzeit`, `0x25/0x2008`)
+  - delay start (`Zeitvorwahl`, `0x17/0x1012`)
+  - program names and option bits via helper sensors (`0x17/0x1011`, `0x17/0x1000`, `0x25/0x2010`)
 
-## Nutzung
+## Usage
 
-Parser starten:
+Run parser:
 
 ```bash
 python parse_log.py spuelmaschine_log.txt
@@ -80,15 +80,15 @@ python parse_log.py spuelmaschine_log.txt --events
 python parse_log.py spuelmaschine_log.txt --json-out result.json
 ```
 
-Optionales Tuning fuer strengere/lockerere Zuordnung:
+Optional tuning for stricter/looser correlation:
 
 ```bash
 python parse_log.py spuelmaschine_log.txt --max-lag-ms 500
 ```
 
-## Naechste Schritte
+## Next Steps
 
-- Weitere `dest/cmd`-Kombinationen systematisch labeln (insb. `0x25/0x2000`, `0x25/0x2004`, `0x25/0x2005`)
-- Bit- und Byte-Semantik pro Kommando dokumentieren
-- Mapping in `esphome.yaml` schrittweise von "experimentell" auf "stabil" bringen
-- Am Ende: vollstaendige, nachvollziehbar dokumentierte ESPHome-Config fuer dieses Geraet
+- label additional `dest/cmd` combinations systematically (especially `0x25/0x2000`, `0x25/0x2004`, `0x25/0x2005`)
+- document bit and byte semantics per command
+- move mappings in `esphome.yaml` step-by-step from "experimental" to "stable"
+- final outcome: complete and clearly documented ESPHome config for this device

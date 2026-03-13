@@ -1,76 +1,76 @@
-# Siemens BSH DBUS Doku (bestaetigte Formate)
+# Siemens BSH DBUS Documentation (Confirmed Formats)
 
-Diese Doku beschreibt die aktuell bestaetigten seriellen DBUS-Formate.
+This document describes the currently confirmed serial DBUS formats.
 
-Es gibt zwei Bestaetigungsstufen:
-- Log-basiert bestaetigt: per `parse_log.py` aus `spuelmaschine_log.txt` korreliert.
-- Laufend funktional: in `esphome.yaml` implementiert und laut aktuellem Betriebsstand funktionierend.
+There are two confirmation levels:
+- Log-confirmed: correlated from `spuelmaschine_log.txt` via `parse_log.py`.
+- Functionally confirmed: implemented in `esphome.yaml` and currently working in operation.
 
-## Datenbasis und Methode
+## Data Source and Method
 
-- Quelle: `spuelmaschine_log.txt`
-- Auswertung: `parse_log.py` mit direkter Frame->Sensor-Korrelation
-- Kriterium fuer "bestaetigt":
-  - Sensor-Log folgt direkt auf den Frame
-  - Zeitdifferenz liegt im Parser-Fenster (`--max-lag-ms`, Standard 300 ms)
+- Source: `spuelmaschine_log.txt`
+- Analysis: `parse_log.py` with direct frame-to-sensor correlation
+- Confirmation criteria:
+  - sensor log line appears directly after the frame
+  - time difference is within parser window (`--max-lag-ms`, default 300 ms)
 
-Log-Auswertung (aktueller Stand):
-- `441` Frames insgesamt
-- `126` Frames mit direkt korreliertem Sensor-Event
-- Bestaetigte `dest/cmd` mit Sensor-Korrelation:
+Log analysis (current snapshot):
+- `441` total frames
+- `126` frames with directly correlated sensor events
+- confirmed `dest/cmd` with sensor correlation:
   - `0x24 / 0x2006` (6x)
   - `0x27 / 0x2007` (3x)
   - `0x25 / 0x2008` (114x)
   - `0x25 / 0x2010` (2x)
 
-## Gegenpruefung mit `esphome.yaml` (funktioniert bereits)
+## Cross-check with `esphome.yaml` (Already Working)
 
-Folgende Decoder sind in `esphome.yaml` aktiv und gelten als funktionierend:
+The following decoders are active in `esphome.yaml` and considered working:
 
 - `0x24 / 0x2006`
-  - `Klarspueler` (Bit 1)
-  - `Salz` (Bit 0)
-  - `Tuer` (Bit 3 invertiert)
+  - `Rinse aid (Klarspueler)` (bit 1)
+  - `Salt (Salz)` (bit 0)
+  - `Door (Tuer)` (bit 3 inverted)
 - `0x27 / 0x2007`
   - `Status` (running)
 - `0x25 / 0x2008`
-  - `Restzeit` (Minuten)
+  - `Remaining time (Restzeit)` (minutes)
 - `0x17 / 0x1012`
-  - `Zeitvorwahl` (Stunden)
+  - `Delay start (Zeitvorwahl)` (hours)
 - `0x17 / 0x1000`
-  - Option-Bits vom Bedienpanel (`VarioSpeed`, `IntensivZone`, `Hygiene`, `Glanztrocknen`)
+  - option bits from control panel (`VarioSpeed`, `IntensivZone`, `Hygiene`, `Shine & Dry (Glanztrocknen)`)
 - `0x17 / 0x1011`
-  - Programmnamen vom Bedienpanel
+  - program names from control panel
 - `0x25 / 0x2010`
-  - Init/Programmtext und Option-Bits (inkl. Spiegelung auf Template-Sensoren)
+  - init/program text and option bits (including mirrored template sensors)
 
-## Allgemeines Frame-Format
+## Generic Frame Format
 
-ESPHome Logformat:
+ESPHome log format:
 
 ```text
 Received frame dest 0xDD cmd 0xCCCC: 0xPPPP...
 ```
 
-- `dest`: Zielknoten (1 Byte, hex)
-- `cmd`: Kommando (2 Byte, hex)
-- `payload`: Nutzdaten variabler Laenge (hex)
+- `dest`: destination node (1 byte, hex)
+- `cmd`: command (2 bytes, hex)
+- `payload`: variable-length payload (hex)
 
-Hinweis: Bei langen Payloads kann im Log eine Fortsetzungszeile ohne Timestamp folgen. Der Parser fuegt diese korrekt zusammen.
+Note: for long payloads, a continuation line without timestamp may follow. The parser merges these lines correctly.
 
-## Bestaetigte Formate
+## Confirmed Formats
 
-### 1) Tuerstatus
+### 1) Door Status (Tuer)
 
 - `dest`: `0x24`
 - `cmd`: `0x2006`
-- `payload`: 1 Byte
+- `payload`: 1 byte
 
-Beobachtung:
-- `payload 0x00` -> `Tuer ON` (offen)
-- `payload 0x08` -> `Tuer OFF` (geschlossen)
+Observed:
+- `payload 0x00` -> `Door (Tuer) ON` (open)
+- `payload 0x08` -> `Door (Tuer) OFF` (closed)
 
-Evidenzbeispiele:
+Evidence examples:
 - `spuelmaschine_log.txt:140` + `spuelmaschine_log.txt:141`
 - `spuelmaschine_log.txt:142` + `spuelmaschine_log.txt:143`
 - `spuelmaschine_log.txt:446` + `spuelmaschine_log.txt:447`
@@ -78,73 +78,73 @@ Evidenzbeispiele:
 Interpretation in `esphome.yaml`:
 - `door = !((x[0] >> 3) & 0x01)`
 
-### 2) Laufstatus (Running)
+### 2) Running Status
 
 - `dest`: `0x27`
 - `cmd`: `0x2007`
-- `payload`: 1 Byte
+- `payload`: 1 byte
 
-Beobachtung:
+Observed:
 - `payload 0x01` -> `Status ON`
 - `payload 0x02` -> `Status OFF`
 
-Evidenzbeispiele:
+Evidence examples:
 - `spuelmaschine_log.txt:448` + `spuelmaschine_log.txt:449`
 - `spuelmaschine_log.txt:346` + `spuelmaschine_log.txt:347`
 
 Interpretation in `esphome.yaml`:
 - `running = (x[0] == 0x01)`
 
-### 3) Restzeit
+### 3) Remaining Time (Restzeit)
 
 - `dest`: `0x25`
 - `cmd`: `0x2008`
-- `payload`: 3 Byte (`0xMM0000` beobachtet)
+- `payload`: 3 bytes (`0xMM0000` observed)
 
-Beobachtung:
-- Erstes Payload-Byte (`MM`) entspricht Restzeit in Minuten.
-- Beispiele:
+Observed:
+- first payload byte (`MM`) equals remaining minutes.
+- examples:
   - `0xa00000` -> `160 min`
   - `0x9f0000` -> `159 min`
   - `0x980000` -> `152 min`
 
-Evidenzbeispiele:
+Evidence examples:
 - `spuelmaschine_log.txt:302` + `spuelmaschine_log.txt:303`
 - `spuelmaschine_log.txt:471` + `spuelmaschine_log.txt:472`
 - `spuelmaschine_log.txt:518` + `spuelmaschine_log.txt:519`
 
 Interpretation in `esphome.yaml`:
-- `Restzeit = x[0]`
+- `Remaining time = x[0]`
 
-### 4) Init/Programm/Optionen
+### 4) Init / Program / Options
 
 - `dest`: `0x25`
 - `cmd`: `0x2010`
-- `payload`: langes Mehrbyte-Format
+- `payload`: long multi-byte format
 
-Bestaetigt beobachtet:
-- Beispielpayload: `0x0d000001050062000037010000`
-- Direkt danach wurden aktualisiert:
+Confirmed observations:
+- example payload: `0x0d000001050062000037010000`
+- immediate updates afterwards:
   - `Option VarioSpeed = OFF`
   - `Option IntensivZone = OFF`
   - `Option Hygiene = OFF`
-  - `Option Glanztrocknen = OFF`
+  - `Option Shine & Dry (Glanztrocknen) = OFF`
   - `bsh_helper_init = 'Auto 45-65°'`
-  - `Ausgewaehltes Programm = 'Auto 45-65°'`
+  - `Selected Program (Ausgewähltes Programm) = 'Auto 45-65°'`
 
-Evidenzbeispiele:
+Evidence examples:
 - `spuelmaschine_log.txt:334`
 - `spuelmaschine_log.txt:335`
 - `spuelmaschine_log.txt:343`
 - `spuelmaschine_log.txt:344`
 
-Interpretation in `esphome.yaml` (aktueller Stand):
-- Programmcode aus `x[0]` (z. B. `0x0D -> Auto 45-65°`)
-- Optionsbits aus `x[8]` (`0x80`, `0x40`, `0x08`, `0x02`)
+Interpretation in `esphome.yaml` (current):
+- program code from `x[0]` (for example `0x0D -> Auto 45-65°`)
+- option bits from `x[8]` (`0x80`, `0x40`, `0x08`, `0x02`)
 
-## Noch nicht final bestaetigt
+## Not Yet Fully Confirmed
 
-Folgende Telegramme wurden oft gesehen, aber ohne direkte Sensor-Korrelation in diesem Log oder noch ohne klare Semantik:
+The following telegrams were frequently observed, but do not yet have clear semantics from direct sensor correlation in this log:
 - `0x25 / 0x2000`
 - `0x25 / 0x2004`
 - `0x25 / 0x2005`
@@ -152,10 +152,10 @@ Folgende Telegramme wurden oft gesehen, aber ohne direkte Sensor-Korrelation in 
 - `0x22 / 0x40f2`, `0x22 / 0x7ff1`
 - `0x17 / 0x1001`, `0x17 / 0x1007`, `0x17 / 0x1013`
 
-Diese sind als naechster Analyseblock vorgesehen.
+These are planned as the next analysis block.
 
-## Bezug zur ESPHome-Config
+## Relation to ESPHome Config
 
-Ziel bleibt eine vollstaendige `esphome.yaml`, die den beobachteten DBUS-Verkehr robust dekodiert.
+The goal remains a complete `esphome.yaml` that robustly decodes observed DBUS traffic.
 
-Der aktuelle Stand in `esphome.yaml` deckt die Kernpunkte bereits ab (Tuer, Running, Restzeit, Zeitvorwahl, Programm/Optionen) und ist die Arbeitsbasis fuer den weiteren Ausbau.
+The current `esphome.yaml` already covers the main points (door/Tuer, running/Status, remaining time/Restzeit, delay start/Zeitvorwahl, program/options) and is the working base for further expansion.
