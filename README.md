@@ -86,6 +86,28 @@ Optional tuning for stricter/looser correlation:
 python parse_log.py spuelmaschine_log.txt --max-lag-ms 500
 ```
 
+## Log Naming Convention
+
+To keep multiple runs organized, store logs per program and use the log capture timestamp in filenames.
+
+Pattern:
+
+```text
+<program>_logs/spuelmaschine_log_YYYY-MM-DD_HHMMSS.txt
+<program>_logs/spuelmaschine_log_YYYY-MM-DD_HHMMSS_parsed.txt
+```
+
+Important:
+- use the timestamp from when the log was recorded
+- do not use the rename/import date if those differ
+
+Example:
+
+```text
+auto_45_65_logs/spuelmaschine_log_2026-03-12_151857.txt
+auto_45_65_logs/spuelmaschine_log_2026-03-12_151857_parsed.txt
+```
+
 ## Next Steps
 
 - label additional `dest/cmd` combinations systematically (especially `0x25/0x2000`, `0x25/0x2004`, `0x25/0x2005`)
