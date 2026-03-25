@@ -145,7 +145,6 @@ Interpretation in `esphome.yaml` (current):
 ## Not Yet Fully Confirmed
 
 The following telegrams were frequently observed, but do not yet have clear semantics from direct sensor correlation in this log:
-- `0x25 / 0x2000`
 - `0x25 / 0x2004`
 - `0x25 / 0x2005`
 - `0x55 / 0x5003`, `0x55 / 0x5006`, `0x55 / 0x5008`
@@ -153,6 +152,27 @@ The following telegrams were frequently observed, but do not yet have clear sema
 - `0x17 / 0x1001`, `0x17 / 0x1007`, `0x17 / 0x1013`
 
 These are planned as the next analysis block.
+
+### Hypothesis: `0x25 / 0x2000` = Program Progress (0-99%)
+
+Current interpretation (not yet final):
+- payload appears as a single byte (`0x00` to `0x63`)
+- values generally increase over runtime and often align with decreasing remaining time
+- practical reading: `progress_percent = x[0]`
+
+Evidence samples:
+- near program start:
+  - `auto_45_65_logs/spuelmaschine_log_2026-03-12_151857.txt:452` (`Restzeit >> 160 min`)
+  - `auto_45_65_logs/spuelmaschine_log_2026-03-12_151857.txt:453` (`0x25/0x2000 = 0x00`)
+- shortly after:
+  - `auto_45_65_logs/spuelmaschine_log_2026-03-12_151857.txt:472` (`Restzeit >> 159 min`)
+  - `auto_45_65_logs/spuelmaschine_log_2026-03-12_151857.txt:473` (`0x25/0x2000 = 0x01`)
+- near program end:
+  - `auto_45_65_logs/spuelmaschine_log_2026-03-12_151857.txt:1088` (`Restzeit >> 1 min`)
+  - `auto_45_65_logs/spuelmaschine_log_2026-03-12_151857.txt:1089` (`0x25/0x2000 = 0x63`)
+
+Note:
+- repeated values and occasional jumps can happen due to polling cadence and internal recalculation points.
 
 ## Relation to ESPHome Config
 
