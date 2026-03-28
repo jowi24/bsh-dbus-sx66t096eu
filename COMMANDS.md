@@ -8,7 +8,7 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `C` = Auto 65-75° (2026-03-28, vollständiger Lauf)
 
 **Konfidenz:**
-- ✅ Bestätigt — direkte Sensor-Korrelation oder eindeutiger Kontext in ≥2 Logs
+- ✅ Bestätigt — direkte Sensor-Korrelation, durch manuelles Testen am Gerät verifiziert, oder in `esphome.yaml` implementiert
 - 🟡 Plausibel — konsistent über Logs, gute Indizien, aber keine direkte Bestätigung
 - ❓ Unklar — beobachtet, Bedeutung noch unbekannt
 
@@ -18,9 +18,9 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 
 | dest | Vermutliche Funktion | Konfidenz |
 |---|---|---|
-| `0x17` | Bedienpanel | 🟡 |
+| `0x17` | Bedienpanel | ✅ |
 | `0x22` | Unbekanntes Gerät | ❓ |
-| `0x24` | Türsensor / Türsteuerung | ✅ |
+| `0x24` | Türsensor / Verbrauchsmittelstatus | ✅ |
 | `0x25` | Hauptsteuergerät (Controller) | ✅ |
 | `0x26` | Unbekanntes Gerät | ❓ |
 | `0x27` | Betriebsstatus-Knoten | ✅ |
@@ -30,11 +30,18 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 
 ## dest `0x17` — Bedienpanel
 
-### `0x17 / 0x1000` — Panel-Optionen
+### `0x17 / 0x1000` — Panel-Optionen (Byte 1, Bitfeld)
 
-| Payload | Bedeutung | Logs | Konfidenz |
+Vom Panel gesendete Optionswahl. Byte 0 unbekannt, Byte 1 enthält die Optionen:
+
+| Bit in Byte 1 | Maske | Option | Konfidenz |
 |---|---|---|---|
-| `0x0000` | Alle Optionen (VarioSpeed, IntensivZone, Hygiene, Glanz) = OFF | B | 🟡 |
+| Bit 7 | `0x80` | VarioSpeed | ✅ |
+| Bit 6 | `0x40` | IntensivZone | ✅ |
+| Bit 3 | `0x08` | Hygiene | ✅ |
+| Bit 1 | `0x02` | Glanztrocknen | ✅ |
+
+Bisher beobachtete Payloads: `0x0000` (alle Optionen OFF).
 
 ### `0x17 / 0x1001`
 
@@ -52,15 +59,30 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0x0b` | Unbekannt; vermutl. "Set Program Request" (nur in Log B beobachtet) | B | ❓ |
+| `0x0b` | Unbekannt; vermutl. "Set Program Request" vom Panel (nur in Log B beobachtet) | B | ❓ |
 
 ### `0x17 / 0x1011` — Panel-seitige Programm-ID
 
-| Payload | Bedeutung | Logs | Konfidenz |
-|---|---|---|---|
-| `0x0b` | Programm = Auto 65-75° | B | 🟡 |
+Vom Panel gesendete Programm-Auswahl. Payload = 1 Byte.
 
-Nur in Log B vorhanden. Log A und C setzen die Programm-ID über `0x25/0x2010`.
+| Payload | Programm | Logs | Konfidenz |
+|---|---|---|---|
+| `0x10` (16) | Auto 35-45° | — | ✅ |
+| `0x0d` (13) | Auto 45-65° | — | ✅ |
+| `0x0b` (11) | Auto 65-75° | B | ✅ |
+| `0x0e` (14) | Eco 50° | — | ✅ |
+| `0x11` (17) | Schnell 45° | — | ✅ |
+| `0x12` (18) | Vorspülen | — | ✅ |
+
+In Logs A und C nicht beobachtet — der Panel sendet diesen Frame nur beim aktiven Drücken der Programmauswahl. Mapping durch manuelles Testen am Gerät bestätigt (implementiert in `esphome.yaml`).
+
+### `0x17 / 0x1012` — Zeitvorwahl (Delay Start)
+
+| Byte | Bedeutung | Konfidenz |
+|---|---|---|
+| Byte 1 | Verzögerung in Stunden | ✅ |
+
+In bisherigen Logs nicht beobachtet (kein Delayed-Start-Lauf aufgezeichnet). Mapping durch manuelles Testen bestätigt (implementiert in `esphome.yaml`).
 
 ### `0x17 / 0x1013`
 
@@ -86,14 +108,22 @@ Nur in Log B vorhanden. Log A und C setzen die Programm-ID über `0x25/0x2010`.
 
 ---
 
-## dest `0x24` — Türsensor
+## dest `0x24` — Türsensor / Verbrauchsmittelstatus
 
-### `0x24 / 0x2006` — Türstatus
+### `0x24 / 0x2006` — Tür, Klarspüler, Salz (Byte 0, Bitfeld)
+
+| Bit | Maske | Sensor | Logik | Konfidenz |
+|---|---|---|---|---|
+| Bit 3 | `0x08` | Tür | `0` = offen (ON), `1` = geschlossen (OFF) | ✅ |
+| Bit 1 | `0x02` | Klarspüler leer | `1` = Problem | ✅ |
+| Bit 0 | `0x01` | Salz leer | `1` = Problem | ✅ |
+
+Typische Payloads:
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0x00` | Tür = ON (geöffnet) | A B C | ✅ |
-| `0x08` | Tür = OFF (geschlossen) | A B C | ✅ |
+| `0x00` | Tür offen, kein Verbrauchsmittelproblem | A B C | ✅ |
+| `0x08` | Tür geschlossen, kein Verbrauchsmittelproblem | A B C | ✅ |
 
 ---
 
@@ -114,18 +144,18 @@ Bitfeld; die wichtigsten beobachteten Werte:
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
 | `0x000000` | Inaktiv / Standby (vor Programmstart und nach Ende) | A B C | 🟡 |
-| `0x020000` | Nur einmalig bei Auto 45-65° Programmstart (Bit 17) | A | ❓ |
+| `0x020000` | Einmalig bei Auto 45-65° Programmstart (Bit 17) | A | ❓ |
 | `0x200000` | Normalbetrieb (Bit 21 gesetzt) | A B C | 🟡 |
 | `0x201000` | Normalbetrieb mit aktivem Teilprogramm (Bit 21 + Bit 12) | A B C | 🟡 |
-| `0x220000` | Nur Auto 45-65°: Bit 21 + Bit 17 — möglicherweise Hochtemperatur-Flag der 65°-Phase | A | ❓ |
+| `0x220000` | Nur Auto 45-65°: Bit 21 + Bit 17 — möglicherweise Hochtemperatur-Flag | A | ❓ |
 | `0x221000` | Nur Auto 45-65°: Bit 21 + 17 + 12 | A | ❓ |
 | `0x800000` | Einmalig bei Programmstart (Bit 23) — nur Auto 65-75° | B C | 🟡 |
 | `0x820000` | Einmalig bei Programmstart (Bit 23 + 17) — nur Auto 45-65° | A | 🟡 |
 
 **Bit-Interpretation (vorläufig):**
-- Bit 23 (`0x800000`): Programm-Initialisierungs-Flag (erscheint genau einmal, direkt nach Programmstart)
+- Bit 23 (`0x800000`): Programm-Initialisierungs-Flag (einmalig, direkt nach Programmstart)
 - Bit 21 (`0x200000`): Programm läuft
-- Bit 17 (`0x020000`): programmspezifisch — nur bei Auto 45-65° (niedrigere Temperaturklasse?)
+- Bit 17 (`0x020000`): programmspezifisch — nur bei Auto 45-65° (Temperaturklasse?)
 - Bit 12 (`0x001000`): aktiver Teilschritt innerhalb einer Phase
 
 ### `0x25 / 0x2005` — Programmphase
@@ -141,6 +171,8 @@ Zentrales Statusfeld; Werte erscheinen in fester Reihenfolge:
 | `0x24` | Klarspülen | Stabile Phase, ~38–41 min Restzeit | A B C | ✅ |
 | `0x28` | Trocknen-Vorphase | ~16–20 min Restzeit | A B C | ✅ |
 | `0x20` | Trocknen / Auslauf | Erscheint zweimal bei ~1 min Restzeit | A B C | ✅ |
+
+Das `0x10`-Bit markiert generell Übergangszustände (`0x12`, `0x14`); das `0x20`-Bit ist in allen stabilen Betriebszuständen gesetzt.
 
 **Phasenverlauf je Programm:**
 
@@ -168,9 +200,9 @@ Ab `0x24` (Klarspülen) ist die Sequenz in beiden Programmen identisch.
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0xNN0000` | Restzeit in Minuten; Byte 0 (big-endian) = Minuten | A B C | ✅ |
+| `0xNN0000` | Restzeit in Minuten; Byte 0 = Minuten, Bytes 1–2 immer `0x00` | A B C | ✅ |
 
-Byte 1 und 2 sind immer `0x00`. Restzeit wird bei jedem `0x12`-Phasenübergang neu berechnet (Schätzkorrektur).
+Restzeit wird bei jedem `0x12`-Phasenübergang neu berechnet (Schätzkorrektur, kann deutlich springen).
 
 ### `0x25 / 0x2009` — Uptime-Poll
 
@@ -184,27 +216,37 @@ Erscheint alle ~10–30 Sekunden während des laufenden Programms.
 
 Payload: 13 Byte. Erscheint einmalig kurz nach Verbindungsaufbau / vor Programmstart.
 
-| Byte | Bedeutung | Konfidenz |
-|---|---|---|
-| Byte 0 | Programm-ID | 🟡 |
-| Byte 1–4 | Option-Bits (VarioSpeed, IntensivZone, Hygiene, Glanz) | 🟡 |
-| Byte 5–12 | Weitere Parameter; konstant über alle Logs (`0x62000037010000...`) | ❓ |
-
-**Beobachtete Programm-IDs (Byte 0):**
+**Byte 0 — Programm-ID** (gleiche Codierung wie `0x17/0x1011`):
 
 | Wert | Programm | Logs | Konfidenz |
 |---|---|---|---|
-| `0x0d` (13) | Auto 45-65° | A | 🟡 |
-| `0x0b` (11) | Auto 65-75° | C | 🟡 |
-| `0x10` (16) | Auto 65-75° | B | ❓ (Inkonsistenz zu Log C unklar) |
+| `0x10` (16) | Auto 35-45° | B* | ✅ |
+| `0x0d` (13) | Auto 45-65° | A | ✅ |
+| `0x0b` (11) | Auto 65-75° | C | ✅ |
+| `0x0e` (14) | Eco 50° | — | ✅ |
+| `0x11` (17) | Schnell 45° | — | ✅ |
+| `0x12` (18) | Vorspülen | — | ✅ |
 
-Vollständige Payload bei allen bisher geloggten Läufen (Bytes 1–12): `000001050062000037010000`
+*Log B zeigt `0x10` (Auto 35-45°) — dies stammt von einem vorherigen Lauf, bei dem der ESP mid-run verbunden hat. Der nachfolgende Auto 65-75°-Lauf überlagerte den Programmwert via `0x17/0x1011`.
 
-### `0x25 / 0x2011` — Unbekannte Konfiguration
+**Byte 8 — Optionen (Bitfeld)** (gleiche Codierung wie `0x17/0x1000` Byte 1):
+
+| Bit | Maske | Option | Konfidenz |
+|---|---|---|---|
+| Bit 7 | `0x80` | VarioSpeed | ✅ |
+| Bit 6 | `0x40` | IntensivZone | ✅ |
+| Bit 3 | `0x08` | Hygiene | ✅ |
+| Bit 1 | `0x02` | Glanztrocknen | ✅ |
+
+Bytes 1–7 und 9–12: konstant `000001050062000037010000` über alle bisher geloggten Läufe; Bedeutung unklar.
+
+### `0x25 / 0x2011` — Programmliste (Hypothese)
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0xa5100d0b0e1112a1a080818486a2` | Identisch in allen Logs; vermutlich Gerätekonfiguration oder Programmtabelle | A B C | ❓ |
+| `0xa5100d0b0e1112a1a080818486a2` | Identisch in allen Logs | A B C | ❓ |
+
+**Hinweis:** Die Bytes 1–6 der Payload (`10 0d 0b 0e 11 12`) entsprechen exakt den 6 bekannten Programm-IDs in der Reihenfolge Auto 35-45°, Auto 45-65°, Auto 65-75°, Eco 50°, Schnell 45°, Vorspülen. Byte 0 (`0xa5`) könnte ein Header oder die Programmanzahl sein. Die zweite Hälfte (`a1 a0 80 81 84 86 a2`) ist noch ungeklärt — möglicherweise Temperaturwerte oder Klarspülparameter je Programm.
 
 ### `0x25 / 0x2012`
 
@@ -237,7 +279,7 @@ Vollständige Payload bei allen bisher geloggten Läufen (Bytes 1–12): `000001
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0x01` | Status = ON (Programm läuft) | A B C | ✅ |
+| `0x01` | Status = ON (Programm läuft); `x[0] == 0x01` | A B C | ✅ |
 | `0x02` | Status = OFF (Programm beendet, erste Meldung) | A B C | ✅ |
 | `0x03` | Status = OFF (Programm beendet, zweite Meldung) | A B C | ✅ |
 
@@ -252,8 +294,7 @@ Vollständige Payload bei allen bisher geloggten Läufen (Bytes 1–12): `000001
 | `0xNN0000` | Byte 0 = Restzeit bei Programmstart in Minuten | A C | 🟡 |
 
 Bestätigt: `0xa0`=160 (Auto 45-65°, Log A), `0x91`=145 (Auto 65-75°, Log C).
-Log B zeigt `0x64`=100, weil der ESP mid-run verbunden hat und dort die laufende Restzeit widerspiegelt.
-
+Log B zeigt `0x64`=100, weil der ESP mid-run verbunden hat.
 Erscheint 20× zu Beginn jedes Programms.
 
 ### `0x55 / 0x5006`
@@ -272,18 +313,19 @@ Erscheint 20× zu Beginn jedes Programms.
 
 ## Offene Fragen
 
-1. **`0x2010` Byte 0 Inkonsistenz**: Auto 65-75° liefert `0x0b` (Log C) und `0x10` (Log B). Ursache unbekannt — mögliche ESPHome-Firmware-Unterschiede oder interne Programmvarianten.
-2. **`0x2004` Bit 17 (`0x020000`)**: Nur bei Auto 45-65°. Könnte Temperaturklasse oder Zwischenspül-Konfiguration codieren.
-3. **`0x22 / 0x40f2` und `0x22 / 0x7ff1`**: Destination `0x22` ist unbekannt. Beide Frames erscheinen einmalig beim Start.
-4. **`0x2011` Payload**: Identisch in allen Logs. Könnte eine Geräte-Lookup-Tabelle oder Programmparameter-Block sein.
-5. **Dispenser-Signal**: Kein dedizierter Bus-Frame für das Öffnen des Tab-Fachs identifiziert. Stärkster Kandidat: erster `0x25/0x2005/0x12`-Frame nach Programmstart.
-6. **`0x17 / 0x1010` und `0x17 / 0x1011`**: Nur in Log B. Möglicherweise alternative Programm-Ankündigung via Panel; in Logs A und C nicht vorhanden.
+1. **`0x2004` Bit 17 (`0x020000`)**: Nur bei Auto 45-65°. Könnte Temperaturklasse oder Zwischenspül-Konfiguration codieren.
+2. **`0x22 / 0x40f2` und `0x22 / 0x7ff1`**: Destination `0x22` ist unbekannt. Beide Frames erscheinen einmalig beim Start.
+3. **`0x2011` zweite Hälfte**: Bytes 7–13 (`a1 a0 80 81 84 86 a2`) noch unklar. Hypothese: Temperatur- oder Klarspülparameter je Programm.
+4. **Dispenser-Signal**: Kein dedizierter Bus-Frame für das Öffnen des Tab-Fachs identifiziert. Stärkster Kandidat: erster `0x25/0x2005/0x12`-Frame nach Programmstart.
+5. **`0x17 / 0x1010`**: Nur in Log B. Möglicherweise "Set Program"-Request vom Panel vor `0x1011`.
+6. **`0x2012` und `0x2013`**: Immer gleiche Werte, Bedeutung unklar.
 
 ---
 
 ## Nächste Schritte
 
-- [ ] Log für **Auto 35-45°** aufzeichnen → Phasenzahl und `0x2010` Byte 0 bestimmen
+- [ ] Log für **Auto 35-45°** aufzeichnen → Phasenzahl und `0x2010` Byte 0 (`0x10`) im Log bestätigen
+- [ ] **Zeitvorwahl-Lauf** aufzeichnen → `0x17/0x1012` Byte 1 im echten Log sehen
 - [ ] Dispenser-Öffnung physisch mit Log-Zeitstempel synchronisieren (erster `0x12`-Übergang bestätigen)
-- [ ] Bedeutung von `0x2004` Bit 17 klären (weiterer Programm-Log oder Experiment mit Option IntensivZone)
-- [ ] `0x2011` Payload analysieren (mögliche Byte-Struktur: Temperaturtabelle, Programmliste?)
+- [ ] Bedeutung von `0x2004` Bit 17 klären (Experiment mit Option IntensivZone oder Auto 35-45° Log)
+- [ ] `0x2011` Bytes 7–13 analysieren (Temperaturtabelle?)
