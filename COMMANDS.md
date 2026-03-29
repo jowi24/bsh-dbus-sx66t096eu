@@ -6,6 +6,9 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `A` = Auto 45-65° (2026-03-12)
 - `B` = Auto 65-75° (2026-03-25)
 - `C` = Auto 65-75° (2026-03-28, vollständiger Lauf)
+- `D` = Auto 35-45° + IntensivZone (2026-03-29, vollständiger Lauf)
+
+**Hinweis zu Zeitstempeln:** Alle Log-Zeitstempel sind in UTC (GMT). Lokale Zeit (MESZ) = UTC + 2h.
 
 **Konfidenz:**
 - ✅ Bestätigt — direkte Sensor-Korrelation, durch manuelles Testen am Gerät verifiziert, oder in `esphome.yaml` implementiert
@@ -41,7 +44,7 @@ Vom Panel gesendete Optionswahl. Byte 0 unbekannt, Byte 1 enthält die Optionen:
 | Bit 3 | `0x08` | Hygiene | ✅ |
 | Bit 1 | `0x02` | Glanztrocknen | ✅ |
 
-Bisher beobachtete Payloads: `0x0000` (alle Optionen OFF).
+Beobachtete Payloads: `0x0000` (alle Optionen OFF), `0x0040` (nur IntensivZone ON, Log D).
 
 ### `0x17 / 0x1001`
 
@@ -67,7 +70,7 @@ Vom Panel gesendete Programm-Auswahl. Payload = 1 Byte.
 
 | Payload | Programm | Logs | Konfidenz |
 |---|---|---|---|
-| `0x10` (16) | Auto 35-45° | — | ✅ |
+| `0x10` (16) | Auto 35-45° | D | ✅ |
 | `0x0d` (13) | Auto 45-65° | — | ✅ |
 | `0x0b` (11) | Auto 65-75° | B | ✅ |
 | `0x0e` (14) | Eco 50° | — | ✅ |
@@ -143,20 +146,23 @@ Bitfeld; die wichtigsten beobachteten Werte:
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0x000000` | Inaktiv / Standby (vor Programmstart und nach Ende) | A B C | 🟡 |
-| `0x020000` | Einmalig bei Auto 45-65° Programmstart (Bit 17) | A | ❓ |
+| `0x000000` | Inaktiv / Standby (vor Programmstart und nach Ende) | A B C D | 🟡 |
+| `0x020000` | Einmalig bei Niedertemperatur-Programmstart (Bit 17) | A D | 🟡 |
 | `0x200000` | Normalbetrieb (Bit 21 gesetzt) | A B C | 🟡 |
 | `0x201000` | Normalbetrieb mit aktivem Teilprogramm (Bit 21 + Bit 12) | A B C | 🟡 |
-| `0x220000` | Nur Auto 45-65°: Bit 21 + Bit 17 — möglicherweise Hochtemperatur-Flag | A | ❓ |
-| `0x221000` | Nur Auto 45-65°: Bit 21 + 17 + 12 | A | ❓ |
+| `0x220000` | Auto 45-65°: Bit 21 + Bit 17 | A | 🟡 |
+| `0x220200` | Auto 35-45° + IntensivZone: Bit 21 + Bit 17 + Bit 9 | D | 🟡 |
+| `0x221000` | Auto 45-65°: Bit 21 + 17 + 12 | A | 🟡 |
+| `0x221200` | Auto 35-45° + IntensivZone: Bit 21 + 17 + 12 + 9 | D | 🟡 |
 | `0x800000` | Einmalig bei Programmstart (Bit 23) — nur Auto 65-75° | B C | 🟡 |
-| `0x820000` | Einmalig bei Programmstart (Bit 23 + 17) — nur Auto 45-65° | A | 🟡 |
+| `0x820000` | Einmalig bei Programmstart (Bit 23 + 17) — Niedertemperatur-Programme | A D | 🟡 |
 
 **Bit-Interpretation (vorläufig):**
 - Bit 23 (`0x800000`): Programm-Initialisierungs-Flag (einmalig, direkt nach Programmstart)
 - Bit 21 (`0x200000`): Programm läuft
-- Bit 17 (`0x020000`): programmspezifisch — nur bei Auto 45-65° (Temperaturklasse?)
+- Bit 17 (`0x020000`): Niedertemperatur-Flag — in Auto 35-45° und Auto 45-65° gesetzt, bei Auto 65-75° nicht
 - Bit 12 (`0x001000`): aktiver Teilschritt innerhalb einer Phase
+- Bit 9 (`0x000200`): IntensivZone aktiv in aktueller Phase — nur wenn Option IntensivZone ausgewählt ✅ (Log D)
 
 ### `0x25 / 0x2005` — Programmphase
 
@@ -176,25 +182,27 @@ Das `0x10`-Bit markiert generell Übergangszustände (`0x12`, `0x14`); das `0x20
 
 **Phasenverlauf je Programm:**
 
-| Phase | Auto 45-65° | Auto 65-75° |
-|---|---|---|
-| Init | `0x21` @ 0 min | `0x21` @ 0 min |
-| Vorspülen | `0x22` @ +21 min | `0x22` @ +21 min |
-| Übergang (Hauptspülen) | `0x12` @ +44 min | `0x12` @ +61–81 min |
-| Hauptspülen | `0x22` @ +86 min | `0x22` @ +98 min |
-| Übergang (Zwischenspülen) | `0x12` @ +95 min | — |
-| Zwischenspülen | `0x22` @ +110 min | — |
-| Übergang (Klarspülen) | `0x12` @ +119 min | — |
-| Klarspülen | `0x24` @ +119 min | `0x24` @ +108 min |
-| Übergang | `0x14` @ +133 min | `0x14` @ +120 min |
-| — | `0x24` @ +135 min | `0x24` @ +123 min |
-| Trocknen | `0x28` @ +140 min | `0x28` @ +128 min |
-| Auslauf | `0x20` @ +159 min | `0x20` @ +144 min |
+| Phase | Auto 35-45° | Auto 45-65° | Auto 65-75° |
+|---|---|---|---|
+| Init | `0x21` @ 0 min | `0x21` @ 0 min | `0x21` @ 0 min |
+| **Hauptspülen / Vorspülen** | `0x22` @ +14 min ⚡ | `0x22` @ +21 min | `0x22` @ +21 min |
+| Übergang | `0x12` @ +52 min | `0x12` @ +44 min | `0x12` @ +61–81 min |
+| Hauptspülen | `0x22` @ +52 min | `0x22` @ +86 min | `0x22` @ +98 min |
+| Übergang (Zwischenspülen) | — | `0x12` @ +95 min | — |
+| Zwischenspülen | — | `0x22` @ +110 min | — |
+| Übergang (Klarspülen) | — | `0x12` @ +119 min | — |
+| Klarspülen | `0x24` @ +62 min | `0x24` @ +119 min | `0x24` @ +108 min |
+| Übergang | `0x14` @ +74 min | `0x14` @ +133 min | `0x14` @ +120 min |
+| — | `0x24` @ +74 min | `0x24` @ +135 min | `0x24` @ +123 min |
+| Trocknen | `0x28` @ +80 min | `0x28` @ +140 min | `0x28` @ +128 min |
+| Auslauf | `0x20` @ +95 min | `0x20` @ +159 min | `0x20` @ +144 min |
 
-Auto 45-65° hat 3× `0x12`-Übergänge (inkl. Zwischenspülen), Auto 65-75° nur 1×.
-Ab `0x24` (Klarspülen) ist die Sequenz in beiden Programmen identisch.
+Zeiten für Auto 35-45° sind mit aktivem IntensivZone (Restzeit-Start: 105 min).
 
-**Hypothese Dispensersignal:** Der erste `0x12`-Übergang nach `Status → ON` markiert den Wechsel von Vorspülen zu Hauptspülen. Dies ist der plausibelste Zeitpunkt für das Öffnen des Reinigertab-Fachs. Nicht physisch bestätigt.
+Auto 45-65° hat 3× `0x12`-Übergänge (inkl. Zwischenspülen), Auto 35-45° und Auto 65-75° jeweils nur 1×.
+Ab `0x24` (Klarspülen) ist die Sequenz in allen Programmen identisch.
+
+**⚡ = erster `0x22`-Frame nach `0x21`:** In Auto 35-45° korreliert dieser Übergang physisch mit dem Öffnen des Reinigertab-Fachs (beobachtet 15:49 MESZ = 13:49 UTC, Log D: 13:50:06 UTC). Bei Auto 35-45° gibt es offenbar keine separate Vorspülphase. Für Auto 45-65° und 65-75° (mit Vorspülen) markiert hingegen der erste `0x12`-Übergang den Beginn des Hauptspülens; die Dispenser-Korrelation ist dort noch nicht physisch bestätigt.
 
 ### `0x25 / 0x2008` — Restzeit
 
@@ -220,7 +228,7 @@ Payload: 13 Byte. Erscheint einmalig kurz nach Verbindungsaufbau / vor Programms
 
 | Wert | Programm | Logs | Konfidenz |
 |---|---|---|---|
-| `0x10` (16) | Auto 35-45° | B* | ✅ |
+| `0x10` (16) | Auto 35-45° | B* D | ✅ |
 | `0x0d` (13) | Auto 45-65° | A | ✅ |
 | `0x0b` (11) | Auto 65-75° | C | ✅ |
 | `0x0e` (14) | Eco 50° | — | ✅ |
@@ -293,7 +301,7 @@ Bytes 1–7 und 9–12: konstant `000001050062000037010000` über alle bisher ge
 |---|---|---|---|
 | `0xNN0000` | Byte 0 = Restzeit bei Programmstart in Minuten | A C | 🟡 |
 
-Bestätigt: `0xa0`=160 (Auto 45-65°, Log A), `0x91`=145 (Auto 65-75°, Log C).
+Bestätigt: `0xa0`=160 (Auto 45-65°, Log A), `0x91`=145 (Auto 65-75°, Log C), `0x69`=105 (Auto 35-45° + IntensivZone, Log D).
 Log B zeigt `0x64`=100, weil der ESP mid-run verbunden hat.
 Erscheint 20× zu Beginn jedes Programms.
 
@@ -313,19 +321,20 @@ Erscheint 20× zu Beginn jedes Programms.
 
 ## Offene Fragen
 
-1. **`0x2004` Bit 17 (`0x020000`)**: Nur bei Auto 45-65°. Könnte Temperaturklasse oder Zwischenspül-Konfiguration codieren.
+1. **`0x2004` Bit 17 (`0x020000`)**: In Auto 35-45° (Log D) und Auto 45-65° (Log A) bestätigt, bei Auto 65-75° nicht. Hypothese: Niedertemperatur-Waschgang-Flag. Offen: gilt das auch für Eco 50° und Schnell 45°?
 2. **`0x22 / 0x40f2` und `0x22 / 0x7ff1`**: Destination `0x22` ist unbekannt. Beide Frames erscheinen einmalig beim Start.
 3. **`0x2011` zweite Hälfte**: Bytes 7–13 (`a1 a0 80 81 84 86 a2`) noch unklar. Hypothese: Temperatur- oder Klarspülparameter je Programm.
-4. **Dispenser-Signal**: Kein dedizierter Bus-Frame für das Öffnen des Tab-Fachs identifiziert. Stärkster Kandidat: erster `0x25/0x2005/0x12`-Frame nach Programmstart.
-5. **`0x17 / 0x1010`**: Nur in Log B. Möglicherweise "Set Program"-Request vom Panel vor `0x1011`.
+4. **Dispenser-Signal bei Auto 45-65° / 65-75°**: Bei Auto 35-45° physisch bestätigt: erster `0x2005=0x22`-Frame. Bei Programmen mit Vorspülen (45-65°, 65-75°) bleibt der erste `0x12`-Übergang als stärkster Kandidat für das Dispenser-Öffnen — noch nicht physisch bestätigt.
+5. **`0x17 / 0x1010`**: In Log B und D beobachtet. Möglicherweise "Set Program"-Request vom Panel vor `0x1011`.
 6. **`0x2012` und `0x2013`**: Immer gleiche Werte, Bedeutung unklar.
 
 ---
 
 ## Nächste Schritte
 
-- [ ] Log für **Auto 35-45°** aufzeichnen → Phasenzahl und `0x2010` Byte 0 (`0x10`) im Log bestätigen
+- [x] Log für **Auto 35-45°** aufzeichnen → Phasenzahl und `0x2010` Byte 0 (`0x10`) im Log bestätigt (Log D)
+- [x] Dispenser-Öffnung physisch synchronisiert für **Auto 35-45°** → erster `0x2005=0x22`-Frame ✅
+- [ ] Dispenser-Signal für **Auto 45-65° / 65-75°** physisch bestätigen (erster `0x12`-Übergang?)
 - [ ] **Zeitvorwahl-Lauf** aufzeichnen → `0x17/0x1012` Byte 1 im echten Log sehen
-- [ ] Dispenser-Öffnung physisch mit Log-Zeitstempel synchronisieren (erster `0x12`-Übergang bestätigen)
-- [ ] Bedeutung von `0x2004` Bit 17 klären (Experiment mit Option IntensivZone oder Auto 35-45° Log)
+- [ ] `0x2004` Bit 17 bei Eco 50° und Schnell 45° prüfen
 - [ ] `0x2011` Bytes 7–13 analysieren (Temperaturtabelle?)
