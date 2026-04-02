@@ -7,6 +7,7 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `B` = Auto 65-75° (2026-03-25)
 - `C` = Auto 65-75° (2026-03-28, vollständiger Lauf)
 - `D` = Auto 35-45° + IntensivZone (2026-03-29, vollständiger Lauf)
+- `E` = Eco 50° (2026-04-01, erster vollständiger Eco-Lauf)
 
 **Hinweis zu Zeitstempeln:** Alle Log-Zeitstempel sind in UTC (GMT). Lokale Zeit (MESZ) = UTC + 2h.
 
@@ -60,9 +61,13 @@ Beobachtete Payloads: `0x0000` (alle Optionen OFF), `0x0040` (nur IntensivZone O
 
 ### `0x17 / 0x1010`
 
-| Payload | Bedeutung | Logs | Konfidenz |
+Payload = 1 Byte; erscheint jeweils unmittelbar vor dem entsprechenden `0x1011`-Frame mit identischem Wert. Möglicherweise eine Art "Cursor"-Meldung beim Durchblättern der Programme.
+
+| Payload | Programm | Logs | Konfidenz |
 |---|---|---|---|
-| `0x0b` | Unbekannt; vermutl. "Set Program Request" vom Panel (nur in Log B beobachtet) | B | ❓ |
+| `0x0b` (11) | Auto 65-75° | B | ❓ |
+| `0x0d` (13) | Auto 45-65° | D E | ❓ |
+| `0x0e` (14) | Eco 50° | E | ❓ |
 
 ### `0x17 / 0x1011` — Panel-seitige Programm-ID
 
@@ -73,7 +78,7 @@ Vom Panel gesendete Programm-Auswahl. Payload = 1 Byte.
 | `0x10` (16) | Auto 35-45° | D | ✅ |
 | `0x0d` (13) | Auto 45-65° | — | ✅ |
 | `0x0b` (11) | Auto 65-75° | B | ✅ |
-| `0x0e` (14) | Eco 50° | — | ✅ |
+| `0x0e` (14) | Eco 50° | E | ✅ |
 | `0x11` (17) | Schnell 45° | — | ✅ |
 | `0x12` (18) | Vorspülen | — | ✅ |
 
@@ -147,15 +152,15 @@ Bitfeld; die wichtigsten beobachteten Werte:
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
 | `0x000000` | Inaktiv / Standby (vor Programmstart und nach Ende) | A B C D | 🟡 |
-| `0x020000` | Einmalig bei Niedertemperatur-Programmstart (Bit 17) | A D | 🟡 |
-| `0x200000` | Normalbetrieb (Bit 21 gesetzt) | A B C | 🟡 |
-| `0x201000` | Normalbetrieb mit aktivem Teilprogramm (Bit 21 + Bit 12) | A B C | 🟡 |
-| `0x220000` | Auto 45-65°: Bit 21 + Bit 17 | A | 🟡 |
+| `0x020000` | Einmalig bei Niedertemperatur-Programmstart (Bit 17) | A D E | 🟡 |
+| `0x200000` | Normalbetrieb (Bit 21 gesetzt) | A B C E | 🟡 |
+| `0x201000` | Normalbetrieb mit aktivem Teilprogramm (Bit 21 + Bit 12) | A B C E | 🟡 |
+| `0x220000` | Niedertemperatur-Programme: Bit 21 + Bit 17 | A E | 🟡 |
 | `0x220200` | Auto 35-45° + IntensivZone: Bit 21 + Bit 17 + Bit 9 | D | 🟡 |
-| `0x221000` | Auto 45-65°: Bit 21 + 17 + 12 | A | 🟡 |
+| `0x221000` | Niedertemperatur-Programme: Bit 21 + 17 + 12 | A E | 🟡 |
 | `0x221200` | Auto 35-45° + IntensivZone: Bit 21 + 17 + 12 + 9 | D | 🟡 |
 | `0x800000` | Einmalig bei Programmstart (Bit 23) — nur Auto 65-75° | B C | 🟡 |
-| `0x820000` | Einmalig bei Programmstart (Bit 23 + 17) — Niedertemperatur-Programme | A D | 🟡 |
+| `0x820000` | Einmalig bei Programmstart (Bit 23 + Bit 17) — Niedertemperatur-Programme | A D E | 🟡 |
 
 **Bit-Interpretation (vorläufig):**
 - Bit 23 (`0x800000`): Programm-Initialisierungs-Flag (einmalig, direkt nach Programmstart)
@@ -163,6 +168,8 @@ Bitfeld; die wichtigsten beobachteten Werte:
 - Bit 17 (`0x020000`): Niedertemperatur-Flag — in Auto 35-45° und Auto 45-65° gesetzt, bei Auto 65-75° nicht
 - Bit 12 (`0x001000`): aktiver Teilschritt innerhalb einer Phase
 - Bit 9 (`0x000200`): IntensivZone aktiv in aktueller Phase — nur wenn Option IntensivZone ausgewählt ✅ (Log D)
+
+**Log E (Eco 50°):** `0x220000`, `0x221000` und `0x820000` beobachtet → Bit 17 ist auch bei Eco 50° gesetzt. Eco 50° ist damit ein Niedertemperatur-Programm (wie Auto 35-45° und Auto 45-65°). ✅
 
 ### `0x25 / 0x2005` — Programmphase
 
@@ -182,25 +189,27 @@ Das `0x10`-Bit markiert generell Übergangszustände (`0x12`, `0x14`); das `0x20
 
 **Phasenverlauf je Programm:**
 
-| Phase | Auto 35-45° | Auto 45-65° | Auto 65-75° |
-|---|---|---|---|
-| Init | `0x21` @ 0 min | `0x21` @ 0 min | `0x21` @ 0 min |
-| **Hauptspülen / Vorspülen** | `0x22` @ +14 min ⚡ | `0x22` @ +21 min | `0x22` @ +21 min |
-| Übergang | `0x12` @ +52 min | `0x12` @ +44 min | `0x12` @ +61–81 min |
-| Hauptspülen | `0x22` @ +52 min | `0x22` @ +86 min | `0x22` @ +98 min |
-| Übergang (Zwischenspülen) | — | `0x12` @ +95 min | — |
-| Zwischenspülen | — | `0x22` @ +110 min | — |
-| Übergang (Klarspülen) | — | `0x12` @ +119 min | — |
-| Klarspülen | `0x24` @ +62 min | `0x24` @ +119 min | `0x24` @ +108 min |
-| Übergang | `0x14` @ +74 min | `0x14` @ +133 min | `0x14` @ +120 min |
-| — | `0x24` @ +74 min | `0x24` @ +135 min | `0x24` @ +123 min |
-| Trocknen | `0x28` @ +80 min | `0x28` @ +140 min | `0x28` @ +128 min |
-| Auslauf | `0x20` @ +95 min | `0x20` @ +159 min | `0x20` @ +144 min |
+| Phase | Auto 35-45° | Auto 45-65° | Auto 65-75° | Eco 50° |
+|---|---|---|---|---|
+| Init | `0x21` @ 0 min | `0x21` @ 0 min | `0x21` @ 0 min | `0x21` @ 0 min |
+| **Vorspülen / erste Phase** | `0x22` @ +14 min ⚡ | `0x22` @ +21 min | `0x22` @ +21 min | `0x22` @ +14 min |
+| Übergang | `0x12` @ +52 min | `0x12` @ +44 min | `0x12` @ +61–81 min | `0x12` @ +110 min |
+| Hauptspülen | `0x22` @ +52 min | `0x22` @ +86 min | `0x22` @ +98 min | `0x22` @ +110 min |
+| Übergang (Zwischenspülen) | — | `0x12` @ +95 min | — | — |
+| Zwischenspülen | — | `0x22` @ +110 min | — | — |
+| Übergang (Klarspülen) | — | `0x12` @ +119 min | — | — |
+| Klarspülen | `0x24` @ +62 min | `0x24` @ +119 min | `0x24` @ +108 min | `0x24` @ +120 min |
+| Übergang | `0x14` @ +74 min | `0x14` @ +133 min | `0x14` @ +120 min | `0x14` @ +130 min |
+| — | `0x24` @ +74 min | `0x24` @ +135 min | `0x24` @ +123 min | `0x24` @ +130 min |
+| Trocknen | `0x28` @ +80 min | `0x28` @ +140 min | `0x28` @ +128 min | `0x28` @ +136 min |
+| Auslauf | `0x20` @ +95 min | `0x20` @ +159 min | `0x20` @ +144 min | `0x20` @ ~+172 min |
 
-Zeiten für Auto 35-45° sind mit aktivem IntensivZone (Restzeit-Start: 105 min).
+Zeiten für Auto 35-45° sind mit aktivem IntensivZone (Restzeit-Start: 105 min). Eco 50° Startrestzeit: 165 min (tatsächliche Laufdauer: ~172 min, d.h. leichte Unterschätzung).
 
-Auto 45-65° hat 3× `0x12`-Übergänge (inkl. Zwischenspülen), Auto 35-45° und Auto 65-75° jeweils nur 1×.
+Auto 45-65° hat 3× `0x12`-Übergänge (inkl. Zwischenspülen), die anderen Programme jeweils nur 1×.
 Ab `0x24` (Klarspülen) ist die Sequenz in allen Programmen identisch.
+
+**Restzeit-Neuberechnung bei Eco 50°:** Beim `0x12`-Übergang (+110 min) springt die Restzeit von ~55 min auf 65 min — typische Schätzkorrektur nach Phasenwechsel.
 
 **⚡ = erster `0x22`-Frame nach `0x21`:** In Auto 35-45° korreliert dieser Übergang physisch mit dem Öffnen des Reinigertab-Fachs (beobachtet 15:49 MESZ = 13:49 UTC, Log D: 13:50:06 UTC). Bei Auto 35-45° gibt es offenbar keine separate Vorspülphase. Für Auto 45-65° und 65-75° (mit Vorspülen) markiert hingegen der erste `0x12`-Übergang den Beginn des Hauptspülens; die Dispenser-Korrelation ist dort noch nicht physisch bestätigt.
 
@@ -208,7 +217,7 @@ Ab `0x24` (Klarspülen) ist die Sequenz in allen Programmen identisch.
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0xNN0000` | Restzeit in Minuten; Byte 0 = Minuten, Bytes 1–2 immer `0x00` | A B C | ✅ |
+| `0xNN0000` | Byte 0 = Restzeit in Minuten; Byte 0 = Minuten, Bytes 1–2 immer `0x00` | A B C E | ✅ |
 
 Restzeit wird bei jedem `0x12`-Phasenübergang neu berechnet (Schätzkorrektur, kann deutlich springen).
 
@@ -231,7 +240,7 @@ Payload: 13 Byte. Erscheint einmalig kurz nach Verbindungsaufbau / vor Programms
 | `0x10` (16) | Auto 35-45° | B* D | ✅ |
 | `0x0d` (13) | Auto 45-65° | A | ✅ |
 | `0x0b` (11) | Auto 65-75° | C | ✅ |
-| `0x0e` (14) | Eco 50° | — | ✅ |
+| `0x0e` (14) | Eco 50° | E | ✅ |
 | `0x11` (17) | Schnell 45° | — | ✅ |
 | `0x12` (18) | Vorspülen | — | ✅ |
 
@@ -303,6 +312,7 @@ Bytes 1–7 und 9–12: konstant `000001050062000037010000` über alle bisher ge
 
 Bestätigt: `0xa0`=160 (Auto 45-65°, Log A), `0x91`=145 (Auto 65-75°, Log C), `0x69`=105 (Auto 35-45° + IntensivZone, Log D).
 Log B zeigt `0x64`=100, weil der ESP mid-run verbunden hat.
+Log E zeigt `0x64`=100 — allerdings erschienen diese 20 Frames bereits während der Programm-Auswahl (16:25:09, vor Status→ON um 16:25:31). Die tatsächliche Startrestzeit von Eco 50° war 165 min. Hypothese: `0x5003` zeigt die Basis-Programmlaufzeit ohne etwaige Zuschläge (z.B. Trockenstufe), oder den zuletzt aktiven Anzeigewert vor dem letzten Programmwechsel.
 Erscheint 20× zu Beginn jedes Programms.
 
 ### `0x55 / 0x5006`
@@ -321,7 +331,7 @@ Erscheint 20× zu Beginn jedes Programms.
 
 ## Offene Fragen
 
-1. **`0x2004` Bit 17 (`0x020000`)**: In Auto 35-45° (Log D) und Auto 45-65° (Log A) bestätigt, bei Auto 65-75° nicht. Hypothese: Niedertemperatur-Waschgang-Flag. Offen: gilt das auch für Eco 50° und Schnell 45°?
+1. **`0x2004` Bit 17 (`0x020000`)**: ✅ Durch Log E bestätigt: Eco 50° hat Bit 17 gesetzt (`0x220000`, `0x221000`, `0x820000`). Damit ist die Hypothese "Niedertemperatur-Flag" für alle bisherigen Eco/Auto-35-45°/Auto-45-65°-Läufe konsistent. Offen: gilt das auch für Schnell 45°?
 2. **`0x22 / 0x40f2` und `0x22 / 0x7ff1`**: Destination `0x22` ist unbekannt. Beide Frames erscheinen einmalig beim Start.
 3. **`0x2011` zweite Hälfte**: Bytes 7–13 (`a1 a0 80 81 84 86 a2`) noch unklar. Hypothese: Temperatur- oder Klarspülparameter je Programm.
 4. **Dispenser-Signal bei Auto 45-65° / 65-75°**: Bei Auto 35-45° physisch bestätigt: erster `0x2005=0x22`-Frame. Bei Programmen mit Vorspülen (45-65°, 65-75°) bleibt der erste `0x12`-Übergang als stärkster Kandidat für das Dispenser-Öffnen — noch nicht physisch bestätigt.
@@ -336,5 +346,8 @@ Erscheint 20× zu Beginn jedes Programms.
 - [x] Dispenser-Öffnung physisch synchronisiert für **Auto 35-45°** → erster `0x2005=0x22`-Frame ✅
 - [ ] Dispenser-Signal für **Auto 45-65° / 65-75°** physisch bestätigen (erster `0x12`-Übergang?)
 - [ ] **Zeitvorwahl-Lauf** aufzeichnen → `0x17/0x1012` Byte 1 im echten Log sehen
-- [ ] `0x2004` Bit 17 bei Eco 50° und Schnell 45° prüfen
+- [x] `0x2004` Bit 17 bei **Eco 50°** bestätigt (Log E) → Bit 17 gesetzt ✅
+- [ ] `0x2004` Bit 17 bei **Schnell 45°** prüfen
 - [ ] `0x2011` Bytes 7–13 analysieren (Temperaturtabelle?)
+- [ ] **Eco 50° `0x5003`-Diskrepanz** klären: 0x64=100 min während Browsing, Startrestzeit=165 min
+- [ ] Dispenser-Signal für **Eco 50°** physisch bestätigen (erster `0x22`-Frame bei +14 min?)
