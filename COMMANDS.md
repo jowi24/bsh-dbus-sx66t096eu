@@ -9,6 +9,7 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `D` = Auto 35-45° + IntensivZone (2026-03-29, vollständiger Lauf)
 - `E` = Eco 50° (2026-04-01, erster vollständiger Eco-Lauf)
 - `F` = Auto 45-65° (2026-04-03, zweiter vollständiger Lauf)
+- `G` = Auto 45-65° (2026-04-04, dritter Lauf — adaptiv verkürzt)
 
 **Hinweis zu Zeitstempeln:** Alle Log-Zeitstempel sind in UTC (GMT). Lokale Zeit (MESZ) = UTC + 2h.
 
@@ -174,6 +175,8 @@ Bitfeld; die wichtigsten beobachteten Werte:
 
 **Log F (Auto 45-65°):** Selbe Werte wie Log A: `0x020000`, `0x820000`, `0x220000` bei Start, dann `0x221000` im Betrieb. ✅
 
+**Log G (Auto 45-65°):** Identisch zu Log A/F. Niedertemperatur-Flag (Bit 17) konsistent. ✅
+
 ### `0x25 / 0x2005` — Programmphase
 
 Zentrales Statusfeld; Werte erscheinen in fester Reihenfolge:
@@ -192,31 +195,39 @@ Das `0x10`-Bit markiert generell Übergangszustände (`0x12`, `0x14`); das `0x20
 
 **Phasenverlauf je Programm:**
 
-| Phase | Auto 35-45° | Auto 45-65° (Log A) | Auto 45-65° (Log F) | Auto 65-75° | Eco 50° |
-|---|---|---|---|---|---|
-| Init | `0x21` @ 0 min | `0x21` @ 0 min | `0x21` @ 0 min (+ 2. `0x21` @ +2 min) | `0x21` @ 0 min | `0x21` @ 0 min |
-| **Vorspülen / erste Phase** | `0x22` @ +14 min ⚡ | `0x22` @ +21 min | `0x22` @ +22 min | `0x22` @ +21 min | `0x22` @ +14 min |
-| Übergang | `0x12` @ +52 min | `0x12` @ +44 min | `0x12` @ +76 min | `0x12` @ +61–81 min | `0x12` @ +110 min |
-| Hauptspülen | `0x22` @ +52 min | `0x22` @ +86 min | `0x22` @ +76 min (instant) | `0x22` @ +98 min | `0x22` @ +110 min |
-| Übergang (Zwischenspülen) | — | `0x12` @ +95 min | `0x12` @ +92 min | — | — |
-| Zwischenspülen | — | `0x22` @ +110 min | `0x22` @ +92 min (4 Sek.) | — | — |
-| Übergang (Klarspülen) | — | `0x12` @ +119 min | — | — | — |
-| Klarspülen | `0x24` @ +62 min | `0x24` @ +119 min | `0x24` @ +92 min | `0x24` @ +108 min | `0x24` @ +120 min |
-| Übergang | `0x14` @ +74 min | `0x14` @ +133 min | `0x14` @ +104 min | `0x14` @ +120 min | `0x14` @ +130 min |
-| — | `0x24` @ +74 min | `0x24` @ +135 min | `0x24` @ +104 min | `0x24` @ +123 min | `0x24` @ +130 min |
-| Trocknen | `0x28` @ +80 min | `0x28` @ +140 min | `0x28` @ +110 min | `0x28` @ +128 min | `0x28` @ +136 min |
-| Auslauf | `0x20` @ +95 min | `0x20` @ +159 min | `0x20` @ +128 min | `0x20` @ +144 min | `0x20` @ ~+172 min |
+| Phase | Auto 35-45° | Auto 45-65° (Log A) | Auto 45-65° (Log F) | Auto 45-65° (Log G) | Auto 65-75° | Eco 50° |
+|---|---|---|---|---|---|---|
+| Init | `0x21` @ 0 min | `0x21` @ 0 min | `0x21` @ 0 min (+ 2. `0x21` @ +2 min) | `0x21` @ 0 min | `0x21` @ 0 min | `0x21` @ 0 min |
+| **Vorspülen / erste Phase** | `0x22` @ +14 min ⚡ | `0x22` @ +21 min | `0x22` @ +22 min | `0x22` @ +11 min | `0x22` @ +21 min | `0x22` @ +14 min |
+| Übergang | `0x12` @ +52 min | `0x12` @ +44 min | `0x12` @ +76 min | `0x12` @ +43 min | `0x12` @ +61–81 min | `0x12` @ +110 min |
+| Hauptspülen | `0x22` @ +52 min | `0x22` @ +86 min | `0x22` @ +76 min (instant) | `0x22` @ +43 min | `0x22` @ +98 min | `0x22` @ +110 min |
+| Übergang (Zwischenspülen) | — | `0x12` @ +95 min | `0x12` @ +92 min | — | — | — |
+| Zwischenspülen | — | `0x22` @ +110 min | `0x22` @ +92 min (4 Sek.) | — | — | — |
+| Übergang (Klarspülen) | — | `0x12` @ +119 min | — | — | — | — |
+| Klarspülen | `0x24` @ +62 min | `0x24` @ +119 min | `0x24` @ +92 min | `0x24` @ +52 min | `0x24` @ +108 min | `0x24` @ +120 min |
+| Übergang | `0x14` @ +74 min | `0x14` @ +133 min | `0x14` @ +104 min | `0x14` @ +64 min | `0x14` @ +120 min | `0x14` @ +130 min |
+| — | `0x24` @ +74 min | `0x24` @ +135 min | `0x24` @ +104 min | `0x24` @ +64 min | `0x24` @ +123 min | `0x24` @ +130 min |
+| Trocknen | `0x28` @ +80 min | `0x28` @ +140 min | `0x28` @ +110 min | `0x28` @ +70 min | `0x28` @ +128 min | `0x28` @ +136 min |
+| Auslauf | `0x20` @ +95 min | `0x20` @ +159 min | `0x20` @ +128 min | `0x20` @ +85 min | `0x20` @ +144 min | `0x20` @ ~+172 min |
 
-Zeiten für Auto 35-45° sind mit aktivem IntensivZone (Restzeit-Start: 105 min). Eco 50° Startrestzeit: 165 min (tatsächliche Laufdauer: ~172 min). Log F (Auto 45-65°) Startrestzeit: 160 min, Laufdauer: 128 min (Überestimate um 32 min).
+Initiale Restzeiten: Auto 35-45° (mit IntensivZone) 105 min; Auto 45-65° Logs A/F 160 min; **Auto 45-65° Log G 100 min** (adaptiv, s.u.); Eco 50° 165 min; Auto 65-75° 145 min.
 
-Auto 45-65° zeigt in Log A **3× `0x12`**, in Log F **2× `0x12`** — die Zwischenspülen-Phase kann sehr kurz sein (4 Sek. in Log F). Die anderen Programme haben jeweils nur 1× `0x12`.
-Ab `0x24` (Klarspülen) ist die Sequenz in allen Programmen identisch.
+**Anzahl `0x12`-Übergänge ist adaptiv** — bei Auto 45-65° bisher 1×, 2× und 3× beobachtet (je nach Verschmutzungsgrad / Sensorentscheidung des Geräts):
+- Log A: **3× `0x12`** — voller Lauf inkl. Zwischenspülen
+- Log F: **2× `0x12`** — Zwischenspülen sehr kurz (4 Sek.)
+- Log G: **1× `0x12`** — Zwischenspülen entfällt, kürzester Lauf (85 min, Restzeit-Start 100 min)
 
-**Restzeit-Korrekturen bei `0x12`-Übergängen (Log F):**
-- 1. `0x12` @ +76 min: Restzeit 85 min → springt auf 50 min (Abwärtskorrektur, −35 min)
-- 2. `0x12` @ +92 min: Restzeit 35 min → springt auf 41 min (Aufwärtskorrektur, +6 min)
+Die anderen Programme zeigen bisher jeweils 1× `0x12` (Auto 35-45°, Auto 65-75°, Eco 50°) — ob das ebenfalls adaptiv ist, ist noch unklar.
 
-**Restzeit-Neuberechnung bei Eco 50°:** Beim `0x12`-Übergang (+110 min) springt die Restzeit von ~55 min auf 65 min (Aufwärtskorrektur, +10 min).
+Ab `0x24` (Klarspülen) ist die Sequenz in allen beobachteten Läufen identisch.
+
+**Initiale Restzeit kann von 0x5003 abweichen (Log G):** `0x5003` zeigte 160 min (Nominalwert), aber `0x2008` bei `0x2005=0x21` zeigte bereits 100 min. Das Gerät schätzt die tatsächliche Laufzeit scheinbar schon zu Beginn anhand von Beladung/Sensorik und unterschreitet dabei den Nominalwert. 🟡
+
+**Restzeit-Korrekturen bei `0x12`-Übergängen:**
+- Log F, 1. `0x12` @ +76 min: Restzeit 85 → 50 min (−35 min)
+- Log F, 2. `0x12` @ +92 min: Restzeit 35 → 41 min (+6 min)
+- Log G, 1. `0x12` @ +43 min: Restzeit 42 → 42 min (keine Korrektur)
+- Eco 50° (Log E), `0x12` @ +110 min: Restzeit ~55 → 65 min (+10 min)
 
 **⚡ = erster `0x22`-Frame nach `0x21`:** In Auto 35-45° korreliert dieser Übergang physisch mit dem Öffnen des Reinigertab-Fachs (beobachtet 15:49 MESZ = 13:49 UTC, Log D: 13:50:06 UTC). Bei Auto 35-45° gibt es offenbar keine separate Vorspülphase. Für Auto 45-65° und 65-75° (mit Vorspülen) markiert hingegen der erste `0x12`-Übergang den Beginn des Hauptspülens; die Dispenser-Korrelation ist dort noch nicht physisch bestätigt.
 
@@ -245,7 +256,7 @@ Payload: 13 Byte. Erscheint typischerweise kurz nach Verbindungsaufbau. In Log F
 | Wert | Programm | Logs | Konfidenz |
 |---|---|---|---|
 | `0x10` (16) | Auto 35-45° | B* D | ✅ |
-| `0x0d` (13) | Auto 45-65° | A F | ✅ |
+| `0x0d` (13) | Auto 45-65° | A F G | ✅ |
 | `0x0b` (11) | Auto 65-75° | C | ✅ |
 | `0x0e` (14) | Eco 50° | E | ✅ |
 | `0x11` (17) | Schnell 45° | — | ✅ |
@@ -321,6 +332,7 @@ Bestätigt: `0xa0`=160 (Auto 45-65°, Log A), `0x91`=145 (Auto 65-75°, Log C), 
 Log B zeigt `0x64`=100, weil der ESP mid-run verbunden hat.
 Log E zeigt `0x64`=100 — allerdings erschienen diese 20 Frames bereits während der Programm-Auswahl (16:25:09, vor Status→ON um 16:25:31). Die tatsächliche Startrestzeit von Eco 50° war 165 min. Hypothese: der 20×-Burst feuert bei jeder Programmauswahl auf dem Panel (nicht nur beim Start), was erklärt, warum Log E den Wert des zuletzt gesichteten Programms (Auto 45-65° = 100 min?) zeigt.
 Log F: **nicht beobachtet** — ESP verband sich kurz vor Programmstart, der 20×-Burst erfolgte offenbar vor dem Log-Beginn. Dies zeigt, dass der Burst ein Startup-Signal des Controllers ist, das unabhängig von einer ESP-Verbindung gesendet wird.
+Log G: `0xa0`=160 (Nominalwert Auto 45-65°) — aber `0x2008` zeigte bei `0x2005=0x21` bereits 100 min. `0x5003` zeigt den Nominalwert des Programms, nicht die adaptive Schätzung.
 Erscheint 20× zu Beginn jedes Programms.
 
 ### `0x55 / 0x5006`
