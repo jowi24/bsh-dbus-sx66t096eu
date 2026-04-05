@@ -229,7 +229,16 @@ Ab `0x24` (Klarspülen) ist die Sequenz in allen beobachteten Läufen identisch.
 - Log G, 1. `0x12` @ +43 min: Restzeit 42 → 42 min (keine Korrektur)
 - Eco 50° (Log E), `0x12` @ +110 min: Restzeit ~55 → 65 min (+10 min)
 
-**⚡ = erster `0x22`-Frame nach `0x21`:** In Auto 35-45° korreliert dieser Übergang physisch mit dem Öffnen des Reinigertab-Fachs (beobachtet 15:49 MESZ = 13:49 UTC, Log D: 13:50:06 UTC). Bei Auto 35-45° gibt es offenbar keine separate Vorspülphase. Für Auto 45-65° und 65-75° (mit Vorspülen) markiert hingegen der erste `0x12`-Übergang den Beginn des Hauptspülens; die Dispenser-Korrelation ist dort noch nicht physisch bestätigt.
+**⚡ Dispenser-Öffnung = Start des Hauptspülens** (bestätigt in Log D und Log G):
+
+| Log | Programm | Vorspülen? | Dispenser-Signal | Beobachtet (MESZ) | Log-Frame (UTC) |
+|---|---|---|---|---|---|
+| D | Auto 35-45° + IntensivZone | Nein | erster `0x22` nach `0x21` | 15:49 | 13:50:06 |
+| G | Auto 45-65° (adaptiv 1× `0x12`) | Nein | erster `0x22` nach `0x21` | 00:03 | 22:04:03 |
+
+**Regel:** Das Gerät öffnet das Tab-Fach zu Beginn der Hauptspülphase. Ob diese direkt als erster `0x22` erscheint oder erst nach einem `0x12`-Übergang, hängt davon ab, ob ein Vorspülen stattfindet:
+- **Kein Vorspülen** (1× `0x12`, z.B. Auto 35-45°, kurzer Auto 45-65°-Lauf): Dispenser bei erstem `0x22` ✅
+- **Mit Vorspülen** (2–3× `0x12`, langer Auto 45-65°-Lauf): Dispenser vermutlich beim ersten `0x12`-Übergang — noch nicht physisch bestätigt.
 
 ### `0x25 / 0x2008` — Restzeit
 
@@ -354,7 +363,7 @@ Erscheint 20× zu Beginn jedes Programms.
 1. **`0x2004` Bit 17 (`0x020000`)**: ✅ Durch Log E bestätigt: Eco 50° hat Bit 17 gesetzt (`0x220000`, `0x221000`, `0x820000`). Damit ist die Hypothese "Niedertemperatur-Flag" für alle bisherigen Eco/Auto-35-45°/Auto-45-65°-Läufe konsistent. Offen: gilt das auch für Schnell 45°?
 2. **`0x22 / 0x40f2` und `0x22 / 0x7ff1`**: Destination `0x22` ist unbekannt. Beide Frames erscheinen einmalig beim Start.
 3. **`0x2011` zweite Hälfte**: Bytes 7–13 (`a1 a0 80 81 84 86 a2`) noch unklar. Hypothese: Temperatur- oder Klarspülparameter je Programm.
-4. **Dispenser-Signal bei Auto 45-65° / 65-75°**: Bei Auto 35-45° physisch bestätigt: erster `0x2005=0x22`-Frame. Bei Programmen mit Vorspülen (45-65°, 65-75°) bleibt der erste `0x12`-Übergang als stärkster Kandidat für das Dispenser-Öffnen — noch nicht physisch bestätigt.
+4. **Dispenser-Signal mit Vorspülen**: Bei Auto 45-65° ohne Vorspülen (Log G, 1× `0x12`) physisch bestätigt: erster `0x2005=0x22` ✅. Bei Läufen mit Vorspülen (2–3× `0x12`) bleibt der erste `0x12`-Übergang als stärkster Kandidat — noch nicht physisch bestätigt.
 5. **`0x17 / 0x1010`**: In Log B und D beobachtet. Möglicherweise "Set Program"-Request vom Panel vor `0x1011`.
 6. **`0x2012` und `0x2013`**: Immer gleiche Werte, Bedeutung unklar.
 
@@ -364,7 +373,8 @@ Erscheint 20× zu Beginn jedes Programms.
 
 - [x] Log für **Auto 35-45°** aufzeichnen → Phasenzahl und `0x2010` Byte 0 (`0x10`) im Log bestätigt (Log D)
 - [x] Dispenser-Öffnung physisch synchronisiert für **Auto 35-45°** → erster `0x2005=0x22`-Frame ✅
-- [ ] Dispenser-Signal für **Auto 45-65° / 65-75°** physisch bestätigen (erster `0x12`-Übergang?)
+- [x] Dispenser-Öffnung physisch synchronisiert für **Auto 45-65° (adaptiv, kein Vorspülen)** → erster `0x2005=0x22`-Frame ✅ (Log G, 00:03 MESZ)
+- [ ] Dispenser-Signal für **Auto 45-65° mit Vorspülen** (2–3× `0x12`) physisch bestätigen — vermutlich erster `0x12`-Übergang
 - [ ] **Zeitvorwahl-Lauf** aufzeichnen → `0x17/0x1012` Byte 1 im echten Log sehen
 - [x] `0x2004` Bit 17 bei **Eco 50°** bestätigt (Log E) → Bit 17 gesetzt ✅
 - [x] Zweiter vollständiger **Auto 45-65°**-Lauf aufgezeichnet (Log F) → Phasenverlauf und 0x2004-Flags bestätigt
