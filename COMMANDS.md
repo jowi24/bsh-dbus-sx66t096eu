@@ -10,6 +10,7 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `E` = Eco 50° (2026-04-01, erster vollständiger Eco-Lauf)
 - `F` = Auto 45-65° (2026-04-03, zweiter vollständiger Lauf)
 - `G` = Auto 45-65° (2026-04-04, dritter Lauf — adaptiv verkürzt)
+- `H` = Auto 45-65° (2026-04-05, vierter Lauf — 4× `0x12`, kein 0x2010/5003 im Log)
 
 **Hinweis zu Zeitstempeln:** Alle Log-Zeitstempel sind in UTC (GMT). Lokale Zeit (MESZ) = UTC + 2h.
 
@@ -59,7 +60,8 @@ Beobachtete Payloads: `0x0000` (alle Optionen OFF), `0x0040` (nur IntensivZone O
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0x00` | Unbekannt; erscheint kurz vor Programmstart | A B C | ❓ |
+| `0x00` | Unbekannt; erscheint kurz vor Programmstart | A B C H | ❓ |
+| `0x01` | Erscheint einmalig direkt neben `0x00` beim Start (Log H); Bedeutung unklar | H | ❓ |
 
 ### `0x17 / 0x1010`
 
@@ -132,8 +134,16 @@ Typische Payloads:
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0x00` | Tür offen, kein Verbrauchsmittelproblem | A B C | ✅ |
-| `0x08` | Tür geschlossen, kein Verbrauchsmittelproblem | A B C | ✅ |
+| `0x00` | Tür offen, kein Verbrauchsmittelproblem | A B C H | ✅ |
+| `0x02` | Tür offen, Klarspüler leer | H | ✅ |
+| `0x08` | Tür geschlossen, kein Verbrauchsmittelproblem | A B C H | ✅ |
+
+**Log H Klarspüler-Sequenz** (physisch bestätigt ✅): Klarspüler war leer; Benutzer füllte manuell auf, bevor das Programm startete:
+- 21:29:54 UTC: `0x2006=0x02` → Klarspüler leer gemeldet
+- 21:30:04 UTC: `0x2006=0x00` → nach ~10 Sek. wieder OK (Auffüllen)
+- 21:30:27 UTC: `0x2006=0x08` → Tür geschlossen, Programm startet
+
+Damit ist `0x02` (Bit 1) als Klarspüler-leer-Signal durch direkte Korrelation bestätigt. ✅
 
 ---
 
@@ -212,10 +222,24 @@ Das `0x10`-Bit markiert generell Übergangszustände (`0x12`, `0x14`); das `0x20
 
 Initiale Restzeiten: Auto 35-45° (mit IntensivZone) 105 min; Auto 45-65° Logs A/F 160 min; **Auto 45-65° Log G 100 min** (adaptiv, s.u.); Eco 50° 165 min; Auto 65-75° 145 min.
 
-**Anzahl `0x12`-Übergänge ist adaptiv** — bei Auto 45-65° bisher 1×, 2× und 3× beobachtet (je nach Verschmutzungsgrad / Sensorentscheidung des Geräts):
-- Log A: **3× `0x12`** — voller Lauf inkl. Zwischenspülen
-- Log F: **2× `0x12`** — Zwischenspülen sehr kurz (4 Sek.)
-- Log G: **1× `0x12`** — Zwischenspülen entfällt, kürzester Lauf (85 min, Restzeit-Start 100 min)
+**Anzahl `0x12`-Übergänge ist adaptiv** — bei Auto 45-65° bisher 1×, 2×, 3× und **4×** beobachtet (je nach Verschmutzungsgrad / Sensorentscheidung des Geräts):
+
+| Log | `0x12`-Zahl | Laufdauer | Restzeit-Start | Besonderheit |
+|---|---|---|---|---|
+| G | **1×** | 85 min | 100 min | kein Vorspülen |
+| F | **2×** | 128 min | 160 min | Zwischenspülen nur 4 Sek. |
+| A | **3×** | 159 min | 160 min | Volllauf |
+| H | **4×** | ~109 min | 160 min | 4 Waschphasen + 2 sehr kurz (1.7/0 min) |
+
+Log H (2026-04-05) Phasensequenz im Detail:
+- `0x21` @ +0 min; `0x22` @ +22 min (Vorspülen, 27 min)
+- `0x12` #1 @ +49 min → Restzeit 111→74; `0x22` @ +50 min (9 min)
+- `0x12` #2 @ +60 min → Restzeit 64→52; `0x22` @ +61 min (1.7 min — sehr kurz)
+- `0x12` #3 @ +63 min → Restzeit 50→50; `0x22` @ +63 min (9 min)
+- `0x12` #4 @ +72 min → Restzeit 41→41; `0x24` @ +72 min (Klarspülen direkt)
+- `0x28` @ +91 min; `0x20` @ +109 min
+
+Hypothese: Die kurzen Phasen (1.7 min, 0 sec) könnten Spülwasserwechsel / Zwischenentleerungen darstellen. Bei stark verschmutztem Geschirr führt das Gerät mehr Spülphasen durch.
 
 Die anderen Programme zeigen bisher jeweils 1× `0x12` (Auto 35-45°, Auto 65-75°, Eco 50°) — ob das ebenfalls adaptiv ist, ist noch unklar.
 
@@ -227,6 +251,9 @@ Ab `0x24` (Klarspülen) ist die Sequenz in allen beobachteten Läufen identisch.
 - Log F, 1. `0x12` @ +76 min: Restzeit 85 → 50 min (−35 min)
 - Log F, 2. `0x12` @ +92 min: Restzeit 35 → 41 min (+6 min)
 - Log G, 1. `0x12` @ +43 min: Restzeit 42 → 42 min (keine Korrektur)
+- Log H, 1. `0x12` @ +49 min: Restzeit 111 → 74 min (−37 min, starke Abwärtskorrektur)
+- Log H, 2. `0x12` @ +60 min: Restzeit 64 → 52 min (−12 min)
+- Log H, 3.+4. `0x12`: keine Restzeit-Korrekturen (50→50, 41→41)
 - Eco 50° (Log E), `0x12` @ +110 min: Restzeit ~55 → 65 min (+10 min)
 
 **⚡ Dispenser-Öffnung = Start des Hauptspülens** (bestätigt in Log D und Log G):
