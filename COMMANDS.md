@@ -138,7 +138,12 @@ Typische Payloads:
 | `0x02` | Tür offen, Klarspüler leer | H | ✅ |
 | `0x08` | Tür geschlossen, kein Verbrauchsmittelproblem | A B C H | ✅ |
 
-**Hinweis Log H:** `0x02` erschien kurz (~10 Sek.) zu Beginn des Logs direkt neben `0x00` (21:29:54 UTC), vor Status→ON. Vermutlich transienter Status-Broadcast bei Programminitialisierung — nicht dauerhaft gesetzt.
+**Log H Klarspüler-Sequenz** (physisch bestätigt ✅): Klarspüler war leer; Benutzer füllte manuell auf, bevor das Programm startete:
+- 21:29:54 UTC: `0x2006=0x02` → Klarspüler leer gemeldet
+- 21:30:04 UTC: `0x2006=0x00` → nach ~10 Sek. wieder OK (Auffüllen)
+- 21:30:27 UTC: `0x2006=0x08` → Tür geschlossen, Programm startet
+
+Damit ist `0x02` (Bit 1) als Klarspüler-leer-Signal durch direkte Korrelation bestätigt. ✅
 
 ---
 
