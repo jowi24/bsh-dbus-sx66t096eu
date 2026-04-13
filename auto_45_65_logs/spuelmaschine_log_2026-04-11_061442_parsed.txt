@@ -1,0 +1,563 @@
+Unique packets (dest, cmd, payload):
+- 0x17, 0x1000, 0x0000 (count=1)
+  sensors: Option VarioSpeed -> OFF x1, helper_panel_variospeed -> OFF x1, Option IntensivZone -> OFF x1, helper_panel_intensivzone -> OFF x1, Option Hygiene -> OFF x1
+- 0x17, 0x1001, 0x02 (count=1)
+- 0x17, 0x1007, 0x00 (count=1)
+- 0x17, 0x1010, 0x0d (count=1)
+- 0x17, 0x1011, 0x0d (count=1)
+  sensors: bsh_helper_panel -> 'Auto 45-65°' x1, Ausgewähltes Programm -> 'Auto 45-65°' x1
+- 0x17, 0x1012, 0x000000 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010001 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010002 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010003 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010004 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010005 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010006 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010007 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010008 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010009 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x01000a (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x01000b (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x01000c (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x01000d (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x01000e (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x01000f (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010010 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010011 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010012 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010013 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010014 (count=1)
+- 0x17, 0x1012, 0x010015 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010016 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010017 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010018 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x010019 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x01001a (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x01001b (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x01001c (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x01001d (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x01001e (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x02001f (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020020 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020021 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020022 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020023 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020024 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020025 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020026 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020027 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020028 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020029 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x02002a (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x02002b (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x02002c (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x02002d (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x02002e (count=1)
+- 0x17, 0x1012, 0x02002f (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020030 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020031 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020032 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020033 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020034 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020035 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020036 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020037 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020038 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020039 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x02003a (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x02003b (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020100 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030101 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030102 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030103 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030104 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030105 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030106 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030107 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030108 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030109 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03010a (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03010b (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03010c (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03010d (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03010e (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03010f (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030110 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030111 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030112 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030113 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030114 (count=1)
+- 0x17, 0x1012, 0x030115 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030116 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030117 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030118 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030119 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03011a (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03011b (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03011c (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03011d (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03011e (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04011f (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040120 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040121 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040122 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040123 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040124 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040125 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040126 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040127 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040128 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040129 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04012a (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04012b (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04012c (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04012d (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04012e (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04012f (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040130 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040131 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040132 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040133 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040134 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040135 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040136 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040137 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040138 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040139 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04013a (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04013b (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040200 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1013, 0x01 (count=1)
+- 0x22, 0x40f2, 0x (count=1)
+- 0x22, 0x7ff1, 0x10 (count=1)
+- 0x24, 0x2006, 0x00 (count=2)
+  sensors: Tür -> ON x1
+- 0x24, 0x2006, 0x08 (count=1)
+  sensors: Tür -> OFF x1
+- 0x25, 0x2000, 0x00 (count=1)
+- 0x25, 0x2000, 0x01 (count=2)
+  sensors: Uptime -> 7262 s x1, Uptime -> 7322 s x1
+- 0x25, 0x2000, 0x02 (count=1)
+- 0x25, 0x2000, 0x03 (count=2)
+- 0x25, 0x2000, 0x04 (count=2)
+- 0x25, 0x2000, 0x05 (count=1)
+- 0x25, 0x2000, 0x06 (count=2)
+  sensors: WiFi Signal -> -50 dBm x2
+- 0x25, 0x2000, 0x07 (count=1)
+  sensors: WiFi Signal -> -50 dBm x1
+- 0x25, 0x2000, 0x08 (count=2)
+- 0x25, 0x2000, 0x09 (count=2)
+- 0x25, 0x2000, 0x0a (count=1)
+- 0x25, 0x2000, 0x0b (count=2)
+- 0x25, 0x2000, 0x0c (count=1)
+- 0x25, 0x2000, 0x0d (count=2)
+- 0x25, 0x2000, 0x0e (count=2)
+- 0x25, 0x2000, 0x0f (count=1)
+- 0x25, 0x2000, 0x10 (count=2)
+- 0x25, 0x2000, 0x11 (count=1)
+- 0x25, 0x2000, 0x12 (count=2)
+- 0x25, 0x2000, 0x13 (count=2)
+- 0x25, 0x2000, 0x14 (count=1)
+- 0x25, 0x2000, 0x15 (count=2)
+- 0x25, 0x2000, 0x16 (count=1)
+- 0x25, 0x2000, 0x17 (count=2)
+- 0x25, 0x2000, 0x18 (count=2)
+- 0x25, 0x2000, 0x19 (count=1)
+- 0x25, 0x2000, 0x1a (count=2)
+- 0x25, 0x2000, 0x1b (count=1)
+- 0x25, 0x2000, 0x1c (count=1)
+- 0x25, 0x2000, 0x36 (count=2)
+- 0x25, 0x2000, 0x37 (count=1)
+- 0x25, 0x2000, 0x38 (count=2)
+- 0x25, 0x2000, 0x39 (count=1)
+- 0x25, 0x2000, 0x3a (count=2)
+- 0x25, 0x2000, 0x3b (count=2)
+- 0x25, 0x2000, 0x3c (count=1)
+- 0x25, 0x2000, 0x45 (count=2)
+- 0x25, 0x2000, 0x46 (count=1)
+- 0x25, 0x2000, 0x47 (count=2)
+- 0x25, 0x2000, 0x48 (count=1)
+- 0x25, 0x2000, 0x49 (count=2)
+- 0x25, 0x2000, 0x4a (count=2)
+- 0x25, 0x2000, 0x4b (count=1)
+- 0x25, 0x2000, 0x4c (count=2)
+- 0x25, 0x2000, 0x4d (count=1)
+- 0x25, 0x2000, 0x4e (count=2)
+- 0x25, 0x2000, 0x4f (count=2)
+- 0x25, 0x2000, 0x50 (count=1)
+- 0x25, 0x2000, 0x51 (count=2)
+- 0x25, 0x2000, 0x52 (count=1)
+- 0x25, 0x2000, 0x53 (count=1)
+- 0x25, 0x2000, 0x54 (count=1)
+- 0x25, 0x2000, 0x55 (count=1)
+- 0x25, 0x2000, 0x56 (count=2)
+- 0x25, 0x2000, 0x57 (count=1)
+- 0x25, 0x2000, 0x58 (count=2)
+- 0x25, 0x2000, 0x59 (count=2)
+- 0x25, 0x2000, 0x5a (count=1)
+- 0x25, 0x2000, 0x5b (count=2)
+- 0x25, 0x2000, 0x5c (count=1)
+- 0x25, 0x2000, 0x5d (count=2)
+- 0x25, 0x2000, 0x5e (count=2)
+- 0x25, 0x2000, 0x5f (count=1)
+- 0x25, 0x2000, 0x60 (count=2)
+- 0x25, 0x2000, 0x61 (count=1)
+- 0x25, 0x2000, 0x62 (count=2)
+- 0x25, 0x2000, 0x63 (count=2)
+- 0x25, 0x2004, 0x020000 (count=1)
+- 0x25, 0x2004, 0x200000 (count=6)
+- 0x25, 0x2004, 0x201000 (count=5)
+- 0x25, 0x2004, 0x220000 (count=3)
+- 0x25, 0x2004, 0x221000 (count=3)
+- 0x25, 0x2004, 0x820000 (count=1)
+- 0x25, 0x2005, 0x12 (count=3)
+- 0x25, 0x2005, 0x14 (count=1)
+- 0x25, 0x2005, 0x20 (count=2)
+- 0x25, 0x2005, 0x21 (count=1)
+- 0x25, 0x2005, 0x22 (count=4)
+- 0x25, 0x2005, 0x24 (count=2)
+- 0x25, 0x2005, 0x28 (count=1)
+- 0x25, 0x2008, 0x010000 (count=1)
+  sensors: Restzeit -> 1 min x1
+- 0x25, 0x2008, 0x020000 (count=1)
+  sensors: Restzeit -> 2 min x1
+- 0x25, 0x2008, 0x030000 (count=1)
+  sensors: Restzeit -> 3 min x1
+- 0x25, 0x2008, 0x040000 (count=1)
+  sensors: Restzeit -> 4 min x1
+- 0x25, 0x2008, 0x050000 (count=1)
+  sensors: Restzeit -> 5 min x1
+- 0x25, 0x2008, 0x060000 (count=1)
+  sensors: Restzeit -> 6 min x1
+- 0x25, 0x2008, 0x070000 (count=1)
+  sensors: Restzeit -> 7 min x1
+- 0x25, 0x2008, 0x080000 (count=1)
+  sensors: Restzeit -> 8 min x1
+- 0x25, 0x2008, 0x090000 (count=1)
+  sensors: Restzeit -> 9 min x1
+- 0x25, 0x2008, 0x0a0000 (count=1)
+  sensors: Restzeit -> 10 min x1
+- 0x25, 0x2008, 0x0b0000 (count=1)
+  sensors: Restzeit -> 11 min x1
+- 0x25, 0x2008, 0x0c0000 (count=1)
+  sensors: Restzeit -> 12 min x1
+- 0x25, 0x2008, 0x0d0000 (count=1)
+  sensors: Restzeit -> 13 min x1
+- 0x25, 0x2008, 0x0e0000 (count=1)
+  sensors: Restzeit -> 14 min x1
+- 0x25, 0x2008, 0x0f0000 (count=1)
+  sensors: Restzeit -> 15 min x1
+- 0x25, 0x2008, 0x100000 (count=1)
+  sensors: Restzeit -> 16 min x1
+- 0x25, 0x2008, 0x110000 (count=1)
+  sensors: Restzeit -> 17 min x1
+- 0x25, 0x2008, 0x120000 (count=1)
+  sensors: Restzeit -> 18 min x1
+- 0x25, 0x2008, 0x130000 (count=1)
+  sensors: Restzeit -> 19 min x1
+- 0x25, 0x2008, 0x140000 (count=1)
+  sensors: Restzeit -> 20 min x1
+- 0x25, 0x2008, 0x150000 (count=1)
+  sensors: Restzeit -> 21 min x1
+- 0x25, 0x2008, 0x160000 (count=1)
+  sensors: Restzeit -> 22 min x1
+- 0x25, 0x2008, 0x170000 (count=1)
+  sensors: Restzeit -> 23 min x1
+- 0x25, 0x2008, 0x180000 (count=1)
+  sensors: Restzeit -> 24 min x1
+- 0x25, 0x2008, 0x190000 (count=2)
+  sensors: Restzeit -> 25 min x2
+- 0x25, 0x2008, 0x1c0000 (count=1)
+  sensors: Restzeit -> 28 min x1
+- 0x25, 0x2008, 0x1d0000 (count=1)
+  sensors: Restzeit -> 29 min x1
+- 0x25, 0x2008, 0x1e0000 (count=1)
+  sensors: Restzeit -> 30 min x1
+- 0x25, 0x2008, 0x1f0000 (count=1)
+  sensors: Restzeit -> 31 min x1
+- 0x25, 0x2008, 0x200000 (count=1)
+  sensors: Restzeit -> 32 min x1
+- 0x25, 0x2008, 0x210000 (count=1)
+  sensors: Restzeit -> 33 min x1
+- 0x25, 0x2008, 0x220000 (count=1)
+  sensors: Restzeit -> 34 min x1
+- 0x25, 0x2008, 0x230000 (count=1)
+  sensors: Restzeit -> 35 min x1
+- 0x25, 0x2008, 0x240000 (count=1)
+  sensors: Restzeit -> 36 min x1
+- 0x25, 0x2008, 0x250000 (count=1)
+  sensors: Restzeit -> 37 min x1
+- 0x25, 0x2008, 0x260000 (count=1)
+  sensors: Restzeit -> 38 min x1
+- 0x25, 0x2008, 0x270000 (count=1)
+  sensors: Restzeit -> 39 min x1
+- 0x25, 0x2008, 0x280000 (count=1)
+  sensors: Restzeit -> 40 min x1
+- 0x25, 0x2008, 0x290000 (count=2)
+  sensors: Restzeit -> 41 min x2
+- 0x25, 0x2008, 0x2a0000 (count=1)
+  sensors: Restzeit -> 42 min x1
+- 0x25, 0x2008, 0x2b0000 (count=1)
+  sensors: Restzeit -> 43 min x1
+- 0x25, 0x2008, 0x2c0000 (count=1)
+  sensors: Restzeit -> 44 min x1
+- 0x25, 0x2008, 0x2d0000 (count=1)
+  sensors: Restzeit -> 45 min x1
+- 0x25, 0x2008, 0x2e0000 (count=1)
+  sensors: Restzeit -> 46 min x1
+- 0x25, 0x2008, 0x2f0000 (count=1)
+  sensors: Restzeit -> 47 min x1
+- 0x25, 0x2008, 0x300000 (count=1)
+  sensors: Restzeit -> 48 min x1
+- 0x25, 0x2008, 0x310000 (count=1)
+  sensors: Restzeit -> 49 min x1
+- 0x25, 0x2008, 0x320000 (count=2)
+  sensors: Restzeit -> 50 min x2
+- 0x25, 0x2008, 0x400000 (count=1)
+  sensors: Restzeit -> 64 min x1
+- 0x25, 0x2008, 0x410000 (count=1)
+  sensors: Restzeit -> 65 min x1
+- 0x25, 0x2008, 0x420000 (count=1)
+  sensors: Restzeit -> 66 min x1
+- 0x25, 0x2008, 0x430000 (count=1)
+  sensors: Restzeit -> 67 min x1
+- 0x25, 0x2008, 0x440000 (count=1)
+  sensors: Restzeit -> 68 min x1
+- 0x25, 0x2008, 0x450000 (count=1)
+  sensors: Restzeit -> 69 min x1
+- 0x25, 0x2008, 0x460000 (count=1)
+  sensors: Restzeit -> 70 min x1
+- 0x25, 0x2008, 0x470000 (count=1)
+  sensors: Restzeit -> 71 min x1
+- 0x25, 0x2008, 0x480000 (count=1)
+  sensors: Restzeit -> 72 min x1
+- 0x25, 0x2008, 0x490000 (count=1)
+  sensors: Restzeit -> 73 min x1
+- 0x25, 0x2008, 0x4a0000 (count=2)
+  sensors: Restzeit -> 74 min x2
+- 0x25, 0x2008, 0x740000 (count=1)
+  sensors: Restzeit -> 116 min x1
+- 0x25, 0x2008, 0x750000 (count=1)
+  sensors: Restzeit -> 117 min x1
+- 0x25, 0x2008, 0x760000 (count=1)
+  sensors: Restzeit -> 118 min x1
+- 0x25, 0x2008, 0x770000 (count=1)
+  sensors: Restzeit -> 119 min x1
+- 0x25, 0x2008, 0x780000 (count=1)
+  sensors: Restzeit -> 120 min x1
+- 0x25, 0x2008, 0x790000 (count=1)
+  sensors: Restzeit -> 121 min x1
+- 0x25, 0x2008, 0x7a0000 (count=1)
+  sensors: Restzeit -> 122 min x1
+- 0x25, 0x2008, 0x7b0000 (count=1)
+  sensors: Restzeit -> 123 min x1
+- 0x25, 0x2008, 0x7c0000 (count=1)
+  sensors: Restzeit -> 124 min x1
+- 0x25, 0x2008, 0x7d0000 (count=1)
+  sensors: Restzeit -> 125 min x1
+- 0x25, 0x2008, 0x7e0000 (count=1)
+  sensors: Restzeit -> 126 min x1
+- 0x25, 0x2008, 0x7f0000 (count=1)
+  sensors: Restzeit -> 127 min x1
+- 0x25, 0x2008, 0x800000 (count=1)
+  sensors: Restzeit -> 128 min x1
+- 0x25, 0x2008, 0x810000 (count=1)
+  sensors: Restzeit -> 129 min x1
+- 0x25, 0x2008, 0x820000 (count=1)
+  sensors: Restzeit -> 130 min x1
+- 0x25, 0x2008, 0x830000 (count=1)
+  sensors: Restzeit -> 131 min x1
+- 0x25, 0x2008, 0x840000 (count=1)
+  sensors: Restzeit -> 132 min x1
+- 0x25, 0x2008, 0x850000 (count=1)
+  sensors: Restzeit -> 133 min x1
+- 0x25, 0x2008, 0x860000 (count=1)
+  sensors: Restzeit -> 134 min x1
+- 0x25, 0x2008, 0x870000 (count=1)
+  sensors: Restzeit -> 135 min x1
+- 0x25, 0x2008, 0x880000 (count=1)
+  sensors: Restzeit -> 136 min x1
+- 0x25, 0x2008, 0x890000 (count=1)
+  sensors: Restzeit -> 137 min x1
+- 0x25, 0x2008, 0x8a0000 (count=1)
+  sensors: Restzeit -> 138 min x1
+- 0x25, 0x2008, 0x8b0000 (count=1)
+  sensors: Restzeit -> 139 min x1
+- 0x25, 0x2008, 0x8c0000 (count=1)
+  sensors: Restzeit -> 140 min x1
+- 0x25, 0x2008, 0x8d0000 (count=1)
+  sensors: Restzeit -> 141 min x1
+- 0x25, 0x2008, 0x8e0000 (count=1)
+  sensors: Restzeit -> 142 min x1
+- 0x25, 0x2008, 0x8f0000 (count=1)
+  sensors: Restzeit -> 143 min x1
+- 0x25, 0x2008, 0x900000 (count=1)
+  sensors: Restzeit -> 144 min x1
+- 0x25, 0x2008, 0x910000 (count=1)
+  sensors: Restzeit -> 145 min x1
+- 0x25, 0x2008, 0x920000 (count=1)
+  sensors: Restzeit -> 146 min x1
+- 0x25, 0x2008, 0x930000 (count=1)
+  sensors: Restzeit -> 147 min x1
+- 0x25, 0x2008, 0x940000 (count=1)
+  sensors: Restzeit -> 148 min x1
+- 0x25, 0x2008, 0x950000 (count=1)
+  sensors: Restzeit -> 149 min x1
+- 0x25, 0x2008, 0x960000 (count=1)
+  sensors: Restzeit -> 150 min x1
+- 0x25, 0x2008, 0x970000 (count=1)
+  sensors: Restzeit -> 151 min x1
+- 0x25, 0x2008, 0x980000 (count=1)
+  sensors: Restzeit -> 152 min x1, WiFi Signal -> -50 dBm x1
+- 0x25, 0x2008, 0x990000 (count=1)
+  sensors: Restzeit -> 153 min x1
+- 0x25, 0x2008, 0x9a0000 (count=1)
+  sensors: Restzeit -> 154 min x1
+- 0x25, 0x2008, 0x9b0000 (count=1)
+  sensors: Restzeit -> 155 min x1
+- 0x25, 0x2008, 0x9c0000 (count=1)
+  sensors: Restzeit -> 156 min x1
+- 0x25, 0x2008, 0x9d0000 (count=1)
+  sensors: Restzeit -> 157 min x1
+- 0x25, 0x2008, 0x9e0000 (count=1)
+  sensors: Restzeit -> 158 min x1
+- 0x25, 0x2008, 0x9f0000 (count=1)
+  sensors: Restzeit -> 159 min x1
+- 0x25, 0x2008, 0xa00000 (count=6)
+  sensors: Restzeit -> 160 min x6
+- 0x25, 0x2009, 0x00 (count=99)
+  sensors: Uptime -> 10982 s x1
+- 0x25, 0x2010, 0x0d000001050062000037010000 (count=1)
+  sensors: helper_init_variospeed -> OFF x1, helper_init_intensivzone -> OFF x1, helper_init_hygiene -> OFF x1, helper_init_glanz -> OFF x1, bsh_helper_init -> 'Auto 45-65°' x1
+- 0x25, 0x2011, 0xa5100d0b0e1112a1a080818486a2 (count=1)
+- 0x25, 0x2012, 0x00 (count=1)
+- 0x25, 0x2012, 0x01 (count=1)
+- 0x25, 0x2013, 0xffff (count=2)
+- 0x26, 0x2002, 0x00000000 (count=2)
+- 0x27, 0x2007, 0x01 (count=1)
+  sensors: Status -> ON x1
+- 0x27, 0x2007, 0x02 (count=1)
+- 0x27, 0x2007, 0x03 (count=1)
+  sensors: Status -> OFF x1
+- 0x55, 0x5006, 0x00000000 (count=2)
+
+Total frames: 494
+Unlinked sensor lines: 1224

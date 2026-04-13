@@ -11,6 +11,7 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `F` = Auto 45-65° (2026-04-03, zweiter vollständiger Lauf)
 - `G` = Auto 45-65° (2026-04-04, dritter Lauf — adaptiv verkürzt)
 - `H` = Auto 45-65° (2026-04-05, vierter Lauf — 4× `0x12`, kein 0x2010/5003 im Log)
+- `I` = Auto 45-65° (2026-04-11, fünfter Lauf — 3× `0x12`, langer Log mit Tür-Öffnungs-Burst)
 
 **Hinweis zu Zeitstempeln:** Alle Log-Zeitstempel sind in UTC (GMT). Lokale Zeit (MESZ) = UTC + 2h.
 
@@ -228,8 +229,11 @@ Initiale Restzeiten: Auto 35-45° (mit IntensivZone) 105 min; Auto 45-65° Logs 
 |---|---|---|---|---|
 | G | **1×** | 85 min | 100 min | kein Vorspülen |
 | F | **2×** | 128 min | 160 min | Zwischenspülen nur 4 Sek. |
-| A | **3×** | 159 min | 160 min | Volllauf |
-| H | **4×** | ~109 min | 160 min | 4 Waschphasen + 2 sehr kurz (1.7/0 min) |
+| A | **3×** | 159 min | 160 min | Volllauf, Zwischenspülen lang |
+| I | **3×** | ~101 min | 138 min* | 3 Phasen komprimiert (innerhalb 20 min) |
+| H | **4×** | ~109 min | 138 min* | 4 Waschphasen + 2 sehr kurz (1.7/0 min) |
+
+*Restzeit beim ersten `0x22` (0x21-Frame hatte keine 0x2008 im Log).
 
 Log H (2026-04-05) Phasensequenz im Detail:
 - `0x21` @ +0 min; `0x22` @ +22 min (Vorspülen, 27 min)
@@ -251,6 +255,9 @@ Ab `0x24` (Klarspülen) ist die Sequenz in allen beobachteten Läufen identisch.
 - Log F, 1. `0x12` @ +76 min: Restzeit 85 → 50 min (−35 min)
 - Log F, 2. `0x12` @ +92 min: Restzeit 35 → 41 min (+6 min)
 - Log G, 1. `0x12` @ +43 min: Restzeit 42 → 42 min (keine Korrektur)
+- Log I, 1. `0x12` @ +44 min: Restzeit 116 → 74 min (−42 min, starke Abwärtskorrektur)
+- Log I, 2. `0x12` @ +55 min: Restzeit 64 → 50 min (−14 min)
+- Log I, 3. `0x12` @ +64 min: Restzeit 41 → 41 min (keine Korrektur)
 - Log H, 1. `0x12` @ +49 min: Restzeit 111 → 74 min (−37 min, starke Abwärtskorrektur)
 - Log H, 2. `0x12` @ +60 min: Restzeit 64 → 52 min (−12 min)
 - Log H, 3.+4. `0x12`: keine Restzeit-Korrekturen (50→50, 41→41)
@@ -350,9 +357,11 @@ Bytes 1–7 und 9–12: konstant `000001050062000037010000` über alle bisher ge
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0x01` | Status = ON (Programm läuft); `x[0] == 0x01` | A B C | ✅ |
-| `0x02` | Status = OFF (Programm beendet, erste Meldung) | A B C | ✅ |
-| `0x03` | Status = OFF (Programm beendet, zweite Meldung) | A B C | ✅ |
+| `0x01` | Status = ON (Programm läuft) | A B C | ✅ |
+| `0x02` | Status = Standby/bereit — erscheint sowohl beim Programmende als auch beim Öffnen der Tür im Standby (Log I: 6h nach Programmende bei Türöffnung) | A B C I | 🟡 |
+| `0x03` | Programmende-Signal — erscheint einmalig beim tatsächlichen Programmabschluss | A B C I | ✅ |
+
+**Log I (2026-04-11):** Nach Programmende (09:55 UTC, `0x03`) öffnete der Benutzer die Tür ~6h später (16:03 UTC). Dies löste einen kompletten Status-Burst aus: `0x2006=0x00`, `0x2004=0x200000`, `0x2008=0xa0`, `0x2011`, `0x2012`, `0x2013`, `0x2010=0x0d...`, `0x2007=0x02`. Das bedeutet: **`0x02` ist kein reines Programmende-Signal**, sondern eher ein allgemeiner "Gerät bereit/Standby"-Frame. `0x03` hingegen markiert eindeutig das Programmende.
 
 ---
 
