@@ -12,6 +12,7 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `G` = Auto 45-65° (2026-04-04, dritter Lauf — adaptiv verkürzt)
 - `H` = Auto 45-65° (2026-04-05, vierter Lauf — 4× `0x12`, kein 0x2010/5003 im Log)
 - `I` = Auto 45-65° (2026-04-11, fünfter Lauf — 3× `0x12`, langer Log mit Tür-Öffnungs-Burst)
+- `J` = Auto 45-65° (2026-04-14, sechster Lauf — 3× `0x12`, erster Zeitvorwahl-Lauf mit 7h Delay)
 
 **Hinweis zu Zeitstempeln:** Alle Log-Zeitstempel sind in UTC (GMT). Lokale Zeit (MESZ) = UTC + 2h.
 
@@ -91,17 +92,23 @@ In Logs A und C nicht beobachtet — der Panel sendet diesen Frame nur beim akti
 
 ### `0x17 / 0x1012` — Zeitvorwahl (Delay Start)
 
+Payload: 3 Byte `[AA][BB][CC]`.
+
 | Byte | Bedeutung | Konfidenz |
 |---|---|---|
-| Byte 1 | Verzögerung in Stunden | ✅ |
+| Byte 0 (AA) | Rollierender Sequenzzähler; ändert sich in unregelmäßigen Abständen | ❓ |
+| Byte 1 (BB) | Verbleibende Stunden bis Programmstart (0–9) | ✅ |
+| Byte 2 (CC) | Verbleibende Minuten innerhalb der aktuellen Stunde (0x00–0x3b = 0–59, zählt abwärts) | ✅ |
 
-In bisherigen Logs nicht beobachtet (kein Delayed-Start-Lauf aufgezeichnet). Mapping durch manuelles Testen bestätigt (implementiert in `esphome.yaml`).
+Der Frame wird einmal pro Minute gesendet und zählt BB:CC rückwärts. Wenn CC 0x00 erreicht und BB > 0, dekrementiert BB um 1 und CC springt auf 0x3b (59). Bei BB=CC=0 startet das Programm.
+
+Erstmals live beobachtet in Log J (2026-04-14): Log startete mit 7h48min verbleibender Wartezeit — erster Frame `0x100730` (AA=0x10, BB=0x07, CC=0x30=48). Jede Minute dekrementierte CC um 1. AA blieb im beobachteten Zeitraum konstant bei 0x10 (BB=7), nahm zuvor andere Werte 0x00–0x0f an. ESPHome-Sensor `Zeitvorwahl` zeigt BB (Stunden) ✅; Minuten-Auflösung via CC wäre ergänzbar.
 
 ### `0x17 / 0x1013`
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0x01` | Programmstart-Signal (erscheint direkt vor `Status → ON`) | A B C F | 🟡 |
+| `0x01` | Programmstart-Signal (erscheint direkt vor `Status → ON`) | A B C F J | 🟡 |
 
 ---
 
@@ -232,6 +239,7 @@ Initiale Restzeiten: Auto 35-45° (mit IntensivZone) 105 min; Auto 45-65° Logs 
 | A | **3×** | 159 min | 160 min | Volllauf, Zwischenspülen lang |
 | I | **3×** | ~101 min | 138 min* | 3 Phasen komprimiert (innerhalb 20 min) |
 | H | **4×** | ~109 min | 138 min* | 4 Waschphasen + 2 sehr kurz (1.7/0 min) |
+| J | **3×** | 106 min | 139 min* | erster Zeitvorwahl-Lauf (7h Delay); Restzeit-Start nominal 160 min |
 
 *Restzeit beim ersten `0x22` (0x21-Frame hatte keine 0x2008 im Log).
 
@@ -261,6 +269,9 @@ Ab `0x24` (Klarspülen) ist die Sequenz in allen beobachteten Läufen identisch.
 - Log H, 1. `0x12` @ +49 min: Restzeit 111 → 74 min (−37 min, starke Abwärtskorrektur)
 - Log H, 2. `0x12` @ +60 min: Restzeit 64 → 52 min (−12 min)
 - Log H, 3.+4. `0x12`: keine Restzeit-Korrekturen (50→50, 41→41)
+- Log J, 1. `0x12` @ +44 min: Restzeit 116 → 78 min (−38 min)
+- Log J, 2. `0x12` @ +54 min: Restzeit 70 → 55 min (−15 min)
+- Log J, 3. `0x12` @ +68 min: Restzeit 41 → 41 min (keine Korrektur)
 - Eco 50° (Log E), `0x12` @ +110 min: Restzeit ~55 → 65 min (+10 min)
 
 **⚡ Dispenser-Öffnung = Start des Hauptspülens** (bestätigt in Log D und Log G):
@@ -411,7 +422,7 @@ Erscheint 20× zu Beginn jedes Programms.
 - [x] Dispenser-Öffnung physisch synchronisiert für **Auto 35-45°** → erster `0x2005=0x22`-Frame ✅
 - [x] Dispenser-Öffnung physisch synchronisiert für **Auto 45-65° (adaptiv, kein Vorspülen)** → erster `0x2005=0x22`-Frame ✅ (Log G, 00:03 MESZ)
 - [ ] Dispenser-Signal für **Auto 45-65° mit Vorspülen** (2–3× `0x12`) physisch bestätigen — vermutlich erster `0x12`-Übergang
-- [ ] **Zeitvorwahl-Lauf** aufzeichnen → `0x17/0x1012` Byte 1 im echten Log sehen
+- [x] **Zeitvorwahl-Lauf** aufzeichnen → `0x17/0x1012` vollständige Payload-Struktur in Log J bestätigt (`[AA][BB][CC]`, BB=Stunden, CC=Minuten)
 - [x] `0x2004` Bit 17 bei **Eco 50°** bestätigt (Log E) → Bit 17 gesetzt ✅
 - [x] Zweiter vollständiger **Auto 45-65°**-Lauf aufgezeichnet (Log F) → Phasenverlauf und 0x2004-Flags bestätigt
 - [ ] `0x2004` Bit 17 bei **Schnell 45°** prüfen
