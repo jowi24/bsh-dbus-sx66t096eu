@@ -58,7 +58,7 @@ Zeitstempel sind **UTC**. Lokale Zeit (MESZ) = UTC + 2h.
 | `0x12` | Vorspülen |
 
 ### Log-Buchstaben (bisher)
-`A`=Auto45-65° Mar-12, `B`=Auto65-75° Mar-25, `C`=Auto65-75° Mar-28, `D`=Auto35-45°+IZ Mar-29, `E`=Eco50° Apr-01, `F`=Auto45-65° Apr-03, `G`=Auto45-65° Apr-04, `H`=Auto45-65° Apr-05, `I`=Auto45-65° Apr-11. Nächstes Log = `J`.
+`A`=Auto45-65° Mar-12, `B`=Auto65-75° Mar-25, `C`=Auto65-75° Mar-28, `D`=Auto35-45°+IZ Mar-29, `E`=Eco50° Apr-01, `F`=Auto45-65° Apr-03, `G`=Auto45-65° Apr-04, `H`=Auto45-65° Apr-05, `I`=Auto45-65° Apr-11, `J`=Auto45-65° Apr-14 (Zeitvorwahl 7h). Nächstes Log = `K`.
 
 ### Schlüssel-Frames
 | Frame | Bedeutung |
