@@ -13,6 +13,7 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `H` = Auto 45-65° (2026-04-05, vierter Lauf — 4× `0x12`, kein 0x2010/5003 im Log)
 - `I` = Auto 45-65° (2026-04-11, fünfter Lauf — 3× `0x12`, langer Log mit Tür-Öffnungs-Burst)
 - `J` = Auto 45-65° (2026-04-14, sechster Lauf — 3× `0x12`, erster Zeitvorwahl-Lauf mit 7h Delay)
+- `K` = Auto 45-65° (2026-04-18, siebter Lauf — 3× `0x12`, Zeitvorwahl ~58 min, Phasen komprimiert)
 
 **Hinweis zu Zeitstempeln:** Alle Log-Zeitstempel sind in UTC (GMT). Lokale Zeit (MESZ) = UTC + 2h.
 
@@ -96,19 +97,23 @@ Payload: 3 Byte `[AA][BB][CC]`.
 
 | Byte | Bedeutung | Konfidenz |
 |---|---|---|
-| Byte 0 (AA) | Rollierender Sequenzzähler; ändert sich in unregelmäßigen Abständen | ❓ |
+| Byte 0 (AA) | `ceil((BB×60 + CC) / 30)` — Anzahl verbleibender 30-min-Blöcke (aufgerundet) | 🟡 |
 | Byte 1 (BB) | Verbleibende Stunden bis Programmstart (0–9) | ✅ |
 | Byte 2 (CC) | Verbleibende Minuten innerhalb der aktuellen Stunde (0x00–0x3b = 0–59, zählt abwärts) | ✅ |
 
 Der Frame wird einmal pro Minute gesendet und zählt BB:CC rückwärts. Wenn CC 0x00 erreicht und BB > 0, dekrementiert BB um 1 und CC springt auf 0x3b (59). Bei BB=CC=0 startet das Programm.
 
-Erstmals live beobachtet in Log J (2026-04-14): Log startete mit 7h48min verbleibender Wartezeit — erster Frame `0x100730` (AA=0x10, BB=0x07, CC=0x30=48). Jede Minute dekrementierte CC um 1. AA blieb im beobachteten Zeitraum konstant bei 0x10 (BB=7), nahm zuvor andere Werte 0x00–0x0f an. ESPHome-Sensor `Zeitvorwahl` zeigt BB (Stunden) ✅; Minuten-Auflösung via CC wäre ergänzbar.
+**Byte-0-Formel (AA):** AA ist deterministisch: `AA = ceil((BB×60 + CC) / 30)`. Beispiele: 7h48min → ceil((7×60+48)/30) = ceil(15,6) = **16 = 0x10** ✅ (Log J); 58 min → ceil(58/30) = **2 = 0x02** ✅; 30 min → ceil(30/30) = **1 = 0x01** ✅; 0 min → **0 = 0x00** ✅ (Log K). AA ändert sich immer dann, wenn eine neue 30-min-Schwelle unterschritten wird.
+
+**Log J (2026-04-14):** Log startete mit 7h48min verbleibender Wartezeit — erster Frame `0x100730` (AA=0x10, BB=7, CC=0x30=48). ESPHome-Sensor `Zeitvorwahl` zeigt BB (Stunden) ✅; Minuten-Auflösung via CC wäre ergänzbar.
+
+**Log K (2026-04-18):** Kurze Zeitvorwahl — erster Frame `0x02003a` (AA=0x02, BB=0, CC=0x3a=58 min). Übergang AA 0x02→0x01 bei CC=30 min, AA 0x01→0x00 bei Programmstart. Bestätigt die ceil-Formel.
 
 ### `0x17 / 0x1013`
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0x01` | Programmstart-Signal (erscheint direkt vor `Status → ON`) | A B C F J | 🟡 |
+| `0x01` | Programmstart-Signal (erscheint direkt vor `Status → ON`) | A B C F J K | 🟡 |
 
 ---
 
@@ -172,15 +177,15 @@ Bitfeld; die wichtigsten beobachteten Werte:
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
 | `0x000000` | Inaktiv / Standby (vor Programmstart und nach Ende) | A B C D | 🟡 |
-| `0x020000` | Einmalig bei Niedertemperatur-Programmstart (Bit 17) | A D E F | 🟡 |
-| `0x200000` | Normalbetrieb (Bit 21 gesetzt) | A B C E F | 🟡 |
-| `0x201000` | Normalbetrieb mit aktivem Teilprogramm (Bit 21 + Bit 12) | A B C E F | 🟡 |
-| `0x220000` | Niedertemperatur-Programme: Bit 21 + Bit 17 | A E F | 🟡 |
+| `0x020000` | Einmalig bei Niedertemperatur-Programmstart (Bit 17) | A D E F K | 🟡 |
+| `0x200000` | Normalbetrieb (Bit 21 gesetzt) | A B C E F K | 🟡 |
+| `0x201000` | Normalbetrieb mit aktivem Teilprogramm (Bit 21 + Bit 12) | A B C E F K | 🟡 |
+| `0x220000` | Niedertemperatur-Programme: Bit 21 + Bit 17 | A E F K | 🟡 |
 | `0x220200` | Auto 35-45° + IntensivZone: Bit 21 + Bit 17 + Bit 9 | D | 🟡 |
-| `0x221000` | Niedertemperatur-Programme: Bit 21 + 17 + 12 | A E F | 🟡 |
+| `0x221000` | Niedertemperatur-Programme: Bit 21 + 17 + 12 | A E F K | 🟡 |
 | `0x221200` | Auto 35-45° + IntensivZone: Bit 21 + 17 + 12 + 9 | D | 🟡 |
 | `0x800000` | Einmalig bei Programmstart (Bit 23) — nur Auto 65-75° | B C | 🟡 |
-| `0x820000` | Einmalig bei Programmstart (Bit 23 + Bit 17) — Niedertemperatur-Programme | A D E F | 🟡 |
+| `0x820000` | Einmalig bei Programmstart (Bit 23 + Bit 17) — Niedertemperatur-Programme | A D E F K | 🟡 |
 
 **Bit-Interpretation (vorläufig):**
 - Bit 23 (`0x800000`): Programm-Initialisierungs-Flag (einmalig, direkt nach Programmstart)
@@ -228,7 +233,7 @@ Das `0x10`-Bit markiert generell Übergangszustände (`0x12`, `0x14`); das `0x20
 | Trocknen | `0x28` @ +80 min | `0x28` @ +140 min | `0x28` @ +110 min | `0x28` @ +70 min | `0x28` @ +128 min | `0x28` @ +136 min |
 | Auslauf | `0x20` @ +95 min | `0x20` @ +159 min | `0x20` @ +128 min | `0x20` @ +85 min | `0x20` @ +144 min | `0x20` @ ~+172 min |
 
-Initiale Restzeiten: Auto 35-45° (mit IntensivZone) 105 min; Auto 45-65° Logs A/F 160 min; **Auto 45-65° Log G 100 min** (adaptiv, s.u.); Eco 50° 165 min; Auto 65-75° 145 min.
+Initiale Restzeiten: Auto 35-45° (mit IntensivZone) 105 min; Auto 45-65° Logs A/F/K 160 min; **Auto 45-65° Log G 100 min** (adaptiv, s.u.); Eco 50° 165 min; Auto 65-75° 145 min.
 
 **Anzahl `0x12`-Übergänge ist adaptiv** — bei Auto 45-65° bisher 1×, 2×, 3× und **4×** beobachtet (je nach Verschmutzungsgrad / Sensorentscheidung des Geräts):
 
@@ -240,8 +245,18 @@ Initiale Restzeiten: Auto 35-45° (mit IntensivZone) 105 min; Auto 45-65° Logs 
 | I | **3×** | ~101 min | 138 min* | 3 Phasen komprimiert (innerhalb 20 min) |
 | H | **4×** | ~109 min | 138 min* | 4 Waschphasen + 2 sehr kurz (1.7/0 min) |
 | J | **3×** | 106 min | 139 min* | erster Zeitvorwahl-Lauf (7h Delay); Restzeit-Start nominal 160 min |
+| K | **3×** | 101 min | 160 min | Zeitvorwahl ~58 min; Phasen komprimiert (1 min / sofort / sofort); `0x24` direkt nach 3. `0x12` |
 
 *Restzeit beim ersten `0x22` (0x21-Frame hatte keine 0x2008 im Log).
+
+Log K (2026-04-18) Phasensequenz im Detail (Auto 45-65°, Zeitvorwahl ~58 min, Startrestzeit 160 min):
+- `0x21` @ +0 min; `0x22` @ +22 min (Vorspülen, 22 min)
+- `0x12` #1 @ +44 min → Restzeit 116→74; `0x22` @ +45 min (10 min)
+- `0x12` #2 @ +55 min → Restzeit 65→50; `0x22` @ +55 min (sofort, <1 min)
+- `0x12` #3 @ +64 min → Restzeit 41→41; `0x24` @ +64 min (Klarspülen direkt, kein separates `0x22`)
+- `0x14` @ +77 min → Restzeit 29→25; `0x28` @ +83 min; `0x20` @ +101 min
+
+Besonderheit: Nach dem 3. `0x12` folgt der `0x24`-Frame unmittelbar ohne zwischengeschaltetes `0x22`, wie auch in Log I. Außerdem verursacht hier `0x14` eine Restzeit-Korrektur (29→25 min, −4 min) — erstmals explizit belegt.
 
 Log H (2026-04-05) Phasensequenz im Detail:
 - `0x21` @ +0 min; `0x22` @ +22 min (Vorspülen, 27 min)
@@ -272,7 +287,13 @@ Ab `0x24` (Klarspülen) ist die Sequenz in allen beobachteten Läufen identisch.
 - Log J, 1. `0x12` @ +44 min: Restzeit 116 → 78 min (−38 min)
 - Log J, 2. `0x12` @ +54 min: Restzeit 70 → 55 min (−15 min)
 - Log J, 3. `0x12` @ +68 min: Restzeit 41 → 41 min (keine Korrektur)
+- Log K, 1. `0x12` @ +44 min: Restzeit 116 → 74 min (−42 min, starke Abwärtskorrektur)
+- Log K, 2. `0x12` @ +55 min: Restzeit 65 → 50 min (−15 min)
+- Log K, 3. `0x12` @ +64 min: Restzeit 41 → 41 min (keine Korrektur)
 - Eco 50° (Log E), `0x12` @ +110 min: Restzeit ~55 → 65 min (+10 min)
+
+**Restzeit-Korrektur bei `0x14`-Übergang (erstmals Log K belegt):**
+- Log K, `0x14` @ +77 min: Restzeit 29 → 25 min (−4 min) — `0x14` löst ebenfalls eine Restzeit-Neuschätzung aus. 🟡
 
 **⚡ Dispenser-Öffnung = Start des Hauptspülens** (bestätigt in Log D und Log G):
 
