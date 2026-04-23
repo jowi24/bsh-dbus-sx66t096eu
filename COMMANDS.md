@@ -14,6 +14,7 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `I` = Auto 45-65° (2026-04-11, fünfter Lauf — 3× `0x12`, langer Log mit Tür-Öffnungs-Burst)
 - `J` = Auto 45-65° (2026-04-14, sechster Lauf — 3× `0x12`, erster Zeitvorwahl-Lauf mit 7h Delay)
 - `K` = Auto 45-65° (2026-04-18, siebter Lauf — 3× `0x12`, Zeitvorwahl ~58 min, Phasen komprimiert)
+- `L` = Auto 45-65° (2026-04-23, achter Lauf — 3× `0x12`, ESP mid-run verbunden; neue `0x2004`-Werte `0x222000`/`0x223000` beim Trocknen)
 
 **Hinweis zu Zeitstempeln:** Alle Log-Zeitstempel sind in UTC (GMT). Lokale Zeit (MESZ) = UTC + 2h.
 
@@ -178,19 +179,23 @@ Bitfeld; die wichtigsten beobachteten Werte:
 |---|---|---|---|
 | `0x000000` | Inaktiv / Standby (vor Programmstart und nach Ende) | A B C D | 🟡 |
 | `0x020000` | Einmalig bei Niedertemperatur-Programmstart (Bit 17) | A D E F K | 🟡 |
-| `0x200000` | Normalbetrieb (Bit 21 gesetzt) | A B C E F K | 🟡 |
-| `0x201000` | Normalbetrieb mit aktivem Teilprogramm (Bit 21 + Bit 12) | A B C E F K | 🟡 |
-| `0x220000` | Niedertemperatur-Programme: Bit 21 + Bit 17 | A E F K | 🟡 |
+| `0x200000` | Gerät aktiv / Standby (Bit 21) — erscheint auch nach Programmende und bei Türöffnung | A B C E F K L | 🟡 |
+| `0x201000` | Normalbetrieb mit aktivem Teilprogramm (Bit 21 + Bit 12) | A B C E F K L | 🟡 |
+| `0x203000` | Trocknungsende-Übergang (Bit 21 + Bit 13 + Bit 12) — kurz vor `0x20` Ende | L | 🟡 |
+| `0x220000` | Niedertemperatur-Programme: Bit 21 + Bit 17 | A E F K L | 🟡 |
 | `0x220200` | Auto 35-45° + IntensivZone: Bit 21 + Bit 17 + Bit 9 | D | 🟡 |
-| `0x221000` | Niedertemperatur-Programme: Bit 21 + 17 + 12 | A E F K | 🟡 |
+| `0x221000` | Niedertemperatur-Programme: Bit 21 + 17 + 12 | A E F K L | 🟡 |
 | `0x221200` | Auto 35-45° + IntensivZone: Bit 21 + 17 + 12 + 9 | D | 🟡 |
+| `0x222000` | Trocknen aktiv — Niedertemperatur (Bit 21 + 17 + 13); erscheint beim `0x28`-Start | L | 🟡 |
+| `0x223000` | Trocknen aktiv mit Teilschritt (Bit 21 + 17 + 13 + 12) | L | 🟡 |
 | `0x800000` | Einmalig bei Programmstart (Bit 23) — nur Auto 65-75° | B C | 🟡 |
 | `0x820000` | Einmalig bei Programmstart (Bit 23 + Bit 17) — Niedertemperatur-Programme | A D E F K | 🟡 |
 
 **Bit-Interpretation (vorläufig):**
 - Bit 23 (`0x800000`): Programm-Initialisierungs-Flag (einmalig, direkt nach Programmstart)
-- Bit 21 (`0x200000`): Programm läuft
-- Bit 17 (`0x020000`): Niedertemperatur-Flag — in Auto 35-45° und Auto 45-65° gesetzt, bei Auto 65-75° nicht
+- Bit 21 (`0x200000`): Gerät aktiv / Programm läuft (bleibt auch nach Programmende gesetzt)
+- Bit 17 (`0x020000`): Niedertemperatur-Flag — in Auto 35-45° und Auto 45-65° gesetzt, bei Auto 65-75° nicht; fällt kurz vor `0x20` Ende weg
+- Bit 13 (`0x002000`): Trocknungsphase aktiv (Heizung/Lüfter/Wärmetauscher?) — erstmals in Log L beobachtet; setzt beim `0x28`-Start ein, fällt mit `0x203000`→`0x201000` kurz vor Programmende weg 🟡
 - Bit 12 (`0x001000`): aktiver Teilschritt innerhalb einer Phase
 - Bit 9 (`0x000200`): IntensivZone aktiv in aktueller Phase — nur wenn Option IntensivZone ausgewählt ✅ (Log D)
 
@@ -199,6 +204,16 @@ Bitfeld; die wichtigsten beobachteten Werte:
 **Log F (Auto 45-65°):** Selbe Werte wie Log A: `0x020000`, `0x820000`, `0x220000` bei Start, dann `0x221000` im Betrieb. ✅
 
 **Log G (Auto 45-65°):** Identisch zu Log A/F. Niedertemperatur-Flag (Bit 17) konsistent. ✅
+
+**Log L (Auto 45-65°, 2026-04-23) — Trocknen-Sequenz (erstmals beobachtet):**
+- `0x221000` während Hauptspülen/`0x22`
+- `0x220000` nach 3. `0x12` und nach `0x14` (Bit 12 weg)
+- `0x222000` → `0x223000` beim Start von `0x28` (Bit 13 setzt!)
+- `0x203000` (×2) direkt vor `0x20` (Bit 17 fällt weg, Bit 13 bleibt noch)
+- `0x201000` (×3) → `0x20` Ende (Bit 13 fällt weg)
+- `0x200000` nach `0x20` (Standard-Post-Ende)
+
+Die `0x2004`-Sequenz am Programmende lautet damit vollständig: `0x223000` → `0x203000` (×2) → `0x201000` (×3) → `0x20` Ende → `0x200000`.
 
 ### `0x25 / 0x2005` — Programmphase
 
@@ -246,8 +261,10 @@ Initiale Restzeiten: Auto 35-45° (mit IntensivZone) 105 min; Auto 45-65° Logs 
 | H | **4×** | ~109 min | 138 min* | 4 Waschphasen + 2 sehr kurz (1.7/0 min) |
 | J | **3×** | 106 min | 139 min* | erster Zeitvorwahl-Lauf (7h Delay); Restzeit-Start nominal 160 min |
 | K | **3×** | 101 min | 160 min | Zeitvorwahl ~58 min; Phasen komprimiert (1 min / sofort / sofort); `0x24` direkt nach 3. `0x12` |
+| L | **3×** | unbek. | 184 min* | ESP mid-run verbunden; neue Bit-13-Flags (`0x222000`/`0x223000`) beim Trocknen |
 
 *Restzeit beim ersten `0x22` (0x21-Frame hatte keine 0x2008 im Log).
+*Log L: erste beobachtete Restzeit 184 min (0xb8) beim ESP-Verbindungsaufbau (Programmstart war vor dem Log-Beginn). Ursache für hohen Wert unklar (Hygiene-Option? Aufwärts-Korrektur vor Log-Start?).
 
 Log K (2026-04-18) Phasensequenz im Detail (Auto 45-65°, Zeitvorwahl ~58 min, Startrestzeit 160 min):
 - `0x21` @ +0 min; `0x22` @ +22 min (Vorspülen, 22 min)
@@ -290,10 +307,16 @@ Ab `0x24` (Klarspülen) ist die Sequenz in allen beobachteten Läufen identisch.
 - Log K, 1. `0x12` @ +44 min: Restzeit 116 → 74 min (−42 min, starke Abwärtskorrektur)
 - Log K, 2. `0x12` @ +55 min: Restzeit 65 → 50 min (−15 min)
 - Log K, 3. `0x12` @ +64 min: Restzeit 41 → 41 min (keine Korrektur)
+- Log L, 1. `0x12` @ 13:19 UTC: Restzeit 143 → 98 min (−45 min, starke Abwärtskorrektur)
+- Log L, 2. `0x12` @ 13:30 UTC: Restzeit 89 → 73 min (−16 min)
+- Log L, 3. `0x12` @ 13:49 UTC: Restzeit 54 → 53 min (−1 min)
 - Eco 50° (Log E), `0x12` @ +110 min: Restzeit ~55 → 65 min (+10 min)
 
-**Restzeit-Korrektur bei `0x14`-Übergang (erstmals Log K belegt):**
-- Log K, `0x14` @ +77 min: Restzeit 29 → 25 min (−4 min) — `0x14` löst ebenfalls eine Restzeit-Neuschätzung aus. 🟡
+**Restzeit-Korrektur bei `0x14`-Übergang:**
+- Log K, `0x14` @ +77 min: Restzeit 29 → 25 min (−4 min)
+- Log L, `0x14` @ 14:03 UTC: Restzeit 39 → 37 min (−2 min)
+
+`0x14` löst ebenfalls eine Restzeit-Neuschätzung aus — Korrektur variiert je Lauf (−2 bis −4 min bisher). 🟡
 
 **⚡ Dispenser-Öffnung = Start des Hauptspülens** (bestätigt in Log D und Log G):
 
