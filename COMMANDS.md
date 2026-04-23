@@ -14,7 +14,7 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `I` = Auto 45-65° (2026-04-11, fünfter Lauf — 3× `0x12`, langer Log mit Tür-Öffnungs-Burst)
 - `J` = Auto 45-65° (2026-04-14, sechster Lauf — 3× `0x12`, erster Zeitvorwahl-Lauf mit 7h Delay)
 - `K` = Auto 45-65° (2026-04-18, siebter Lauf — 3× `0x12`, Zeitvorwahl ~58 min, Phasen komprimiert)
-- `L` = Auto 45-65° (2026-04-23, achter Lauf — 3× `0x12`, ESP mid-run verbunden; neue `0x2004`-Werte `0x222000`/`0x223000` beim Trocknen)
+- `L` = Auto 45-65° (2026-04-23, achter Lauf — 3× `0x12`, **Glanztrocknen aktiv** (vom Nutzer bestätigt); neue `0x2004`-Werte `0x222000`/`0x223000` beim Trocknen)
 
 **Hinweis zu Zeitstempeln:** Alle Log-Zeitstempel sind in UTC (GMT). Lokale Zeit (MESZ) = UTC + 2h.
 
@@ -181,13 +181,13 @@ Bitfeld; die wichtigsten beobachteten Werte:
 | `0x020000` | Einmalig bei Niedertemperatur-Programmstart (Bit 17) | A D E F K | 🟡 |
 | `0x200000` | Gerät aktiv / Standby (Bit 21) — erscheint auch nach Programmende und bei Türöffnung | A B C E F K L | 🟡 |
 | `0x201000` | Normalbetrieb mit aktivem Teilprogramm (Bit 21 + Bit 12) | A B C E F K L | 🟡 |
-| `0x203000` | Trocknungsende-Übergang (Bit 21 + Bit 13 + Bit 12) — kurz vor `0x20` Ende | L | 🟡 |
+| `0x203000` | Glanztrocknen-Ausblend-Übergang (Bit 21 + Bit 13 + Bit 12) — kurz vor `0x20` Ende; Bit 17 fällt weg während Bit 13 noch gesetzt | L | 🟡 |
 | `0x220000` | Niedertemperatur-Programme: Bit 21 + Bit 17 | A E F K L | 🟡 |
 | `0x220200` | Auto 35-45° + IntensivZone: Bit 21 + Bit 17 + Bit 9 | D | 🟡 |
 | `0x221000` | Niedertemperatur-Programme: Bit 21 + 17 + 12 | A E F K L | 🟡 |
 | `0x221200` | Auto 35-45° + IntensivZone: Bit 21 + 17 + 12 + 9 | D | 🟡 |
-| `0x222000` | Trocknen aktiv — Niedertemperatur (Bit 21 + 17 + 13); erscheint beim `0x28`-Start | L | 🟡 |
-| `0x223000` | Trocknen aktiv mit Teilschritt (Bit 21 + 17 + 13 + 12) | L | 🟡 |
+| `0x222000` | Glanztrocknen läuft — Niedertemperatur (Bit 21 + 17 + **13**); erscheint beim `0x28`-Start wenn Glanztrocknen aktiv | L | 🟡 |
+| `0x223000` | Glanztrocknen läuft mit Teilschritt (Bit 21 + 17 + **13** + 12) | L | 🟡 |
 | `0x800000` | Einmalig bei Programmstart (Bit 23) — nur Auto 65-75° | B C | 🟡 |
 | `0x820000` | Einmalig bei Programmstart (Bit 23 + Bit 17) — Niedertemperatur-Programme | A D E F K | 🟡 |
 
@@ -195,7 +195,7 @@ Bitfeld; die wichtigsten beobachteten Werte:
 - Bit 23 (`0x800000`): Programm-Initialisierungs-Flag (einmalig, direkt nach Programmstart)
 - Bit 21 (`0x200000`): Gerät aktiv / Programm läuft (bleibt auch nach Programmende gesetzt)
 - Bit 17 (`0x020000`): Niedertemperatur-Flag — in Auto 35-45° und Auto 45-65° gesetzt, bei Auto 65-75° nicht; fällt kurz vor `0x20` Ende weg
-- Bit 13 (`0x002000`): Trocknungsphase aktiv (Heizung/Lüfter/Wärmetauscher?) — erstmals in Log L beobachtet; setzt beim `0x28`-Start ein, fällt mit `0x203000`→`0x201000` kurz vor Programmende weg 🟡
+- Bit 13 (`0x002000`): **Glanztrocknen aktiv** — setzt beim `0x28`-Start ein (wenn Option Glanztrocknen gewählt), fällt mit `0x203000`→`0x201000` kurz vor Programmende weg; in Log L erstmals beobachtet, Glanztrocknen vom Nutzer direkt bestätigt 🟡 (noch in weiterem Log zu verifizieren)
 - Bit 12 (`0x001000`): aktiver Teilschritt innerhalb einer Phase
 - Bit 9 (`0x000200`): IntensivZone aktiv in aktueller Phase — nur wenn Option IntensivZone ausgewählt ✅ (Log D)
 
@@ -205,15 +205,19 @@ Bitfeld; die wichtigsten beobachteten Werte:
 
 **Log G (Auto 45-65°):** Identisch zu Log A/F. Niedertemperatur-Flag (Bit 17) konsistent. ✅
 
-**Log L (Auto 45-65°, 2026-04-23) — Trocknen-Sequenz (erstmals beobachtet):**
+**Log L (Auto 45-65°, 2026-04-23, Glanztrocknen aktiv) — Trocknen-Sequenz (erstmals vollständig beobachtet):**
+
+Option Glanztrocknen wurde vom Nutzer bestätigt. Die `0x2004`-Sequenz mit Bit 13 ist direkt darauf zurückzuführen:
 - `0x221000` während Hauptspülen/`0x22`
 - `0x220000` nach 3. `0x12` und nach `0x14` (Bit 12 weg)
-- `0x222000` → `0x223000` beim Start von `0x28` (Bit 13 setzt!)
+- `0x222000` → `0x223000` beim Start von `0x28` (Bit 13 **setzt** = Glanztrocknen aktiv)
 - `0x203000` (×2) direkt vor `0x20` (Bit 17 fällt weg, Bit 13 bleibt noch)
-- `0x201000` (×3) → `0x20` Ende (Bit 13 fällt weg)
+- `0x201000` (×3) → `0x20` Ende (Bit 13 **fällt weg**)
 - `0x200000` nach `0x20` (Standard-Post-Ende)
 
-Die `0x2004`-Sequenz am Programmende lautet damit vollständig: `0x223000` → `0x203000` (×2) → `0x201000` (×3) → `0x20` Ende → `0x200000`.
+Die vollständige `0x2004`-Sequenz am Programmende mit Glanztrocknen: `0x223000` → `0x203000` (×2) → `0x201000` (×3) → `0x20` Ende → `0x200000`.
+
+**Glanztrocknen verlängert die initiale Restzeit:** Erste beobachtete Restzeit in Log L = 184 min (vs. 160 min bei normalem Auto 45-65°) — Differenz ~24 min entspricht der zusätzlichen Trocknungszeit. 🟡
 
 ### `0x25 / 0x2005` — Programmphase
 
@@ -261,10 +265,10 @@ Initiale Restzeiten: Auto 35-45° (mit IntensivZone) 105 min; Auto 45-65° Logs 
 | H | **4×** | ~109 min | 138 min* | 4 Waschphasen + 2 sehr kurz (1.7/0 min) |
 | J | **3×** | 106 min | 139 min* | erster Zeitvorwahl-Lauf (7h Delay); Restzeit-Start nominal 160 min |
 | K | **3×** | 101 min | 160 min | Zeitvorwahl ~58 min; Phasen komprimiert (1 min / sofort / sofort); `0x24` direkt nach 3. `0x12` |
-| L | **3×** | unbek. | 184 min* | ESP mid-run verbunden; neue Bit-13-Flags (`0x222000`/`0x223000`) beim Trocknen |
+| L | **3×** | unbek. | 184 min† | **Glanztrocknen aktiv** (Nutzer bestätigt); Bit 13 setzt beim Trocknen; +24 min gegenüber Normal |
 
 *Restzeit beim ersten `0x22` (0x21-Frame hatte keine 0x2008 im Log).
-*Log L: erste beobachtete Restzeit 184 min (0xb8) beim ESP-Verbindungsaufbau (Programmstart war vor dem Log-Beginn). Ursache für hohen Wert unklar (Hygiene-Option? Aufwärts-Korrektur vor Log-Start?).
+†Log L: erste beobachtete Restzeit 184 min (0xb8) beim ESP-Verbindungsaufbau (ESPHome-Log war bereits vor Programmstart aktiv, ESP-Verbindung kam aber erst mid-run zustande). Erhöhte Restzeit durch **Glanztrocknen**-Option erklärbar (+~24 min gegenüber 160 min).
 
 Log K (2026-04-18) Phasensequenz im Detail (Auto 45-65°, Zeitvorwahl ~58 min, Startrestzeit 160 min):
 - `0x21` @ +0 min; `0x22` @ +22 min (Vorspülen, 22 min)
@@ -475,3 +479,5 @@ Erscheint 20× zu Beginn jedes Programms.
 - [ ] Dispenser-Signal für **Eco 50°** physisch bestätigen (erster `0x22`-Frame bei +14 min?)
 - [ ] Zweites `0x21` in Log F: prüfen ob dieses Muster in weiteren vollständigen Logs reproduzierbar ist
 - [ ] Auto 45-65°: klären ob 2× oder 3× `0x12`-Übergänge (Log A vs. Log F) von Beladung/Temperatur abhängen
+- [ ] **`0x2004` Bit 13 (Glanztrocknen)** in weiterem Log ohne Glanztrocknen-Option verifizieren → bei `0x28` sollte dann kein `0x222000`/`0x223000` erscheinen ✅ (Log L bestätigt Bit 13 = aktiv wenn Glanztrocknen AN)
+- [ ] **Glanztrocknen-Restzeit** in vollständigem Log erfassen: initiale Restzeit bei `0x21` mit Glanztrocknen (erwartet ~184 min bei Auto 45-65°)
