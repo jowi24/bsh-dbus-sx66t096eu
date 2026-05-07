@@ -25,6 +25,7 @@ Wenn ein rohes Log im Root-Verzeichnis liegt (`spuelmaschine_YYYYMMDD_HHMMSS.txt
    <programm>_logs/spuelmaschine_log_YYYY-MM-DD_HHMMSS.txt
    ```
    Zeitstempel = erster `[HH:MM:SS...]`-Eintrag im Log (**UTC**, nicht MESZ).
+   Sonderfall: Wenn das Log **nur `0x1012`-Frames** enthält (kein Programmlauf), Zielordner = `zeitvorwahl_logs/`.
 
 3. **Datei verschieben und parsen:**
    ```bash
@@ -58,7 +59,7 @@ Zeitstempel sind **UTC**. Lokale Zeit (MESZ) = UTC + 2h.
 | `0x12` | Vorspülen |
 
 ### Log-Buchstaben (bisher)
-`A`=Auto45-65° Mar-12, `B`=Auto65-75° Mar-25, `C`=Auto65-75° Mar-28, `D`=Auto35-45°+IZ Mar-29, `E`=Eco50° Apr-01, `F`=Auto45-65° Apr-03, `G`=Auto45-65° Apr-04, `H`=Auto45-65° Apr-05, `I`=Auto45-65° Apr-11, `J`=Auto45-65° Apr-14 (Zeitvorwahl 7h), `K`=Auto45-65° Apr-18 (Zeitvorwahl ~58min), `L`=Auto45-65° Apr-23 (mid-run, neue 0x2004-Trocknen-Flags), `M`=Auto45-65°+VarioSpeed Apr-26 (0× 0x12, VarioSpeed löscht Bit17, bestätigt Bit13=Glanztrocknen). Nächstes Log = `N`.
+`A`=Auto45-65° Mar-12, `B`=Auto65-75° Mar-25, `C`=Auto65-75° Mar-28, `D`=Auto35-45°+IZ Mar-29, `E`=Eco50° Apr-01, `F`=Auto45-65° Apr-03, `G`=Auto45-65° Apr-04, `H`=Auto45-65° Apr-05, `I`=Auto45-65° Apr-11, `J`=Auto45-65° Apr-14 (Zeitvorwahl 7h), `K`=Auto45-65° Apr-18 (Zeitvorwahl ~58min), `L`=Auto45-65° Apr-23 (mid-run, neue 0x2004-Trocknen-Flags), `M`=Auto45-65°+VarioSpeed Apr-26 (0× 0x12, VarioSpeed löscht Bit17, bestätigt Bit13=Glanztrocknen). `N`=Zeitvorwahl-only Apr-30 (120 0x1012-Frames, Formel ✅, zeitvorwahl_logs/). `O`=Auto45-65° Mai-04 (3× 0x12, Zeitvorwahl 4h59min, 0x000000=Programmstart ✅, neue 0x2013-Kontextinfo). `P`=Zeitvorwahl-only Mai-07 (8 Frames, sehr kurz, zeitvorwahl_logs/). Nächstes Log = `Q`.
 
 ### Schlüssel-Frames
 | Frame | Bedeutung |

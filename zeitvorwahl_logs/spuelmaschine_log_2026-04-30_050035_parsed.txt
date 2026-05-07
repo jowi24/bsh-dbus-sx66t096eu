@@ -1,0 +1,244 @@
+Unique packets (dest, cmd, payload):
+- 0x17, 0x1012, 0x020037 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020038 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020039 (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x02003a (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x02003b (count=1)
+  sensors: Zeitvorwahl -> 0 h x1
+- 0x17, 0x1012, 0x020100 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030101 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030102 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030103 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030104 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030105 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030106 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030107 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030108 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030109 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03010a (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03010b (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03010c (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03010d (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03010e (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03010f (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030110 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030111 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030112 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030113 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030114 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030115 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030116 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030117 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030118 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x030119 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03011a (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03011b (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03011c (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03011d (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x03011e (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04011f (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040120 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040121 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040122 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040123 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040124 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040125 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040126 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040127 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040128 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040129 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04012a (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04012b (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04012c (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04012d (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04012e (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04012f (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040130 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040131 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040132 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040133 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040134 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040135 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040136 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040137 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040138 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040139 (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04013a (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x04013b (count=1)
+  sensors: Zeitvorwahl -> 1 h x1
+- 0x17, 0x1012, 0x040200 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050201 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050202 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050203 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050204 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050205 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050206 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050207 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050208 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050209 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x05020a (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x05020b (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x05020c (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x05020d (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x05020e (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x05020f (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050210 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050211 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050212 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050213 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050214 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050215 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050216 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050217 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050218 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x050219 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x05021a (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x05021b (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x05021c (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x05021d (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x05021e (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x06021f (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060220 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060221 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060222 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060223 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060224 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060225 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060226 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060227 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060228 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060229 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x06022a (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x06022b (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x06022c (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x06022d (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x06022e (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x06022f (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060230 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060231 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060232 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060233 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060234 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060235 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060236 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+
+Total frames: 120
+Unlinked sensor lines: 238

@@ -16,6 +16,9 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `K` = Auto 45-65° (2026-04-18, siebter Lauf — 3× `0x12`, Zeitvorwahl ~58 min, Phasen komprimiert)
 - `L` = Auto 45-65° (2026-04-23, achter Lauf — 3× `0x12`, **Glanztrocknen aktiv** (vom Nutzer bestätigt); neue `0x2004`-Werte `0x222000`/`0x223000` beim Trocknen)
 - `M` = Auto 45-65° + **VarioSpeed** (2026-04-26, vollständiger Lauf — **0× `0x12`**, adaptiv kurz; bestätigt Bit 13 = Glanztrocknen ✅; bestätigt VarioSpeed löscht Bit 17)
+- `N` = Zeitvorwahl-only (2026-04-30, reine Zeitvorwahl-Aufzeichnung — 120 `0x1012`-Frames, 2h54min→0h55min, kein Programmlauf; bestätigt 0x1012-Formel mit 120 Datenpunkten ✅)
+- `O` = Auto 45-65° (2026-05-04, vollständiger Lauf mit Zeitvorwahl 4h59min — **3× `0x12`**, neue Frames `0x2013`/`0x2012` in Start-/Ende-Kontext; `0x1012: 0x000000` = Programmstart bestätigt)
+- `P` = Zeitvorwahl-only (2026-05-07, sehr kurz — 8 Frames, 3h00min→2h54min, Verbindung frühzeitig getrennt)
 
 **Hinweis zu Zeitstempeln:** Alle Log-Zeitstempel sind in UTC (GMT). Lokale Zeit (MESZ) = UTC + 2h.
 
@@ -99,23 +102,29 @@ Payload: 3 Byte `[AA][BB][CC]`.
 
 | Byte | Bedeutung | Konfidenz |
 |---|---|---|
-| Byte 0 (AA) | `ceil((BB×60 + CC) / 30)` — Anzahl verbleibender 30-min-Blöcke (aufgerundet) | 🟡 |
+| Byte 0 (AA) | `ceil((BB×60 + CC) / 30)` — Anzahl verbleibender 30-min-Blöcke (aufgerundet) | ✅ |
 | Byte 1 (BB) | Verbleibende Stunden bis Programmstart (0–9) | ✅ |
 | Byte 2 (CC) | Verbleibende Minuten innerhalb der aktuellen Stunde (0x00–0x3b = 0–59, zählt abwärts) | ✅ |
 
-Der Frame wird einmal pro Minute gesendet und zählt BB:CC rückwärts. Wenn CC 0x00 erreicht und BB > 0, dekrementiert BB um 1 und CC springt auf 0x3b (59). Bei BB=CC=0 startet das Programm.
+Der Frame wird einmal pro Minute gesendet und zählt BB:CC rückwärts. Wenn CC 0x00 erreicht und BB > 0, dekrementiert BB um 1 und CC springt auf 0x3b (59). Bei BB=CC=0 startet das Programm. **`0x1012: 0x000000` (AA=BB=CC=0) = Zeitvorwahl abgelaufen, Programm startet sofort** ✅ (Log O, direkt danach: `0x2007=0x01`).
 
-**Byte-0-Formel (AA):** AA ist deterministisch: `AA = ceil((BB×60 + CC) / 30)`. Beispiele: 7h48min → ceil((7×60+48)/30) = ceil(15,6) = **16 = 0x10** ✅ (Log J); 58 min → ceil(58/30) = **2 = 0x02** ✅; 30 min → ceil(30/30) = **1 = 0x01** ✅; 0 min → **0 = 0x00** ✅ (Log K). AA ändert sich immer dann, wenn eine neue 30-min-Schwelle unterschritten wird.
+**Byte-0-Formel (AA):** AA ist deterministisch: `AA = ceil((BB×60 + CC) / 30)`. Beispiele: 7h48min → ceil((7×60+48)/30) = ceil(15,6) = **16 = 0x10** ✅ (Log J); 4h59min → ceil(299/30) = **10 = 0x0a** ✅ (Log O); 2h54min → ceil(174/30) = **6 = 0x06** ✅ (Log N, 120 Frames validiert); 2h30min → 150/30 = **5 = 0x05** ✅ (exakt, Log N: Übergang AA=6→5 bei CC=30); 58 min → ceil(58/30) = **2 = 0x02** ✅; 30 min → ceil(30/30) = **1 = 0x01** ✅; 0 min → **0 = 0x00** ✅ (Log K, O). AA ändert sich immer dann, wenn eine neue 30-min-Schwelle unterschritten wird.
 
 **Log J (2026-04-14):** Log startete mit 7h48min verbleibender Wartezeit — erster Frame `0x100730` (AA=0x10, BB=7, CC=0x30=48). ESPHome-Sensor `Zeitvorwahl` zeigt BB (Stunden) ✅; Minuten-Auflösung via CC wäre ergänzbar.
 
 **Log K (2026-04-18):** Kurze Zeitvorwahl — erster Frame `0x02003a` (AA=0x02, BB=0, CC=0x3a=58 min). Übergang AA 0x02→0x01 bei CC=30 min, AA 0x01→0x00 bei Programmstart. Bestätigt die ceil-Formel.
 
+**Log N (2026-04-30, Zeitvorwahl-only):** 120 aufeinanderfolgende `0x1012`-Frames von 2h54min (0x060236) bis 0h55min (0x020037) — vollständige Formelvalidierung. AA=6→5 Übergang bei exakt 2h30min (CC=30min, 150/30=5 ganzzahlig) ✅. Kein Programmlauf erfasst.
+
+**Log O (2026-05-04):** Zeitvorwahl 4h59min, erster Frame `0x0a043b` (AA=10, BB=4, CC=59). Abschluss mit `0x01001a` → `0x000000` direkt vor `0x2007=0x01` (Programmstart) — **`0x000000` eindeutig als Startsignal bestätigt** ✅.
+
+**Log P (2026-05-07):** Sehr kurz — 8 Frames von 3h00min (0x060300, AA=6 = ceil(180/30)=6 ✓) bis 2h54min (0x060236), dann Verbindungsabbruch.
+
 ### `0x17 / 0x1013`
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0x01` | Programmstart-Signal (erscheint direkt vor `Status → ON`) | A B C F J K M | 🟡 |
+| `0x01` | Programmstart-Signal (erscheint direkt vor `Status → ON`) | A B C F J K M O | 🟡 |
 
 ---
 
@@ -179,18 +188,18 @@ Bitfeld; die wichtigsten beobachteten Werte:
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
 | `0x000000` | Inaktiv / Standby (vor Programmstart und nach Ende) | A B C D | 🟡 |
-| `0x020000` | Einmalig bei Niedertemperatur-Programmstart (Bit 17) | A D E F K | 🟡 |
-| `0x200000` | Gerät aktiv / Standby (Bit 21) — erscheint auch nach Programmende und bei Türöffnung; bei Auto 65-75° auch beim `0x24`-Start (×2) | A B C E F K L M | 🟡 |
-| `0x201000` | Normalbetrieb mit aktivem Teilprogramm (Bit 21 + Bit 12) | A B C E F K L M | 🟡 |
+| `0x020000` | Einmalig bei Niedertemperatur-Programmstart (Bit 17) | A D E F K O | 🟡 |
+| `0x200000` | Gerät aktiv / Standby (Bit 21) — erscheint auch nach Programmende und bei Türöffnung; bei Auto 65-75° auch beim `0x24`-Start (×2) | A B C E F K L M O | 🟡 |
+| `0x201000` | Normalbetrieb mit aktivem Teilprogramm (Bit 21 + Bit 12) | A B C E F K L M O | 🟡 |
 | `0x203000` | Glanztrocknen-Ausblend-Übergang (Bit 21 + Bit 13 + Bit 12) — kurz vor `0x20` Ende; Bit 17 fällt weg während Bit 13 noch gesetzt | L | 🟡 |
-| `0x220000` | Niedertemperatur-Programme: Bit 21 + Bit 17 | A E F K L | 🟡 |
+| `0x220000` | Niedertemperatur-Programme: Bit 21 + Bit 17 | A E F K L O | 🟡 |
 | `0x220200` | Auto 35-45° + IntensivZone: Bit 21 + Bit 17 + Bit 9 | D | 🟡 |
-| `0x221000` | Niedertemperatur-Programme: Bit 21 + 17 + 12 | A E F K L | 🟡 |
+| `0x221000` | Niedertemperatur-Programme: Bit 21 + 17 + 12 | A E F K L O | 🟡 |
 | `0x221200` | Auto 35-45° + IntensivZone: Bit 21 + 17 + 12 + 9 | D | 🟡 |
 | `0x222000` | Glanztrocknen läuft — Niedertemperatur (Bit 21 + 17 + **13**); erscheint beim `0x28`-Start wenn Glanztrocknen aktiv | L | ✅ |
 | `0x223000` | Glanztrocknen läuft mit Teilschritt (Bit 21 + 17 + **13** + 12) | L | ✅ |
 | `0x800000` | Einmalig bei Programmstart (Bit 23, **kein** Bit 17) — Auto 65-75° oder Niedertemperatur + **VarioSpeed** | B C M | 🟡 |
-| `0x820000` | Einmalig bei Programmstart (Bit 23 + Bit 17) — Niedertemperatur-Programme ohne VarioSpeed | A D E F K | 🟡 |
+| `0x820000` | Einmalig bei Programmstart (Bit 23 + Bit 17) — Niedertemperatur-Programme ohne VarioSpeed | A D E F K O | 🟡 |
 
 **Bit-Interpretation (vorläufig):**
 - Bit 23 (`0x800000`): Programm-Initialisierungs-Flag (einmalig, direkt nach Programmstart)
@@ -274,6 +283,7 @@ Initiale Restzeiten: Auto 35-45° (mit IntensivZone) 105 min; Auto 45-65° Logs 
 | K | **3×** | 101 min | 160 min | Zeitvorwahl ~58 min; Phasen komprimiert (1 min / sofort / sofort); `0x24` direkt nach 3. `0x12` |
 | L | **3×** | unbek. | 184 min† | **Glanztrocknen aktiv** (Nutzer bestätigt); Bit 13 setzt beim Trocknen; +24 min gegenüber Normal |
 | M | **0×** | 92 min | 100 min | **Auto 45-65° + VarioSpeed** (Nutzer bestätigt); kein `0x12`; direkt `0x22`→`0x24`; VarioSpeed löscht Bit 17 (`0x800000` statt `0x820000`); kein Glanztrocknen → Bit 13 nicht gesetzt ✅ |
+| O | **3×** | 101 min | 160 min | Zeitvorwahl 4h59min; Restzeit-Korrekturen identisch mit I/K: 116→74/64→50/41→41; mit Zeitvorwahl-Endframe `0x000000` ✅ |
 
 *Restzeit beim ersten `0x22` (0x21-Frame hatte keine 0x2008 im Log).
 †Log L: erste beobachtete Restzeit 184 min (0xb8) beim ESP-Verbindungsaufbau (ESPHome-Log war bereits vor Programmstart aktiv, ESP-Verbindung kam aber erst mid-run zustande). Erhöhte Restzeit durch **Glanztrocknen**-Option erklärbar (+~24 min gegenüber 160 min).
@@ -293,6 +303,17 @@ Log M (2026-04-26) Phasensequenz im Detail (Auto 45-65° + **VarioSpeed**, 0× `
 - `0x14` @ +69 min → Restzeit 32→24 (−8 min); `0x24` @ +69 min
 - `0x28` @ +75 min (Restzeit 18 min); `0x20` @ +92 min
 - `0x2004`-Sequenz: `0x800000`→`0x200000` bei Init (VarioSpeed: kein Bit 17!); `0x200000`×2 bei `0x24`-Start; `0x201000`×6 → `0x20` Ende
+
+Log O (2026-05-04) Phasensequenz im Detail (Auto 45-65°, Zeitvorwahl 4h59min, Startrestzeit 160 min):
+- `0x21` @ +0 min; `0x22` @ +22 min (Vorspülen, 22 min)
+- `0x12` #1 @ +44 min → Restzeit 116→74; `0x22` @ +46 min (9 min)
+- `0x12` #2 @ +55 min → Restzeit 64→50; `0x22` @ +56 min (sehr kurz, ~4 Sek.)
+- `0x12` #3 @ +64 min → Restzeit 41→41; `0x22` @ +64 min (sofort, 4 Sek.) → `0x24` @ +64 min (Klarspülen direkt)
+- `0x14` @ +77 min → Restzeit 28→25; `0x24` @ +78 min; `0x28` @ +83 min; `0x20` @ +101 min
+- `0x2004`-Sequenz: `0x020000`→`0x820000`→`0x220000` bei Init; `0x221000` während Spülen; `0x201000`(×5)→`0x200000` Trocknen (kein Glanztrocknen)
+- **Besonderheit:** Restzeit-Korrekturen bei 1./2./3. `0x12` identisch mit Log I/K (116→74, 64→50, 41→41) — reproduzierbares Muster bei Standard-Auto-45-65°-Lauf
+
+**Pre-Programm-Restzeit bei Zeitvorwahl (Log O — ❓):** Während der Zeitvorwahl-Wartezeit erscheinen gelegentlich `0x2008`-Frames mit wechselnden Werten (0xa8=168 min und 0xa0=160 min), ausgelöst durch Türöffnung und `0x2006`-Zustandsänderungen. Diese Werte spiegeln vermutlich die Programmrestzeit für das selektierte Programm im Standby wider. Der Wert 168 min erscheint korreliert mit `0x2006=0x02` (Klarspüler-leer-Transient bei Türöffnung), 160 min mit Normalzustand — Bedeutung unklar. ❓
 
 Log H (2026-04-05) Phasensequenz im Detail:
 - `0x21` @ +0 min; `0x22` @ +22 min (Vorspülen, 27 min)
@@ -329,12 +350,16 @@ Ab `0x24` (Klarspülen) ist die Sequenz in allen beobachteten Läufen identisch.
 - Log L, 1. `0x12` @ 13:19 UTC: Restzeit 143 → 98 min (−45 min, starke Abwärtskorrektur)
 - Log L, 2. `0x12` @ 13:30 UTC: Restzeit 89 → 73 min (−16 min)
 - Log L, 3. `0x12` @ 13:49 UTC: Restzeit 54 → 53 min (−1 min)
+- Log O, 1. `0x12` @ +44 min: Restzeit 116 → 74 min (−42 min, starke Abwärtskorrektur — identisch mit Log I/K)
+- Log O, 2. `0x12` @ +55 min: Restzeit 64 → 50 min (−14 min — identisch mit Log I/K)
+- Log O, 3. `0x12` @ +64 min: Restzeit 41 → 41 min (keine Korrektur — identisch mit Log I/K)
 - Eco 50° (Log E), `0x12` @ +110 min: Restzeit ~55 → 65 min (+10 min)
 
 **Restzeit-Korrektur bei `0x14`-Übergang:**
 - Log K, `0x14` @ +77 min: Restzeit 29 → 25 min (−4 min) — Auto 45-65°
 - Log L, `0x14` @ 14:03 UTC: Restzeit 39 → 37 min (−2 min) — Auto 45-65°
-- Log M, `0x14` @ +68 min: Restzeit 32 → 24 min (−8 min) — **Auto 65-75°** (größte Korrektur bisher)
+- Log M, `0x14` @ +68 min: Restzeit 32 → 24 min (−8 min) — **Auto 45-65° + VarioSpeed** (größte Korrektur bisher)
+- Log O, `0x14` @ +77 min: Restzeit 28 → 25 min (−3 min) — Auto 45-65°
 
 `0x14` löst ebenfalls eine Restzeit-Neuschätzung aus — Korrektur variiert je Programm und Lauf (−2 bis −8 min). 🟡
 
@@ -408,11 +433,15 @@ Bytes 1–7 und 9–12: konstant `000001050062000037010000` über alle bisher ge
 | `0x00` | Erscheint einmalig vor Programmstart | A B C | ❓ |
 | `0x01` | Erscheint einmalig nach Programmstart | A B C | ❓ |
 
+**Log O (2026-05-04):** `0x2012=0x00` tritt auf bei [15:30:04] — 3h18min nach Programmende ([11:12:27]), ausgelöst durch Türöffnung. Kontext: Tür öffnete → `0x1007`, `0x2006`, `0x2012=0x00`, `0x2004=0x200000`. Identisches Muster wie der Türöffnungs-Burst in Log I. `0x2012` scheint Teil des "Gerät-wach-gerufen"-Bursts zu sein (nicht nur Programmstart/-ende). ❓
+
 ### `0x25 / 0x2013`
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0xffff` | Erscheint 1–3× beim Start; Anzahl hängt offenbar davon ab, wie frühzeitig der ESP verbunden ist — Log F (ESP verbunden kurz vor Start) nur 1×, andere Logs 2–3× | A B C F | ❓ |
+| `0xffff` | Erscheint 1–3× beim Start; Anzahl hängt offenbar davon ab, wie frühzeitig der ESP verbunden ist — Log F (ESP verbunden kurz vor Start) nur 1×, andere Logs 2–3× | A B C F O | ❓ |
+
+**Log O (2026-05-04) Programmstart-Sequenz (präziser Zeitstempel):** `0x2013=0xffff` erscheint genau 74 ms nach `0x2007=0x01` (Status=ON) und vor `0x2005=0x21` (Init-Phase). Vollständige Startreihenfolge: `0x1013=0x01` → `0x2008` (Restzeit) → `0x2007=0x01` → **`0x2013=0xffff`** → `0x2000=0x00` → `0x2004=0x020000` → `0x2002` → `0x2005=0x21`. `0x2013` ist damit ein Controller-ACK unmittelbar nach Status-ON, vor dem eigentlichen Init-Frame. ❓
 
 ---
 

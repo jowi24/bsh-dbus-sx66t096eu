@@ -1,0 +1,24 @@
+Unique packets (dest, cmd, payload):
+- 0x17, 0x1012, 0x060234 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060235 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060236 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060237 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060238 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060239 (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x06023a (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x06023b (count=1)
+  sensors: Zeitvorwahl -> 2 h x1
+- 0x17, 0x1012, 0x060300 (count=1)
+  sensors: Zeitvorwahl -> 3 h x1
+- 0x24, 0x2006, 0x08 (count=1)
+  sensors: Tür -> OFF x1
+
+Total frames: 10
+Unlinked sensor lines: 18

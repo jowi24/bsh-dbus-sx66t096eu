@@ -1,0 +1,212 @@
+INFO ESPHome 2026.4.1
+INFO Reading configuration geschirrspuler.yaml...
+WARNING GPIO4 is a strapping PIN and should only be used for I/O with care.
+Attaching external pullup/down resistors to strapping pins can cause unexpected failures.
+See https://esphome.io/guides/faq/#why-am-i-getting-a-warning-about-strapping-pins
+WARNING GPIO5 is a strapping PIN and should only be used for I/O with care.
+Attaching external pullup/down resistors to strapping pins can cause unexpected failures.
+See https://esphome.io/guides/faq/#why-am-i-getting-a-warning-about-strapping-pins
+INFO Starting log output from geschirrspuler.local using esphome API
+INFO Successfully resolved geschirrspuler.local in 0.013s
+INFO Successfully connected to geschirrspuler @ 192.168.178.85 in 0.189s
+INFO Successful handshake with geschirrspuler @ 192.168.178.85 in 0.060s
+[05:09:55.938][I][app:210]: ESPHome version 2026.1.5 compiled on 2026-03-09 19:13:41 +0000
+[05:09:55.938][I][app:217]: ESP32 Chip: ESP32-C6 r0.2, 1 core(s)
+[05:09:55.938][C][logger:316]: Logger:
+[05:09:55.938][C][logger:316]:   Max Level: DEBUG
+[05:09:55.938][C][logger:316]:   Initial Level: DEBUG
+[05:09:55.940][C][logger:322]:   Log Baud Rate: 115200
+[05:09:55.940][C][logger:322]:   Hardware UART: USB_SERIAL_JTAG
+[05:09:55.960][C][logger:332]:   Task Log Buffer Size: 768 bytes
+[05:09:55.960][C][uart.idf:238]: UART Bus 0:
+[05:09:55.962][C][uart.idf:152]:   TX Pin: GPIO5
+[05:09:55.965][C][uart.idf:152]:   RX Pin: GPIO4
+[05:09:55.965][C][uart.idf:243]:   RX Buffer Size: 256
+[05:09:55.965][C][uart.idf:243]:   RX Full Threshold: 8
+[05:09:55.965][C][uart.idf:243]:   RX Timeout: 2
+[05:09:55.969][C][uart.idf:249]:   Baud Rate: 9600 baud
+[05:09:55.969][C][uart.idf:249]:   Data Bits: 8
+[05:09:55.969][C][uart.idf:249]:   Parity: NONE
+[05:09:55.969][C][uart.idf:249]:   Stop bits: 1
+[05:09:55.972][C][status_led:018]: Status LED:
+[05:09:55.972][C][status_led:152]:   Pin: GPIO6
+[05:09:55.987][C][gpio.output:010]: Binary Output:
+[05:09:55.993][C][gpio.output:152]:   Pin: GPIO7
+[05:09:55.993][C][template.binary_sensor:016]: Template Binary Sensor 'Option VarioSpeed'
+[05:09:56.009][C][template.binary_sensor:016]: Template Binary Sensor 'Option IntensivZone'
+[05:09:56.029][C][template.binary_sensor:016]: Template Binary Sensor 'Option Hygiene'
+[05:09:56.029][C][template.binary_sensor:016]: Template Binary Sensor 'Option Glanztrocknen'
+[05:09:56.035][C][uptime.sensor:016]: Uptime Sensor 'Uptime'
+[05:09:56.035][C][uptime.sensor:016]:   State Class: 'total_increasing'
+[05:09:56.035][C][uptime.sensor:016]:   Unit of Measurement: 's'
+[05:09:56.035][C][uptime.sensor:016]:   Accuracy Decimals: 0
+[05:09:56.039][C][uptime.sensor:026]:   Device Class: 'duration'
+[05:09:56.039][C][uptime.sensor:030]:   Icon: 'mdi:timer-outline'
+[05:09:56.042][C][uptime.sensor:033]:   Type: Seconds
+[05:09:56.047][C][template.text_sensor:017]: Template Sensor 'Ausgewähltes Programm'
+[05:09:56.047][C][template.text_sensor:024]:   Icon: 'mdi:dishwasher'
+[05:09:56.062][C][bshdbus:051]: BSHDBus:
+[05:09:56.070][C][bshdbus.binary_sensor:011]: BSHDBus Custom Binary Sensor:
+[05:09:56.071][C][bshdbus.binary_sensor:015]:   Dest node: 0x24
+[05:09:56.073][C][bshdbus.binary_sensor:020]:   Command: 0x2006
+[05:09:56.077][C][bshdbus.binary_sensor:022]:   Binary Sensors:
+[05:09:56.077][C][bshdbus.binary_sensor:016]:   - 'Klarspüler'
+[05:09:56.080][C][bshdbus.binary_sensor:019]:     Device Class: 'problem'
+[05:09:56.083][C][bshdbus.binary_sensor:016]:   - 'Salz'
+[05:09:56.083][C][bshdbus.binary_sensor:019]:     Device Class: 'problem'
+[05:09:56.086][C][bshdbus.binary_sensor:016]:   - 'Tür'
+[05:09:56.090][C][bshdbus.binary_sensor:019]:     Device Class: 'door'
+[05:09:56.090][C][bshdbus.binary_sensor:011]: BSHDBus Custom Binary Sensor:
+[05:09:56.094][C][bshdbus.binary_sensor:015]:   Dest node: 0x27
+[05:09:56.097][C][bshdbus.binary_sensor:020]:   Command: 0x2007
+[05:09:56.097][C][bshdbus.binary_sensor:022]:   Binary Sensors:
+[05:09:56.099][C][bshdbus.binary_sensor:016]:   - 'Status'
+[05:09:56.107][C][bshdbus.binary_sensor:019]:     Device Class: 'running'
+[05:09:56.107][C][bshdbus.binary_sensor:011]: BSHDBus Custom Binary Sensor:
+[05:09:56.110][C][bshdbus.binary_sensor:015]:   Dest node: 0x17
+[05:09:56.115][C][bshdbus.binary_sensor:020]:   Command: 0x1000
+[05:09:56.115][C][bshdbus.binary_sensor:022]:   Binary Sensors:
+[05:09:56.117][C][bshdbus.binary_sensor:016]:   - 'helper_panel_variospeed'
+[05:09:56.121][C][bshdbus.binary_sensor:016]:   - 'helper_panel_intensivzone'
+[05:09:56.121][C][bshdbus.binary_sensor:016]:   - 'helper_panel_hygiene'
+[05:09:56.124][C][bshdbus.binary_sensor:016]:   - 'helper_panel_glanz'
+[05:09:56.129][C][bshdbus.binary_sensor:011]: BSHDBus Custom Binary Sensor:
+[05:09:56.129][C][bshdbus.binary_sensor:015]:   Dest node: 0x25
+[05:09:56.131][C][bshdbus.binary_sensor:020]:   Command: 0x2010
+[05:09:56.137][C][bshdbus.binary_sensor:022]:   Binary Sensors:
+[05:09:56.137][C][bshdbus.binary_sensor:016]:   - 'helper_init_variospeed'
+[05:09:56.138][C][bshdbus.binary_sensor:016]:   - 'helper_init_intensivzone'
+[05:09:56.142][C][bshdbus.binary_sensor:016]:   - 'helper_init_hygiene'
+[05:09:56.142][C][bshdbus.binary_sensor:016]:   - 'helper_init_glanz'
+[05:09:56.147][C][bshdbus.sensor:011]: BSHDBus Custom Sensor:
+[05:09:56.149][C][bshdbus.sensor:015]:   Dest node: 0x25
+[05:09:56.149][C][bshdbus.sensor:020]:   Command: 0x2008
+[05:09:56.153][C][bshdbus.sensor:022]:   Sensors:
+[05:09:56.155][C][bshdbus.sensor:016]:   - 'Restzeit'
+[05:09:56.155][C][bshdbus.sensor:016]:     State Class: 'measurement'
+[05:09:56.155][C][bshdbus.sensor:016]:     Unit of Measurement: 'min'
+[05:09:56.155][C][bshdbus.sensor:016]:     Accuracy Decimals: 0
+[05:09:56.156][C][bshdbus.sensor:026]:     Device Class: 'duration'
+[05:09:56.168][C][bshdbus.sensor:011]: BSHDBus Custom Sensor:
+[05:09:56.168][C][bshdbus.sensor:015]:   Dest node: 0x17
+[05:09:56.169][C][bshdbus.sensor:020]:   Command: 0x1012
+[05:09:56.169][C][bshdbus.sensor:022]:   Sensors:
+[05:09:56.169][C][bshdbus.sensor:016]:   - 'Zeitvorwahl'
+[05:09:56.169][C][bshdbus.sensor:016]:     State Class: ''
+[05:09:56.169][C][bshdbus.sensor:016]:     Unit of Measurement: 'h'
+[05:09:56.169][C][bshdbus.sensor:016]:     Accuracy Decimals: 0
+[05:09:56.169][C][bshdbus.sensor:030]:     Icon: 'mdi:timer-sand'
+[05:09:56.175][C][bshdbus.text_sensor:011]: BSHDBus Custom Text Sensor:
+[05:09:56.179][C][bshdbus.text_sensor:015]:   Dest node: 0x17
+[05:09:56.179][C][bshdbus.text_sensor:020]:   Command: 0x1011
+[05:09:56.184][C][bshdbus.text_sensor:022]:   Text Sensors:
+[05:09:56.185][C][bshdbus.text_sensor:017]:   - 'bsh_helper_panel'
+[05:09:56.185][C][bshdbus.text_sensor:011]: BSHDBus Custom Text Sensor:
+[05:09:56.187][C][bshdbus.text_sensor:015]:   Dest node: 0x25
+[05:09:56.195][C][bshdbus.text_sensor:020]:   Command: 0x2010
+[05:09:56.195][C][bshdbus.text_sensor:022]:   Text Sensors:
+[05:09:56.198][C][bshdbus.text_sensor:017]:   - 'bsh_helper_init'
+[05:09:56.219][C][captive_portal:128]: Captive Portal:
+[05:09:56.220][C][wifi:1304]: WiFi:
+[05:09:56.220][C][wifi:1304]:   Local MAC: 58:E6:C5:E0:B0:C4
+[05:09:56.220][C][wifi:1304]:   Connected: YES
+[05:09:56.222][C][wifi:1037]:   IP Address: 192.168.178.85
+[05:09:56.232][C][wifi:1048]:   SSID: 'MaJo'
+[05:09:56.232][C][wifi:1048]:   BSSID: 2C:91:AB:56:6A:AC
+[05:09:56.232][C][wifi:1048]:   Hostname: 'geschirrspuler'
+[05:09:56.232][C][wifi:1048]:   Signal strength: -47 dB ▂▄▆█
+[05:09:56.232][C][wifi:1048]:   Channel: 6
+[05:09:56.232][C][wifi:1048]:   Subnet: 255.255.255.0
+[05:09:56.232][C][wifi:1048]:   Gateway: 192.168.178.1
+[05:09:56.232][C][wifi:1048]:   DNS1: 192.168.178.2
+[05:09:56.232][C][wifi:1048]:   DNS2: 192.168.178.3
+[05:09:56.233][C][esphome.ota:075]: Over-The-Air updates:
+[05:09:56.233][C][esphome.ota:075]:   Address: geschirrspuler.local:3232
+[05:09:56.233][C][esphome.ota:075]:   Version: 2
+[05:09:56.234][C][esphome.ota:082]:   Password configured
+[05:09:56.249][C][safe_mode:021]: Safe Mode:
+[05:09:56.249][C][safe_mode:021]:   Successful after: 60s
+[05:09:56.249][C][safe_mode:021]:   Invoke after: 10 attempts
+[05:09:56.249][C][safe_mode:021]:   Duration: 300s
+[05:09:56.249][C][safe_mode:038]:   Bootloader rollback: support unknown
+[05:09:56.255][C][web_server.ota:231]: Web Server OTA
+[05:09:56.271][C][api:221]: Server:
+[05:09:56.271][C][api:221]:   Address: geschirrspuler.local:6053
+[05:09:56.271][C][api:221]:   Listen backlog: 4
+[05:09:56.271][C][api:221]:   Max connections: 8
+[05:09:56.271][C][api:228]:   Noise encryption: YES
+[05:09:56.275][C][wifi_signal.sensor:016]: WiFi Signal 'WiFi Signal'
+[05:09:56.275][C][wifi_signal.sensor:016]:   State Class: 'measurement'
+[05:09:56.275][C][wifi_signal.sensor:016]:   Unit of Measurement: 'dBm'
+[05:09:56.275][C][wifi_signal.sensor:016]:   Accuracy Decimals: 0
+[05:09:56.291][C][wifi_signal.sensor:026]:   Device Class: 'signal_strength'
+[05:09:56.291][C][mdns:177]: mDNS:
+[05:09:56.291][C][mdns:177]:   Hostname: geschirrspuler
+[05:10:11.652][I][safe_mode:066]: Boot seems successful; resetting boot loop counter
+[05:10:11.977][D][esp32.preferences:155]: Writing 1 items: 0 cached, 1 written, 0 failed
+[05:10:14.076][D][sensor:129]: 'Uptime' >> 63 s
+[05:10:14.169][S][sensor]: 'Uptime' >> 63 s
+[05:10:15.834][D][sensor:129]: 'WiFi Signal' >> -50 dBm
+[05:10:15.935][S][sensor]: 'WiFi Signal' >> -50 dBm
+[05:10:21.348][D][main:432]: Received frame dest 0x17 cmd 0x1012: 0x060300
+[05:10:21.349][D][sensor:129]: 'Zeitvorwahl' >> 3 h
+[05:10:21.456][S][sensor]: 'Zeitvorwahl' >> 3 h
+[05:10:23.092][D][main:432]: Received frame dest 0x24 cmd 0x2006: 0x08
+[05:10:23.094][D][binary_sensor:047]: 'Tür' >> OFF
+[05:10:23.196][S][binary_sensor]: 'Tür' >> OFF
+[05:11:11.324][D][main:432]: Received frame dest 0x17 cmd 0x1012: 0x06023b
+[05:11:11.333][D][sensor:129]: 'Zeitvorwahl' >> 2 h
+[05:11:11.432][S][sensor]: 'Zeitvorwahl' >> 2 h
+[05:11:14.077][D][sensor:129]: 'Uptime' >> 123 s
+[05:11:14.173][S][sensor]: 'Uptime' >> 123 s
+[05:11:15.837][D][sensor:129]: 'WiFi Signal' >> -46 dBm
+[05:11:15.933][S][sensor]: 'WiFi Signal' >> -46 dBm
+[05:12:11.317][D][main:432]: Received frame dest 0x17 cmd 0x1012: 0x06023a
+[05:12:11.320][D][sensor:129]: 'Zeitvorwahl' >> 2 h
+[05:12:11.421][S][sensor]: 'Zeitvorwahl' >> 2 h
+[05:12:14.074][D][sensor:129]: 'Uptime' >> 183 s
+[05:12:14.169][S][sensor]: 'Uptime' >> 183 s
+[05:12:15.836][D][sensor:129]: 'WiFi Signal' >> -46 dBm
+[05:12:15.931][S][sensor]: 'WiFi Signal' >> -46 dBm
+[05:13:11.286][D][main:432]: Received frame dest 0x17 cmd 0x1012: 0x060239
+[05:13:11.332][D][sensor:129]: 'Zeitvorwahl' >> 2 h
+[05:13:11.394][S][sensor]: 'Zeitvorwahl' >> 2 h
+[05:13:14.075][D][sensor:129]: 'Uptime' >> 243 s
+[05:13:14.171][S][sensor]: 'Uptime' >> 243 s
+[05:13:15.836][D][sensor:129]: 'WiFi Signal' >> -46 dBm
+[05:13:15.953][S][sensor]: 'WiFi Signal' >> -46 dBm
+[05:14:11.272][D][main:432]: Received frame dest 0x17 cmd 0x1012: 0x060238
+[05:14:11.275][D][sensor:129]: 'Zeitvorwahl' >> 2 h
+[05:14:11.382][S][sensor]: 'Zeitvorwahl' >> 2 h
+[05:14:14.074][D][sensor:129]: 'Uptime' >> 303 s
+[05:14:14.171][S][sensor]: 'Uptime' >> 303 s
+[05:14:15.836][D][sensor:129]: 'WiFi Signal' >> -46 dBm
+[05:14:15.933][S][sensor]: 'WiFi Signal' >> -46 dBm
+[05:15:11.256][D][main:432]: Received frame dest 0x17 cmd 0x1012: 0x060237
+[05:15:11.258][D][sensor:129]: 'Zeitvorwahl' >> 2 h
+[05:15:11.362][S][sensor]: 'Zeitvorwahl' >> 2 h
+[05:15:14.074][D][sensor:129]: 'Uptime' >> 363 s
+[05:15:14.172][S][sensor]: 'Uptime' >> 363 s
+[05:15:15.837][D][sensor:129]: 'WiFi Signal' >> -46 dBm
+[05:15:15.930][S][sensor]: 'WiFi Signal' >> -46 dBm
+[05:16:11.235][D][main:432]: Received frame dest 0x17 cmd 0x1012: 0x060236
+[05:16:11.237][D][sensor:129]: 'Zeitvorwahl' >> 2 h
+[05:16:11.344][S][sensor]: 'Zeitvorwahl' >> 2 h
+[05:16:14.072][D][sensor:129]: 'Uptime' >> 423 s
+[05:16:14.170][S][sensor]: 'Uptime' >> 423 s
+[05:16:15.836][D][sensor:129]: 'WiFi Signal' >> -46 dBm
+[05:16:15.931][S][sensor]: 'WiFi Signal' >> -46 dBm
+[05:17:11.215][D][main:432]: Received frame dest 0x17 cmd 0x1012: 0x060235
+[05:17:11.216][D][sensor:129]: 'Zeitvorwahl' >> 2 h
+[05:17:11.324][S][sensor]: 'Zeitvorwahl' >> 2 h
+[05:17:14.070][D][sensor:129]: 'Uptime' >> 483 s
+[05:17:14.164][S][sensor]: 'Uptime' >> 483 s
+[05:17:15.836][D][sensor:129]: 'WiFi Signal' >> -46 dBm
+[05:17:15.927][S][sensor]: 'WiFi Signal' >> -46 dBm
+[05:18:11.192][D][main:432]: Received frame dest 0x17 cmd 0x1012: 0x060234
+[05:18:11.203][D][sensor:129]: 'Zeitvorwahl' >> 2 h
+[05:18:11.296][S][sensor]: 'Zeitvorwahl' >> 2 h
+[05:18:14.068][D][sensor:129]: 'Uptime' >> 543 s
+[05:18:14.158][S][sensor]: 'Uptime' >> 543 s
+[05:18:15.837][D][sensor:129]: 'WiFi Signal' >> -46 dBm
+[05:18:15.977][S][sensor]: 'WiFi Signal' >> -46 dBm
