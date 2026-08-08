@@ -90,6 +90,26 @@ binary_sensor:
         name: Status
         device_class: running
         lambda: return x[0] == 0x01;
+        on_press:
+          - binary_sensor.template.publish:
+              id: bsh_dw_active_or_delayed
+              state: true
+      - id: helper_status_finished
+        internal: true
+        lambda: return x[0] == 0x03;
+        on_press:
+          - binary_sensor.template.publish:
+              id: bsh_dw_active_or_delayed
+              state: false
+
+  # Läuft gerade ODER ist per Zeitvorwahl programmiert, bis 0x2007=0x03 (Programmende) zurückgesetzt
+  - platform: template
+    name: "Aktiv oder Zeitvorwahl"
+    id: bsh_dw_active_or_delayed
+    device_class: running
+    lambda: |-
+      if (id(bsh_dw_active_or_delayed).has_state()) return id(bsh_dw_active_or_delayed).state;
+      return false;
 
   # 1. Die sichtbaren Haupt-Sensoren (Templates) für Home Assistant
   - platform: template
@@ -227,9 +247,17 @@ sensor:
       - id: bsh_dw_delay
         name: Zeitvorwahl
         icon: mdi:timer-sand
-        unit_of_measurement: h
+        device_class: duration
+        state_class: measurement
+        unit_of_measurement: min
         accuracy_decimals: 0
-        lambda: return x[1];
+        lambda: return x[1] * 60 + x[2];
+        on_value_range:
+          - above: 0.5
+            then:
+              - binary_sensor.template.publish:
+                  id: bsh_dw_active_or_delayed
+                  state: true
 
 text_sensor:
   # 1. Der sichtbare Haupt-Sensor für Home Assistant
