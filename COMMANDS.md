@@ -15,6 +15,7 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `J` = Auto 45-65° (2026-04-14, sechster Lauf — 3× `0x12`, erster Zeitvorwahl-Lauf mit 7h Delay)
 - `K` = Auto 45-65° (2026-04-18, siebter Lauf — 3× `0x12`, Zeitvorwahl ~58 min, Phasen komprimiert)
 - `L` = Auto 45-65° (2026-04-23, achter Lauf — 3× `0x12`, **Glanztrocknen aktiv** (vom Nutzer bestätigt); neue `0x2004`-Werte `0x222000`/`0x223000` beim Trocknen)
+- `M` = Auto 45-65° (2026-10-07, **Fehler E07** am Display beim Türöffnen nach Programmende — vom Nutzer bestätigt; `0x26/0x2002=0x40000000` taktet während der Trocknung)
 
 **Hinweis zu Zeitstempeln:** Alle Log-Zeitstempel sind in UTC (GMT). Lokale Zeit (MESZ) = UTC + 2h.
 
@@ -400,13 +401,18 @@ Bytes 1–7 und 9–12: konstant `000001050062000037010000` über alle bisher ge
 
 ---
 
-## dest `0x26` — Unbekanntes Gerät
+## dest `0x26` — Fehler-/Diagnoseknoten (vermutlich)
 
-### `0x26 / 0x2002`
+### `0x26 / 0x2002` — Fehlerstatus (Bitfeld, 32 Bit)
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0x00000000` | Erscheint 2× pro Programmdurchlauf (Start und Ende); Bedeutung unklar | A B C | ❓ |
+| `0x00000000` | Kein Fehler; erscheint 2× pro Programmdurchlauf (Start und Ende) bzw. als kurzer Reset zwischen Fehlermeldungen | A B C M | 🟡 |
+| `0x40000000` | Bit 30 gesetzt — korreliert mit **Fehler E07** (Trocknungslüfter / Abluft) | M | 🟡 |
+
+**Log M (2026-10-07, E07 bestätigt):** `0x40000000` tritt vereinzelt bereits im Hauptspülen auf (12:03/12:04, 12:19/12:20 UTC) und taktet dann während der gesamten Trocknungsphase (`0x2005=0x28` ab 13:28:34) ab 13:31 UTC regelmäßig: ~46 s `0x40000000`, ~4 s `0x00000000`, Periode ~50 s — bis Programmende (13:46:53). Interpretation: Steuerung quittiert/resettet, Fehler kehrt sofort zurück (Retry-Muster, typisch für nicht anlaufenden Lüfter). Beim Türöffnen (14:27:42) kein eigener Fehler-Frame, nur `0x2006=0x00`; E07 wird vom Panel angezeigt. In den Logs A–L kam `0x40000000` nie vor.
+
+Offen: ob Bit 30 spezifisch E07 ist oder ein Sammelbit — weitere Fehlercodes würden andere Bits zeigen. ❓
 
 ---
 
