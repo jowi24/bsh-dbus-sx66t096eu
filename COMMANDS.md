@@ -15,6 +15,8 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `J` = Auto 45-65° (2026-04-14, sechster Lauf — 3× `0x12`, erster Zeitvorwahl-Lauf mit 7h Delay)
 - `K` = Auto 45-65° (2026-04-18, siebter Lauf — 3× `0x12`, Zeitvorwahl ~58 min, Phasen komprimiert)
 - `L` = Auto 45-65° (2026-04-23, achter Lauf — 3× `0x12`, **Glanztrocknen aktiv** (vom Nutzer bestätigt); neue `0x2004`-Werte `0x222000`/`0x223000` beim Trocknen)
+- `M` = Auto 45-65° (2026-10-07, **Fehler E07** am Display beim Türöffnen nach Programmende — vom Nutzer bestätigt; `0x26/0x2002=0x40000000` taktet während der Trocknung)
+- `N` = Auto 35-45° (2026-10-19, **E07 erneut** — Lüfter-Stecker zuvor neu gesteckt, Lüfter dreht laut Sichtprüfung nicht; Log startet nach Programmwahl, daher kein `0x2010`/`0x5003`; Restzeit-Start 100 min, 1× `0x12`)
 
 **Hinweis zu Zeitstempeln:** Alle Log-Zeitstempel sind in UTC (GMT). Lokale Zeit (MESZ) = UTC + 2h.
 
@@ -151,6 +153,7 @@ Typische Payloads:
 | `0x00` | Tür offen, kein Verbrauchsmittelproblem | A B C H | ✅ |
 | `0x02` | Tür offen, Klarspüler leer | H | ✅ |
 | `0x08` | Tür geschlossen, kein Verbrauchsmittelproblem | A B C H | ✅ |
+| `0x0a` | Tür geschlossen, Klarspüler leer — kurz nach Programmstart (17:20:30–17:21:13 UTC), danach wieder `0x08`; vermutlich Schwimmer/Füllstand kurz nach Türschließen | N | 🟡 |
 
 **Log H Klarspüler-Sequenz** (physisch bestätigt ✅): Klarspüler war leer; Benutzer füllte manuell auf, bevor das Programm startete:
 - 21:29:54 UTC: `0x2006=0x02` → Klarspüler leer gemeldet
@@ -400,13 +403,24 @@ Bytes 1–7 und 9–12: konstant `000001050062000037010000` über alle bisher ge
 
 ---
 
-## dest `0x26` — Unbekanntes Gerät
+## dest `0x26` — Fehler-/Diagnoseknoten (vermutlich)
 
-### `0x26 / 0x2002`
+### `0x26 / 0x2002` — Fehlerstatus (Bitfeld, 32 Bit)
 
 | Payload | Bedeutung | Logs | Konfidenz |
 |---|---|---|---|
-| `0x00000000` | Erscheint 2× pro Programmdurchlauf (Start und Ende); Bedeutung unklar | A B C | ❓ |
+| `0x00000000` | Kein Fehler; erscheint 2× pro Programmdurchlauf (Start und Ende) bzw. als kurzer Reset zwischen Fehlermeldungen | A B C M | 🟡 |
+| `0x40000000` | Bit 30 gesetzt — **Fehler E07** (Zeolith-Lüfter 00652135, 280–340 V DC BLDC); Siemens: „Fehler im Trocknungssystem“ | M N | ✅ |
+
+**Log M (2026-10-07, E07 bestätigt):** `0x40000000` tritt vereinzelt bereits im Hauptspülen auf (12:03/12:04, 12:19/12:20 UTC) und taktet dann während der gesamten Trocknungsphase (`0x2005=0x28` ab 13:28:34) ab 13:31 UTC regelmäßig: ~46 s `0x40000000`, ~4 s `0x00000000`, Periode ~50 s — bis Programmende (13:46:53). Interpretation: Steuerung quittiert/resettet, Fehler kehrt sofort zurück (Retry-Muster, typisch für nicht anlaufenden Lüfter). Beim Türöffnen (14:27:42) kein eigener Fehler-Frame, nur `0x2006=0x00`; E07 wird vom Panel angezeigt. In den Logs A–L kam `0x40000000` nie vor.
+
+**Zustandssemantik:** `0x2002` wird nur bei Änderung gesendet. Der Fehler ist daher zwischen den Frames dauerhaft gesetzt; die ~4-s-`0x00000000`-Fenster sind Retry-Versuche der Steuerung (Fehler löschen → Lüfter starten → nach ~4 s ohne Rückmeldung erneut Fehler).
+
+**Zwei Lüfterphasen (Zeolith):** Retries treten (a) beim Start des Hauptspülens (`0x2005=0x22`, `0x2004=0x221000` — Desorption, Zeolith wird beheizt) und (b) ~5 min nach Beginn der Trocknung (`0x2005=0x28`, Adsorption) im ~50-s-Takt auf.
+
+**Log N (2026-10-19, Auto 35-45°, E07 bestätigt):** Muster identisch zu M, obwohl anderes Programm: Fehler ab 17:31:51 (direkt nach `0x2005=0x22` um 17:31:44), ein Retry 17:32:37–41, dann gesetzt bis Trocknung; ab 18:36:41 (`0x28` seit 18:31:50) 13 Retries im 50-s-Takt (~4 s aus) bis Programmende 18:47:09. Bei offenem Gehäuse wurde beobachtet: Lüfter dreht nicht, ist mechanisch frei; 3-pol. Stecker neu gesteckt ohne Wirkung. Damit ist Bit 30 = E07 programmunabhängig reproduziert. ✅
+
+Offen: ob Bit 30 spezifisch E07 ist oder ein Sammelbit — weitere Fehlercodes würden andere Bits zeigen. ❓
 
 ---
 

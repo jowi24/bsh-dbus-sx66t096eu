@@ -65,6 +65,15 @@ bshdbus:
 
 binary_sensor:
   - platform: bshdbus
+    dest: 0x26
+    command: 0x2002
+    binary_sensors:
+      - id: bsh_dw_error_e07
+        name: Fehler E07 Trocknungslüfter
+        device_class: problem
+        icon: mdi:fan-alert
+        lambda: return ((x[0] >> 6) & 0x01);
+  - platform: bshdbus
     dest: 0x24
     command: 0x2006
     binary_sensors:
