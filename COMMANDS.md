@@ -15,6 +15,7 @@ Alle in den bisherigen Logs beobachteten Frames, ihre Bedeutung und der aktuelle
 - `J` = Auto 45-65° (2026-04-14, sechster Lauf — 3× `0x12`, erster Zeitvorwahl-Lauf mit 7h Delay)
 - `K` = Auto 45-65° (2026-04-18, siebter Lauf — 3× `0x12`, Zeitvorwahl ~58 min, Phasen komprimiert)
 - `L` = Auto 45-65° (2026-04-23, achter Lauf — 3× `0x12`, **Glanztrocknen aktiv** (vom Nutzer bestätigt); neue `0x2004`-Werte `0x222000`/`0x223000` beim Trocknen)
+- `M` = Auto 35-45° (2026-10-31, **nach der Reparatur** des Trocknungslüfters — vollständiger Lauf ohne E07; `0x2004` → `0x221000` nach 11:15 min wie im E07-Lauf vom 2026-10-19, aber `0x26 cmd 0x2002` bleibt `0x00000000`)
 
 **Hinweis zu Zeitstempeln:** Alle Log-Zeitstempel sind in UTC (GMT). Lokale Zeit (MESZ) = UTC + 2h.
 
