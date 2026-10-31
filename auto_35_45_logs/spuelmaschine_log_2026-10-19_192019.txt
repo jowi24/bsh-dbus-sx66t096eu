@@ -1,0 +1,875 @@
+INFO ESPHome 2026.9.1
+INFO Loaded validated config cache for geschirrspuler.yaml, skipping validation.
+INFO Starting log output from geschirrspuler.local using esphome API
+WARNING Error with socket 19 (('10.8.0.4', 5353))): [Errno 126] Required key not available
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.14/asyncio/selector_events.py", line 1283, in sendto
+    self._sock.sendto(data, addr)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+OSError: [Errno 126] Required key not available
+INFO Successfully resolved geschirrspuler.local in 0.049s
+INFO Successfully connected to geschirrspuler @ 192.168.178.87 in 0.117s
+INFO Successful handshake with geschirrspuler @ 192.168.178.87 in 0.069s
+[17:20:19.862][I][app:151]: ESPHome version 2026.9.1 compiled on 2026-10-19 17:14:38 +0000
+[17:20:19.862][I][app:158]: ESP32 Chip: ESP32-C6 rev0.2, 1 core(s)
+[17:20:19.862][C][logger:216]: Logger:
+[17:20:19.862][C][logger:216]:   Max Level: DEBUG
+[17:20:19.862][C][logger:216]:   Initial Level: DEBUG
+[17:20:19.862][C][logger:223]:   Log Baud Rate: 115200
+[17:20:19.862][C][logger:223]:   Hardware UART: USB_SERIAL_JTAG
+[17:20:19.862][C][logger:232]:   Task Log Buffer Size: 768 bytes
+[17:20:19.882][C][uart:254]: UART Bus 0:
+[17:20:19.883][C][uart:131]:   TX Pin: GPIO5
+[17:20:19.883][C][uart:131]:   RX Pin: GPIO4
+[17:20:19.883][C][uart:259]:   RX Buffer Size: 256
+[17:20:19.883][C][uart:259]:   RX Full Threshold: 8
+[17:20:19.883][C][uart:259]:   RX Timeout: 2
+[17:20:19.885][C][uart:268]:   Baud Rate: 9600 baud
+[17:20:19.885][C][uart:268]:   Data Bits: 8
+[17:20:19.885][C][uart:268]:   Parity: NONE
+[17:20:19.885][C][uart:268]:   Stop bits: 1
+[17:20:19.885][C][uart:268]:   Wake on data RX: ENABLED
+[17:20:19.904][C][status_led:022]: Status LED:
+[17:20:19.920][C][status_led:131]:   Pin: GPIO6
+[17:20:19.920][C][gpio.output:009]: Binary Output:
+[17:20:19.921][C][gpio.output:131]:   Pin: GPIO7
+[17:20:19.937][C][template.binary_sensor:016]: Template Binary Sensor 'Aktiv oder Zeitvorwahl'
+[17:20:19.970][C][template.binary_sensor:165]:   Device Class: 'running'
+[17:20:19.970][C][template.binary_sensor:016]: Template Binary Sensor 'Option VarioSpeed'
+[17:20:19.970][C][template.binary_sensor:016]: Template Binary Sensor 'Option IntensivZone'
+[17:20:19.987][C][template.binary_sensor:016]: Template Binary Sensor 'Option Hygiene'
+[17:20:20.020][C][template.binary_sensor:016]: Template Binary Sensor 'Option Glanztrocknen'
+[17:20:20.020][C][uptime.sensor:017]: Uptime Sensor 'Uptime'
+[17:20:20.020][C][uptime.sensor:017]:   State Class: 'total_increasing'
+[17:20:20.020][C][uptime.sensor:017]:   Unit of Measurement: 's'
+[17:20:20.020][C][uptime.sensor:017]:   Accuracy Decimals: 0
+[17:20:20.021][C][uptime.sensor:165]:   Device Class: 'duration'
+[17:20:20.023][C][uptime.sensor:156]:   Icon: 'mdi:timer-outline'
+[17:20:20.023][C][uptime.sensor:019]:   Type: Seconds
+[17:20:20.055][C][template.text_sensor:016]: Template Sensor 'Ausgewähltes Programm'
+[17:20:20.055][C][template.text_sensor:156]:   Icon: 'mdi:dishwasher'
+[17:20:20.075][C][bshdbus:052]: BSH D-Bus:
+[17:20:20.098][C][bshdbus.binary_sensor:011]: BSH D-Bus Binary Sensor:
+[17:20:20.098][C][bshdbus.binary_sensor:015]:   Dest node: 0x26
+[17:20:20.098][C][bshdbus.binary_sensor:020]:   Command: 0x2002
+[17:20:20.226][C][bshdbus.binary_sensor:022]:   Binary Sensors:
+[17:20:20.226][C][bshdbus.binary_sensor:016]:   - 'Fehler E07 Trocknungslüfter'
+[17:20:20.226][C][bshdbus.binary_sensor:165]:     Device Class: 'problem'
+[17:20:20.226][C][bshdbus.binary_sensor:011]: BSH D-Bus Binary Sensor:
+[17:20:20.226][C][bshdbus.binary_sensor:015]:   Dest node: 0x24
+[17:20:20.226][C][bshdbus.binary_sensor:020]:   Command: 0x2006
+[17:20:20.226][C][bshdbus.binary_sensor:022]:   Binary Sensors:
+[17:20:20.227][C][bshdbus.binary_sensor:016]:   - 'Klarspüler'
+[17:20:20.227][C][bshdbus.binary_sensor:165]:     Device Class: 'problem'
+[17:20:20.227][C][bshdbus.binary_sensor:016]:   - 'Salz'
+[17:20:20.227][C][bshdbus.binary_sensor:165]:     Device Class: 'problem'
+[17:20:20.227][C][bshdbus.binary_sensor:016]:   - 'Tür'
+[17:20:20.227][C][bshdbus.binary_sensor:165]:     Device Class: 'door'
+[17:20:20.227][C][bshdbus.binary_sensor:011]: BSH D-Bus Binary Sensor:
+[17:20:20.227][C][bshdbus.binary_sensor:015]:   Dest node: 0x27
+[17:20:20.227][C][bshdbus.binary_sensor:020]:   Command: 0x2007
+[17:20:20.228][C][bshdbus.binary_sensor:022]:   Binary Sensors:
+[17:20:20.228][C][bshdbus.binary_sensor:016]:   - 'Status'
+[17:20:20.228][C][bshdbus.binary_sensor:165]:     Device Class: 'running'
+[17:20:20.228][C][bshdbus.binary_sensor:016]:   - 'helper_status_finished'
+[17:20:20.228][C][bshdbus.binary_sensor:011]: BSH D-Bus Binary Sensor:
+[17:20:20.228][C][bshdbus.binary_sensor:015]:   Dest node: 0x17
+[17:20:20.228][C][bshdbus.binary_sensor:020]:   Command: 0x1000
+[17:20:20.228][C][bshdbus.binary_sensor:022]:   Binary Sensors:
+[17:20:20.228][C][bshdbus.binary_sensor:016]:   - 'helper_panel_variospeed'
+[17:20:20.228][C][bshdbus.binary_sensor:016]:   - 'helper_panel_intensivzone'
+[17:20:20.229][C][bshdbus.binary_sensor:016]:   - 'helper_panel_hygiene'
+[17:20:20.229][C][bshdbus.binary_sensor:016]:   - 'helper_panel_glanz'
+[17:20:20.229][C][bshdbus.binary_sensor:011]: BSH D-Bus Binary Sensor:
+[17:20:20.229][C][bshdbus.binary_sensor:015]:   Dest node: 0x25
+[17:20:20.229][C][bshdbus.binary_sensor:020]:   Command: 0x2010
+[17:20:20.229][C][bshdbus.binary_sensor:022]:   Binary Sensors:
+[17:20:20.229][C][bshdbus.binary_sensor:016]:   - 'helper_init_variospeed'
+[17:20:20.229][C][bshdbus.binary_sensor:016]:   - 'helper_init_intensivzone'
+[17:20:20.229][C][bshdbus.binary_sensor:016]:   - 'helper_init_hygiene'
+[17:20:20.229][C][bshdbus.binary_sensor:016]:   - 'helper_init_glanz'
+[17:20:20.229][C][bshdbus.sensor:011]: BSH D-Bus Sensor:
+[17:20:20.230][C][bshdbus.sensor:015]:   Dest node: 0x25
+[17:20:20.230][C][bshdbus.sensor:020]:   Command: 0x2008
+[17:20:20.230][C][bshdbus.sensor:022]:   Sensors:
+[17:20:20.230][C][bshdbus.sensor:017]:   - 'Restzeit'
+[17:20:20.230][C][bshdbus.sensor:017]:     State Class: 'measurement'
+[17:20:20.230][C][bshdbus.sensor:017]:     Unit of Measurement: 'min'
+[17:20:20.230][C][bshdbus.sensor:017]:     Accuracy Decimals: 0
+[17:20:20.230][C][bshdbus.sensor:165]:     Device Class: 'duration'
+[17:20:20.230][C][bshdbus.sensor:011]: BSH D-Bus Sensor:
+[17:20:20.230][C][bshdbus.sensor:015]:   Dest node: 0x17
+[17:20:20.230][C][bshdbus.sensor:020]:   Command: 0x1012
+[17:20:20.230][C][bshdbus.sensor:022]:   Sensors:
+[17:20:20.231][C][bshdbus.sensor:017]:   - 'Zeitvorwahl'
+[17:20:20.231][C][bshdbus.sensor:017]:     State Class: 'measurement'
+[17:20:20.231][C][bshdbus.sensor:017]:     Unit of Measurement: 'min'
+[17:20:20.231][C][bshdbus.sensor:017]:     Accuracy Decimals: 0
+[17:20:20.231][C][bshdbus.sensor:165]:     Device Class: 'duration'
+[17:20:20.231][C][bshdbus.sensor:156]:     Icon: 'mdi:timer-sand'
+[17:20:20.231][C][bshdbus.text_sensor:011]: BSH D-Bus Text Sensor:
+[17:20:20.231][C][bshdbus.text_sensor:015]:   Dest node: 0x17
+[17:20:20.231][C][bshdbus.text_sensor:020]:   Command: 0x1011
+[17:20:20.233][C][bshdbus.text_sensor:022]:   Text Sensors:
+[17:20:20.233][C][bshdbus.text_sensor:016]:   - 'bsh_helper_panel'
+[17:20:20.242][C][bshdbus.text_sensor:011]: BSH D-Bus Text Sensor:
+[17:20:20.242][C][bshdbus.text_sensor:015]:   Dest node: 0x25
+[17:20:20.244][C][bshdbus.text_sensor:020]:   Command: 0x2010
+[17:20:20.244][C][bshdbus.text_sensor:022]:   Text Sensors:
+[17:20:20.244][C][bshdbus.text_sensor:016]:   - 'bsh_helper_init'
+[17:20:20.260][C][network:050]: Network:
+[17:20:20.260][C][network:050]:   TCP send buffer: 5760 bytes
+[17:20:20.277][C][captive_portal:162]: Captive Portal:
+[17:20:20.295][C][wifi:1582]: WiFi:
+[17:20:20.295][C][wifi:1582]:   Local MAC: 58:E6:C5:E0:B0:C4
+[17:20:20.295][C][wifi:1582]:   Connected: YES
+[17:20:20.296][C][wifi:1286]:   IP Address: 192.168.178.87
+[17:20:20.296][C][wifi:1297]:   SSID: 'MaJo'
+[17:20:20.296][C][wifi:1297]:   BSSID: 2C:91:AB:56:6A:AC
+[17:20:20.296][C][wifi:1297]:   Hostname: 'geschirrspuler'
+[17:20:20.296][C][wifi:1297]:   Signal strength: -50 dB ▂▄▆█
+[17:20:20.296][C][wifi:1297]:   Channel: 6
+[17:20:20.296][C][wifi:1297]:   Subnet: 255.255.255.0
+[17:20:20.296][C][wifi:1297]:   Gateway: 192.168.178.1
+[17:20:20.296][C][wifi:1297]:   DNS1: 192.168.178.2
+[17:20:20.296][C][wifi:1297]:   DNS2: 192.168.178.3
+[17:20:20.317][C][esphome.ota:125]: Over-The-Air updates:
+[17:20:20.317][C][esphome.ota:125]:   Address: geschirrspuler.local:3232
+[17:20:20.317][C][esphome.ota:125]:   Version: 2
+[17:20:20.317][C][esphome.ota:125]:   Encryption: offered, plaintext accepted
+[17:20:20.329][C][esphome.ota:149]:   Password configured
+[17:20:20.329][C][safe_mode:058]: Safe Mode:
+[17:20:20.329][C][safe_mode:058]:   Successful after: 60s
+[17:20:20.329][C][safe_mode:058]:   Invoke after: 10 attempts
+[17:20:20.329][C][safe_mode:058]:   Duration: 300s
+[17:20:20.330][C][safe_mode:079]:   Bootloader rollback: supported
+[17:20:20.346][C][web_server.ota:256]: Web Server OTA
+[17:20:20.384][C][api:293]: Server:
+[17:20:20.384][C][api:293]:   Address: geschirrspuler.local:6053
+[17:20:20.384][C][api:293]:   Listen backlog: 4
+[17:20:20.384][C][api:293]:   Max connections: 5
+[17:20:20.384][C][api:300]:   Noise encryption: YES
+[17:20:20.384][C][wifi_signal.sensor:017]: WiFi Signal 'WiFi Signal'
+[17:20:20.384][C][wifi_signal.sensor:017]:   State Class: 'measurement'
+[17:20:20.384][C][wifi_signal.sensor:017]:   Unit of Measurement: 'dBm'
+[17:20:20.384][C][wifi_signal.sensor:017]:   Accuracy Decimals: 0
+[17:20:20.398][C][wifi_signal.sensor:165]:   Device Class: 'signal_strength'
+[17:20:20.440][C][mdns:259]: mDNS:
+[17:20:20.440][C][mdns:259]:   Hostname: geschirrspuler
+[17:20:27.755][D][main:616]: Received frame dest 0x17 cmd 0x1013: 0x01
+[17:20:27.780][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x640000
+[17:20:27.894][S][sensor]: 'Restzeit' >> 100 min
+[17:20:29.760][D][main:616]: Received frame dest 0x24 cmd 0x2006: 0x08
+[17:20:29.801][D][main:616]: Received frame dest 0x27 cmd 0x2007: 0x01
+[17:20:29.866][S][binary_sensor]: 'Tür' >> OFF
+[17:20:29.866][S][binary_sensor]: 'Status' >> ON
+[17:20:29.887][D][main:616]: Received frame dest 0x25 cmd 0x2013: 0xffff
+[17:20:29.969][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x640000
+[17:20:29.981][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x00
+[17:20:30.049][D][main:616]: Received frame dest 0x25 cmd 0x2004: 0x020000
+[17:20:30.085][S][sensor]: 'Restzeit' >> 100 min
+[17:20:30.092][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[17:20:30.204][D][main:616]: Received frame dest 0x25 cmd 0x2005: 0x21
+[17:20:30.485][D][main:616]: Received frame dest 0x17 cmd 0x1007: 0x01
+[17:20:30.505][D][main:616]: Received frame dest 0x24 cmd 0x2006: 0x0a
+[17:20:30.531][D][main:616]: Received frame dest 0x25 cmd 0x2004: 0x820000
+[17:20:30.616][S][binary_sensor]: 'Klarspüler' >> ON
+[17:20:30.664][D][main:616]: Received frame dest 0x25 cmd 0x2004: 0x220000
+[17:20:32.361][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:20:48.086][S][sensor]: 'Uptime' >> 125 s
+[17:20:48.359][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:20:52.449][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:21:10.290][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:21:13.892][D][main:616]: Received frame dest 0x17 cmd 0x1007: 0x00
+[17:21:13.913][D][main:616]: Received frame dest 0x24 cmd 0x2006: 0x08
+[17:21:14.034][S][binary_sensor]: 'Klarspüler' >> OFF
+[17:21:29.294][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x630000
+[17:21:29.341][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x01
+[17:21:29.403][S][sensor]: 'Restzeit' >> 99 min
+[17:21:30.251][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:21:48.094][S][sensor]: 'Uptime' >> 185 s
+[17:21:48.368][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:22:29.149][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x620000
+[17:22:29.193][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x02
+[17:22:29.255][S][sensor]: 'Restzeit' >> 98 min
+[17:22:48.086][S][sensor]: 'Uptime' >> 245 s
+[17:22:48.360][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:22:50.301][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:23:29.070][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x610000
+[17:23:29.118][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x03
+[17:23:29.158][S][sensor]: 'Restzeit' >> 97 min
+[17:23:30.089][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:23:32.078][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:23:42.240][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:23:44.994][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:23:47.066][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:23:48.093][S][sensor]: 'Uptime' >> 305 s
+[17:23:48.370][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:23:48.750][D][wifi:2485]: Roam scan (-51 dBm, attempt 1/3)
+[17:24:16.274][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:24:21.220][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:24:22.949][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:24:29.024][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x600000
+[17:24:29.045][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x04
+[17:24:29.127][S][sensor]: 'Restzeit' >> 96 min
+[17:24:48.090][S][sensor]: 'Uptime' >> 365 s
+[17:24:48.364][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:24:53.033][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:24:54.809][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:25:00.942][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:25:02.989][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:25:06.052][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:25:26.878][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:25:28.905][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x5f0000
+[17:25:28.926][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x05
+[17:25:29.007][S][sensor]: 'Restzeit' >> 95 min
+[17:25:48.098][S][sensor]: 'Uptime' >> 425 s
+[17:25:48.372][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:26:28.923][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x5e0000
+[17:26:28.979][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x06
+[17:26:29.023][S][sensor]: 'Restzeit' >> 94 min
+[17:26:48.098][S][sensor]: 'Uptime' >> 485 s
+[17:26:48.371][S][sensor]: 'WiFi Signal' >> -52 dBm
+[17:27:28.654][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x5d0000
+[17:27:28.697][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x07
+[17:27:28.755][S][sensor]: 'Restzeit' >> 93 min
+[17:27:48.089][S][sensor]: 'Uptime' >> 545 s
+[17:27:48.362][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:28:28.659][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x5c0000
+[17:28:28.710][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x08
+[17:28:28.759][S][sensor]: 'Restzeit' >> 92 min
+[17:28:48.091][S][sensor]: 'Uptime' >> 605 s
+[17:28:48.365][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:28:48.762][D][wifi:2485]: Roam scan (-51 dBm, attempt 2/3)
+[17:29:28.423][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x5b0000
+[17:29:28.472][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x09
+[17:29:28.525][S][sensor]: 'Restzeit' >> 91 min
+[17:29:28.671][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:29:48.101][S][sensor]: 'Uptime' >> 665 s
+[17:29:48.373][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:29:49.505][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:30:28.412][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x5a0000
+[17:30:28.461][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x0a
+[17:30:28.516][S][sensor]: 'Restzeit' >> 90 min
+[17:30:48.087][S][sensor]: 'Uptime' >> 725 s
+[17:30:48.361][S][sensor]: 'WiFi Signal' >> -52 dBm
+[17:30:48.549][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:30:50.331][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:31:00.319][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:31:10.368][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:31:13.442][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:31:28.342][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x590000
+[17:31:28.386][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x0b
+[17:31:28.448][S][sensor]: 'Restzeit' >> 89 min
+[17:31:33.000][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:31:43.254][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:31:44.270][D][main:616]: Received frame dest 0x25 cmd 0x2005: 0x22
+[17:31:44.792][D][main:616]: Received frame dest 0x25 cmd 0x2004: 0x221000
+[17:31:48.092][S][sensor]: 'Uptime' >> 785 s
+[17:31:48.365][S][sensor]: 'WiFi Signal' >> -52 dBm
+[17:31:51.631][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[17:31:51.745][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[17:32:28.145][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x580000
+[17:32:28.191][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x0c
+[17:32:28.247][S][sensor]: 'Restzeit' >> 88 min
+[17:32:37.623][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[17:32:37.739][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[17:32:41.755][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[17:32:41.870][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[17:32:48.096][S][sensor]: 'Uptime' >> 845 s
+[17:32:48.370][S][sensor]: 'WiFi Signal' >> -52 dBm
+[17:33:28.107][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x570000
+[17:33:28.156][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x0d
+[17:33:28.209][S][sensor]: 'Restzeit' >> 87 min
+[17:33:48.083][S][sensor]: 'Uptime' >> 905 s
+[17:33:48.374][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:33:48.773][D][wifi:2485]: Roam scan (-51 dBm, attempt 3/3)
+[17:34:27.910][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x560000
+[17:34:27.953][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x0e
+[17:34:28.012][S][sensor]: 'Restzeit' >> 86 min
+[17:34:48.101][S][sensor]: 'Uptime' >> 965 s
+[17:34:48.369][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:35:27.970][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x550000
+[17:35:28.013][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x0f
+[17:35:28.070][S][sensor]: 'Restzeit' >> 85 min
+[17:35:48.090][S][sensor]: 'Uptime' >> 1025 s
+[17:35:48.363][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:36:27.746][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x540000
+[17:36:27.793][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x10
+[17:36:27.847][S][sensor]: 'Restzeit' >> 84 min
+[17:36:48.088][S][sensor]: 'Uptime' >> 1085 s
+[17:36:48.362][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:37:27.807][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x530000
+[17:37:27.857][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x11
+[17:37:27.909][S][sensor]: 'Restzeit' >> 83 min
+[17:37:48.099][S][sensor]: 'Uptime' >> 1145 s
+[17:37:48.362][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:38:27.594][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x520000
+[17:38:27.643][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x12
+[17:38:27.698][S][sensor]: 'Restzeit' >> 82 min
+[17:38:48.099][S][sensor]: 'Uptime' >> 1205 s
+[17:38:48.372][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:39:27.646][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x510000
+[17:39:27.690][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x13
+[17:39:27.748][S][sensor]: 'Restzeit' >> 81 min
+[17:39:48.087][S][sensor]: 'Uptime' >> 1265 s
+[17:39:48.359][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:40:27.431][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x500000
+[17:40:27.473][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x14
+[17:40:27.534][S][sensor]: 'Restzeit' >> 80 min
+[17:40:48.098][S][sensor]: 'Uptime' >> 1325 s
+[17:40:48.371][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:41:27.238][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x4f0000
+[17:41:27.281][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x15
+[17:41:27.340][S][sensor]: 'Restzeit' >> 79 min
+[17:41:48.095][S][sensor]: 'Uptime' >> 1385 s
+[17:41:48.369][S][sensor]: 'WiFi Signal' >> -52 dBm
+[17:42:27.265][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x4e0000
+[17:42:27.309][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x16
+[17:42:27.367][S][sensor]: 'Restzeit' >> 78 min
+[17:42:48.090][S][sensor]: 'Uptime' >> 1445 s
+[17:42:48.363][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:43:27.072][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x4d0000
+[17:43:27.117][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x17
+[17:43:27.176][S][sensor]: 'Restzeit' >> 77 min
+[17:43:48.093][S][sensor]: 'Uptime' >> 1505 s
+[17:43:48.371][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:44:27.121][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x4c0000
+[17:44:27.165][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x18
+[17:44:27.224][S][sensor]: 'Restzeit' >> 76 min
+[17:44:48.093][S][sensor]: 'Uptime' >> 1565 s
+[17:44:48.367][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:45:26.907][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x4b0000
+[17:45:26.970][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x19
+[17:45:27.011][S][sensor]: 'Restzeit' >> 75 min
+[17:45:48.104][S][sensor]: 'Uptime' >> 1625 s
+[17:45:48.374][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:46:26.691][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x4a0000
+[17:46:26.741][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x1a
+[17:46:26.795][S][sensor]: 'Restzeit' >> 74 min
+[17:46:48.092][S][sensor]: 'Uptime' >> 1685 s
+[17:46:48.365][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:47:26.748][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x490000
+[17:47:26.793][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x1b
+[17:47:26.850][S][sensor]: 'Restzeit' >> 73 min
+[17:47:48.102][S][sensor]: 'Uptime' >> 1745 s
+[17:47:48.373][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:48:26.499][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x480000
+[17:48:26.545][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x1c
+[17:48:26.601][S][sensor]: 'Restzeit' >> 72 min
+[17:48:48.100][S][sensor]: 'Uptime' >> 1805 s
+[17:48:48.366][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:49:26.538][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x470000
+[17:49:26.588][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x1d
+[17:49:26.644][S][sensor]: 'Restzeit' >> 71 min
+[17:49:48.100][S][sensor]: 'Uptime' >> 1865 s
+[17:49:48.372][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:50:26.313][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x460000
+[17:50:26.357][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x1e
+[17:50:26.416][S][sensor]: 'Restzeit' >> 70 min
+[17:50:48.100][S][sensor]: 'Uptime' >> 1925 s
+[17:50:48.373][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:51:26.348][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x450000
+[17:51:26.393][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x1f
+[17:51:26.430][S][sensor]: 'Restzeit' >> 69 min
+[17:51:36.393][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:51:48.091][S][sensor]: 'Uptime' >> 1985 s
+[17:51:48.386][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:51:58.257][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:52:26.082][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x440000
+[17:52:26.146][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x20
+[17:52:26.181][S][sensor]: 'Restzeit' >> 68 min
+[17:52:48.106][S][sensor]: 'Uptime' >> 2045 s
+[17:52:48.380][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:52:56.277][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:52:58.068][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:53:03.185][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:53:05.233][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:53:26.016][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x430000
+[17:53:26.119][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x21
+[17:53:26.119][S][sensor]: 'Restzeit' >> 67 min
+[17:53:48.106][S][sensor]: 'Uptime' >> 2105 s
+[17:53:48.379][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:54:26.028][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x420000
+[17:54:26.073][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x22
+[17:54:26.130][S][sensor]: 'Restzeit' >> 66 min
+[17:54:48.101][S][sensor]: 'Uptime' >> 2165 s
+[17:54:48.375][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:55:25.787][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x410000
+[17:55:25.840][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x23
+[17:55:25.898][S][sensor]: 'Restzeit' >> 65 min
+[17:55:48.101][S][sensor]: 'Uptime' >> 2225 s
+[17:55:48.379][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:56:25.824][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x400000
+[17:56:25.873][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x24
+[17:56:25.925][S][sensor]: 'Restzeit' >> 64 min
+[17:56:48.104][S][sensor]: 'Uptime' >> 2285 s
+[17:56:48.378][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:57:05.762][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:57:25.767][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x3f0000
+[17:57:25.819][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x25
+[17:57:25.879][S][sensor]: 'Restzeit' >> 63 min
+[17:57:48.096][S][sensor]: 'Uptime' >> 2345 s
+[17:57:48.377][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:57:59.759][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:58:25.539][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x3e0000
+[17:58:25.589][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x26
+[17:58:25.629][S][sensor]: 'Restzeit' >> 62 min
+[17:58:29.408][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[17:58:48.096][S][sensor]: 'Uptime' >> 2405 s
+[17:58:48.373][S][sensor]: 'WiFi Signal' >> -51 dBm
+[17:59:25.538][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x3d0000
+[17:59:25.582][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x27
+[17:59:25.647][S][sensor]: 'Restzeit' >> 61 min
+[17:59:48.104][S][sensor]: 'Uptime' >> 2465 s
+[17:59:48.381][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:00:25.275][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x3c0000
+[18:00:25.321][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x28
+[18:00:25.379][S][sensor]: 'Restzeit' >> 60 min
+[18:00:48.101][S][sensor]: 'Uptime' >> 2525 s
+[18:00:48.376][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:01:25.319][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x3b0000
+[18:01:25.365][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x29
+[18:01:25.421][S][sensor]: 'Restzeit' >> 59 min
+[18:01:48.097][S][sensor]: 'Uptime' >> 2585 s
+[18:01:48.370][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:02:25.072][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x3a0000
+[18:02:25.117][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x2a
+[18:02:25.177][S][sensor]: 'Restzeit' >> 58 min
+[18:02:25.322][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:02:48.096][S][sensor]: 'Uptime' >> 2645 s
+[18:02:48.370][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:02:52.170][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:03:03.054][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:03:13.070][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:03:15.029][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:03:15.453][D][main:616]: Received frame dest 0x25 cmd 0x2005: 0x12
+[18:03:27.508][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x2a0000
+[18:03:27.553][D][main:616]: Received frame dest 0x25 cmd 0x2005: 0x22
+[18:03:27.616][S][sensor]: 'Restzeit' >> 42 min
+[18:03:27.763][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x2a0000
+[18:03:27.773][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x3a
+[18:03:27.870][S][sensor]: 'Restzeit' >> 42 min
+[18:03:30.957][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:03:32.949][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:03:48.104][S][sensor]: 'Uptime' >> 2705 s
+[18:03:48.378][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:04:12.884][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:04:18.075][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:04:19.909][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:04:24.947][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x290000
+[18:04:25.000][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x3b
+[18:04:25.049][S][sensor]: 'Restzeit' >> 41 min
+[18:04:35.017][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:04:48.110][S][sensor]: 'Uptime' >> 2765 s
+[18:04:48.381][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:05:24.889][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x280000
+[18:05:24.939][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x3c
+[18:05:24.997][S][sensor]: 'Restzeit' >> 40 min
+[18:05:35.723][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:05:48.111][S][sensor]: 'Uptime' >> 2825 s
+[18:05:48.382][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:05:57.606][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:06:24.885][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x270000
+[18:06:24.932][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x3d
+[18:06:25.004][S][sensor]: 'Restzeit' >> 39 min
+[18:06:48.096][S][sensor]: 'Uptime' >> 2885 s
+[18:06:48.385][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:07:24.630][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x260000
+[18:07:24.685][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x3e
+[18:07:24.732][S][sensor]: 'Restzeit' >> 38 min
+[18:07:48.098][S][sensor]: 'Uptime' >> 2945 s
+[18:07:48.383][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:08:24.668][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x250000
+[18:08:24.713][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x3f
+[18:08:24.771][S][sensor]: 'Restzeit' >> 37 min
+[18:08:48.102][S][sensor]: 'Uptime' >> 3005 s
+[18:08:48.376][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:09:24.450][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x240000
+[18:09:24.496][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x40
+[18:09:24.552][S][sensor]: 'Restzeit' >> 36 min
+[18:09:48.108][S][sensor]: 'Uptime' >> 3065 s
+[18:09:48.380][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:10:24.470][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x230000
+[18:10:24.513][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x41
+[18:10:24.574][S][sensor]: 'Restzeit' >> 35 min
+[18:10:48.098][S][sensor]: 'Uptime' >> 3125 s
+[18:10:48.370][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:11:24.232][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x220000
+[18:11:24.277][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x42
+[18:11:24.337][S][sensor]: 'Restzeit' >> 34 min
+[18:11:34.297][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:11:48.109][S][sensor]: 'Uptime' >> 3185 s
+[18:11:48.383][S][sensor]: 'WiFi Signal' >> -52 dBm
+[18:11:59.331][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:12:10.126][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:12:20.134][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:12:22.095][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:12:24.066][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x210000
+[18:12:24.077][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x43
+[18:12:24.174][S][sensor]: 'Restzeit' >> 33 min
+[18:12:25.097][D][main:616]: Received frame dest 0x25 cmd 0x2004: 0x221000
+[18:12:25.185][D][main:616]: Received frame dest 0x25 cmd 0x2004: 0x220000
+[18:12:25.368][D][main:616]: Received frame dest 0x25 cmd 0x2005: 0x24
+[18:12:48.095][S][sensor]: 'Uptime' >> 3245 s
+[18:12:48.387][S][sensor]: 'WiFi Signal' >> -52 dBm
+[18:13:05.037][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:13:10.231][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:13:11.980][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:13:17.787][D][api.connection:2669]: Home Assistant 2026.10.2 (192.168.178.4): disconnected
+[18:13:23.975][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x200000
+[18:13:24.024][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x44
+[18:13:24.078][S][sensor]: 'Restzeit' >> 32 min
+[18:13:27.084][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:13:48.110][S][sensor]: 'Uptime' >> 3305 s
+[18:13:48.382][S][sensor]: 'WiFi Signal' >> -53 dBm
+[18:14:02.334][D][api:277]: Accept 192.168.178.4
+[18:14:03.561][D][api.connection:2669]: Home Assistant 2026.10.2 (192.168.178.4): connected
+[18:14:23.906][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x1f0000
+[18:14:23.949][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x45
+[18:14:24.008][S][sensor]: 'Restzeit' >> 31 min
+[18:14:48.116][S][sensor]: 'Uptime' >> 3365 s
+[18:14:48.380][S][sensor]: 'WiFi Signal' >> -52 dBm
+[18:15:23.856][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x1e0000
+[18:15:23.914][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x46
+[18:15:23.958][S][sensor]: 'Restzeit' >> 30 min
+[18:15:48.105][S][sensor]: 'Uptime' >> 3425 s
+[18:15:48.378][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:16:23.789][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x1d0000
+[18:16:23.832][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x47
+[18:16:23.893][S][sensor]: 'Restzeit' >> 29 min
+[18:16:37.956][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:16:48.102][S][sensor]: 'Uptime' >> 3485 s
+[18:16:48.384][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:16:58.830][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:17:23.566][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x1c0000
+[18:17:23.609][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x48
+[18:17:23.669][S][sensor]: 'Restzeit' >> 28 min
+[18:17:48.103][S][sensor]: 'Uptime' >> 3545 s
+[18:17:48.376][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:17:58.677][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:18:23.611][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x1b0000
+[18:18:23.661][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x49
+[18:18:23.713][S][sensor]: 'Restzeit' >> 27 min
+[18:18:48.099][S][sensor]: 'Uptime' >> 3605 s
+[18:18:48.372][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:19:23.411][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x1a0000
+[18:19:23.458][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x4a
+[18:19:23.513][S][sensor]: 'Restzeit' >> 26 min
+[18:19:48.111][S][sensor]: 'Uptime' >> 3665 s
+[18:19:48.384][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:20:00.328][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:20:23.416][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x190000
+[18:20:23.466][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x4b
+[18:20:23.523][S][sensor]: 'Restzeit' >> 25 min
+[18:20:48.103][S][sensor]: 'Uptime' >> 3725 s
+[18:20:48.376][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:21:23.173][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x180000
+[18:21:23.218][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x4c
+[18:21:23.277][S][sensor]: 'Restzeit' >> 24 min
+[18:21:48.096][S][sensor]: 'Uptime' >> 3785 s
+[18:21:48.386][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:22:03.103][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:22:23.129][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x170000
+[18:22:23.178][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x4d
+[18:22:23.229][S][sensor]: 'Restzeit' >> 23 min
+[18:22:48.100][S][sensor]: 'Uptime' >> 3845 s
+[18:22:48.374][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:23:23.079][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x160000
+[18:23:23.125][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x4e
+[18:23:23.179][S][sensor]: 'Restzeit' >> 22 min
+[18:23:48.099][S][sensor]: 'Uptime' >> 3905 s
+[18:23:48.371][S][sensor]: 'WiFi Signal' >> -52 dBm
+[18:24:23.022][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x150000
+[18:24:23.066][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x4f
+[18:24:23.123][S][sensor]: 'Restzeit' >> 21 min
+[18:24:48.105][S][sensor]: 'Uptime' >> 3965 s
+[18:24:48.378][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:25:02.935][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:25:23.011][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x140000
+[18:25:23.057][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x50
+[18:25:23.073][S][sensor]: 'Restzeit' >> 20 min
+[18:25:48.105][S][sensor]: 'Uptime' >> 4025 s
+[18:25:48.378][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:26:02.928][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:26:04.446][D][main:616]: Received frame dest 0x25 cmd 0x2005: 0x14
+[18:26:11.961][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x160000
+[18:26:11.970][D][main:616]: Received frame dest 0x25 cmd 0x2005: 0x24
+[18:26:12.051][S][sensor]: 'Restzeit' >> 22 min
+[18:26:12.704][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x160000
+[18:26:12.728][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x4e
+[18:26:12.807][S][sensor]: 'Restzeit' >> 22 min
+[18:26:22.783][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x150000
+[18:26:22.849][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:26:22.849][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x4f
+[18:26:22.890][S][sensor]: 'Restzeit' >> 21 min
+[18:26:48.103][S][sensor]: 'Uptime' >> 4085 s
+[18:26:48.389][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:27:22.555][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x140000
+[18:27:22.610][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x50
+[18:27:22.662][S][sensor]: 'Restzeit' >> 20 min
+[18:27:23.516][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:27:38.493][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:27:41.776][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:27:48.102][S][sensor]: 'Uptime' >> 4145 s
+[18:27:48.376][S][sensor]: 'WiFi Signal' >> -52 dBm
+[18:28:22.563][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x130000
+[18:28:22.609][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x51
+[18:28:22.665][S][sensor]: 'Restzeit' >> 19 min
+[18:28:48.097][S][sensor]: 'Uptime' >> 4205 s
+[18:28:48.370][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:29:22.400][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x120000
+[18:29:22.446][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x52
+[18:29:22.504][S][sensor]: 'Restzeit' >> 18 min
+[18:29:48.111][S][sensor]: 'Uptime' >> 4265 s
+[18:29:48.383][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:30:22.262][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x110000
+[18:30:22.305][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x53
+[18:30:22.364][S][sensor]: 'Restzeit' >> 17 min
+[18:30:26.383][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:30:28.194][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:30:33.237][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:30:48.103][S][sensor]: 'Uptime' >> 4325 s
+[18:30:48.379][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:31:03.194][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:31:17.027][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:31:22.244][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x100000
+[18:31:22.289][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x54
+[18:31:22.344][S][sensor]: 'Restzeit' >> 16 min
+[18:31:27.175][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:31:39.265][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:31:48.097][S][sensor]: 'Uptime' >> 4385 s
+[18:31:48.370][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:31:49.253][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:31:50.960][D][main:616]: Received frame dest 0x25 cmd 0x2005: 0x28
+[18:31:51.221][D][main:616]: Received frame dest 0x25 cmd 0x2004: 0x221000
+[18:32:22.068][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x0f0000
+[18:32:22.114][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x55
+[18:32:22.174][S][sensor]: 'Restzeit' >> 15 min
+[18:32:48.104][S][sensor]: 'Uptime' >> 4445 s
+[18:32:48.377][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:33:21.926][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x0e0000
+[18:33:21.969][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x56
+[18:33:22.035][S][sensor]: 'Restzeit' >> 14 min
+[18:33:48.105][S][sensor]: 'Uptime' >> 4505 s
+[18:33:48.379][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:34:21.874][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x0d0000
+[18:34:21.924][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x57
+[18:34:21.980][S][sensor]: 'Restzeit' >> 13 min
+[18:34:48.099][S][sensor]: 'Uptime' >> 4565 s
+[18:34:48.372][S][sensor]: 'WiFi Signal' >> -56 dBm
+[18:35:21.730][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x0c0000
+[18:35:21.773][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x58
+[18:35:21.839][S][sensor]: 'Restzeit' >> 12 min
+[18:35:48.098][S][sensor]: 'Uptime' >> 4625 s
+[18:35:48.372][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:36:21.673][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x0b0000
+[18:36:21.717][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x59
+[18:36:21.782][S][sensor]: 'Restzeit' >> 11 min
+[18:36:41.629][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:36:41.837][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[18:36:41.951][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[18:36:46.648][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[18:36:46.761][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[18:36:48.107][S][sensor]: 'Uptime' >> 4685 s
+[18:36:48.384][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:37:21.497][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x0a0000
+[18:37:21.547][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x5a
+[18:37:21.604][S][sensor]: 'Restzeit' >> 10 min
+[18:37:32.206][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[18:37:32.320][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[18:37:36.056][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[18:37:36.170][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[18:37:48.108][S][sensor]: 'Uptime' >> 4745 s
+[18:37:48.382][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:38:21.394][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x090000
+[18:38:21.440][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x5b
+[18:38:21.503][S][sensor]: 'Restzeit' >> 9 min
+[18:38:22.317][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[18:38:22.429][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[18:38:26.165][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[18:38:26.279][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[18:38:48.106][S][sensor]: 'Uptime' >> 4805 s
+[18:38:48.380][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:39:12.422][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[18:39:12.537][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[18:39:16.272][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[18:39:16.386][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[18:39:21.302][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x080000
+[18:39:21.345][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x5c
+[18:39:21.411][S][sensor]: 'Restzeit' >> 8 min
+[18:39:48.107][S][sensor]: 'Uptime' >> 4865 s
+[18:39:48.382][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:40:02.445][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[18:40:02.559][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[18:40:06.303][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[18:40:06.408][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[18:40:21.207][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x070000
+[18:40:21.217][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x5d
+[18:40:21.314][S][sensor]: 'Restzeit' >> 7 min
+[18:40:48.105][S][sensor]: 'Uptime' >> 4925 s
+[18:40:48.380][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:40:52.548][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[18:40:52.664][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[18:40:56.397][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[18:40:56.510][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[18:41:21.104][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x060000
+[18:41:21.115][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x5e
+[18:41:21.219][S][sensor]: 'Restzeit' >> 6 min
+[18:41:42.570][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[18:41:42.684][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[18:41:46.420][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[18:41:46.534][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[18:41:48.104][S][sensor]: 'Uptime' >> 4985 s
+[18:41:48.379][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:42:21.009][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x050000
+[18:42:21.018][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x5f
+[18:42:21.118][S][sensor]: 'Restzeit' >> 5 min
+[18:42:32.686][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[18:42:32.812][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[18:42:36.535][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[18:42:36.648][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[18:42:48.096][S][sensor]: 'Uptime' >> 5045 s
+[18:42:48.386][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:43:20.912][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x040000
+[18:43:20.921][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x60
+[18:43:21.019][S][sensor]: 'Restzeit' >> 4 min
+[18:43:22.704][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[18:43:22.814][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[18:43:26.551][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[18:43:26.664][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[18:43:48.097][S][sensor]: 'Uptime' >> 5105 s
+[18:43:48.391][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:44:12.808][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[18:44:12.925][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[18:44:16.570][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[18:44:16.685][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[18:44:20.813][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x030000
+[18:44:20.824][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x61
+[18:44:20.923][S][sensor]: 'Restzeit' >> 3 min
+[18:44:48.101][S][sensor]: 'Uptime' >> 5165 s
+[18:44:48.386][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:45:02.831][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[18:45:02.946][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[18:45:06.679][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[18:45:06.794][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[18:45:20.717][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x020000
+[18:45:20.743][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x62
+[18:45:20.825][S][sensor]: 'Restzeit' >> 2 min
+[18:45:48.099][S][sensor]: 'Uptime' >> 5225 s
+[18:45:48.373][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:45:52.939][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[18:45:53.053][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[18:45:56.702][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[18:45:56.815][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[18:46:00.688][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:46:20.645][D][main:616]: Received frame dest 0x25 cmd 0x2008: 0x010000
+[18:46:20.648][D][main:616]: Received frame dest 0x25 cmd 0x2000: 0x63
+[18:46:20.741][S][sensor]: 'Restzeit' >> 1 min
+[18:46:42.932][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x00000000
+[18:46:43.044][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> OFF
+[18:46:46.800][D][main:616]: Received frame dest 0x26 cmd 0x2002: 0x40000000
+[18:46:46.927][S][binary_sensor]: 'Fehler E07 Trocknungslüfter' >> ON
+[18:46:48.109][S][sensor]: 'Uptime' >> 5285 s
+[18:46:48.381][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:46:55.699][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:47:05.751][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:47:06.159][D][main:616]: Received frame dest 0x25 cmd 0x2004: 0x201000
+[18:47:06.248][D][main:616]: Received frame dest 0x25 cmd 0x2004: 0x201000
+[18:47:06.336][D][main:616]: Received frame dest 0x25 cmd 0x2004: 0x201000
+[18:47:06.424][D][main:616]: Received frame dest 0x25 cmd 0x2004: 0x201000
+[18:47:06.511][D][main:616]: Received frame dest 0x25 cmd 0x2004: 0x201000
+[18:47:08.521][D][main:616]: Received frame dest 0x25 cmd 0x2009: 0x00
+[18:47:08.691][D][main:616]: Received frame dest 0x25 cmd 0x2005: 0x20
+[18:47:09.222][D][main:616]: Received frame dest 0x27 cmd 0x2007: 0x03
+[18:47:09.227][D][main:616]: Received frame dest 0x25 cmd 0x2004: 0x200000
+[18:47:09.289][D][main:616]: Received frame dest 0x25 cmd 0x2005: 0x20
+[18:47:09.306][S][binary_sensor]: 'Status' >> OFF
+[18:47:48.106][S][sensor]: 'Uptime' >> 5345 s
+[18:47:48.379][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:48:48.097][S][sensor]: 'Uptime' >> 5405 s
+[18:48:48.386][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:49:48.104][S][sensor]: 'Uptime' >> 5465 s
+[18:49:48.377][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:50:48.107][S][sensor]: 'Uptime' >> 5525 s
+[18:50:48.381][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:51:48.107][S][sensor]: 'Uptime' >> 5585 s
+[18:51:48.381][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:52:48.099][S][sensor]: 'Uptime' >> 5645 s
+[18:52:48.388][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:53:48.100][S][sensor]: 'Uptime' >> 5705 s
+[18:53:48.391][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:54:48.144][S][sensor]: 'Uptime' >> 5765 s
+[18:54:48.385][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:55:48.110][S][sensor]: 'Uptime' >> 5825 s
+[18:55:48.383][S][sensor]: 'WiFi Signal' >> -51 dBm
+[18:56:48.103][S][sensor]: 'Uptime' >> 5885 s
+[18:56:48.377][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:57:48.105][S][sensor]: 'Uptime' >> 5945 s
+[18:57:48.378][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:58:48.105][S][sensor]: 'Uptime' >> 6005 s
+[18:58:48.378][S][sensor]: 'WiFi Signal' >> -50 dBm
+[18:59:48.112][S][sensor]: 'Uptime' >> 6065 s
+[18:59:48.386][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:00:48.109][S][sensor]: 'Uptime' >> 6125 s
+[19:00:48.388][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:01:48.103][S][sensor]: 'Uptime' >> 6185 s
+[19:01:48.377][S][sensor]: 'WiFi Signal' >> -51 dBm
+[19:02:48.112][S][sensor]: 'Uptime' >> 6245 s
+[19:02:48.386][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:03:48.101][S][sensor]: 'Uptime' >> 6305 s
+[19:03:48.375][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:04:48.114][S][sensor]: 'Uptime' >> 6365 s
+[19:04:48.385][S][sensor]: 'WiFi Signal' >> -51 dBm
+[19:05:48.103][S][sensor]: 'Uptime' >> 6425 s
+[19:05:48.375][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:06:48.107][S][sensor]: 'Uptime' >> 6485 s
+[19:06:48.380][S][sensor]: 'WiFi Signal' >> -51 dBm
+[19:07:48.100][S][sensor]: 'Uptime' >> 6545 s
+[19:07:48.388][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:08:48.118][S][sensor]: 'Uptime' >> 6605 s
+[19:08:48.377][S][sensor]: 'WiFi Signal' >> -51 dBm
+[19:09:48.113][S][sensor]: 'Uptime' >> 6665 s
+[19:09:48.387][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:10:48.112][S][sensor]: 'Uptime' >> 6725 s
+[19:10:48.397][S][sensor]: 'WiFi Signal' >> -51 dBm
+[19:11:48.111][S][sensor]: 'Uptime' >> 6785 s
+[19:11:48.387][S][sensor]: 'WiFi Signal' >> -51 dBm
+[19:12:48.114][S][sensor]: 'Uptime' >> 6845 s
+[19:12:48.394][S][sensor]: 'WiFi Signal' >> -51 dBm
+[19:13:48.123][S][sensor]: 'Uptime' >> 6905 s
+[19:13:48.385][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:14:48.100][S][sensor]: 'Uptime' >> 6965 s
+[19:14:48.395][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:15:48.106][S][sensor]: 'Uptime' >> 7025 s
+[19:15:48.379][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:16:48.111][S][sensor]: 'Uptime' >> 7085 s
+[19:16:48.393][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:17:48.107][S][sensor]: 'Uptime' >> 7145 s
+[19:17:48.381][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:18:48.128][S][sensor]: 'Uptime' >> 7205 s
+[19:18:48.388][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:19:48.107][S][sensor]: 'Uptime' >> 7265 s
+[19:19:48.380][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:20:48.110][S][sensor]: 'Uptime' >> 7325 s
+[19:20:48.385][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:21:48.103][S][sensor]: 'Uptime' >> 7385 s
+[19:21:48.391][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:22:48.130][S][sensor]: 'Uptime' >> 7445 s
+[19:22:48.394][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:23:48.115][S][sensor]: 'Uptime' >> 7505 s
+[19:23:48.389][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:24:48.117][S][sensor]: 'Uptime' >> 7565 s
+[19:24:48.389][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:25:48.111][S][sensor]: 'Uptime' >> 7625 s
+[19:25:48.385][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:26:48.106][S][sensor]: 'Uptime' >> 7685 s
+[19:26:48.380][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:27:48.112][S][sensor]: 'Uptime' >> 7745 s
+[19:27:48.386][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:28:48.102][S][sensor]: 'Uptime' >> 7805 s
+[19:28:48.391][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:29:48.117][S][sensor]: 'Uptime' >> 7865 s
+[19:29:48.382][S][sensor]: 'WiFi Signal' >> -50 dBm
+[19:30:48.109][S][sensor]: 'Uptime' >> 7925 s
+[19:30:48.382][S][sensor]: 'WiFi Signal' >> -50 dBm
